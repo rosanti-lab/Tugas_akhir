@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\About;
+use App\Models\Infosampah;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,15 +21,23 @@ class PengajuanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function index()
+    // {
+    //     $items = About::all();
+
+    //     return view('pages.pengajuan')->with([
+    //         'items' => $items
+    //     ]);
+    // }
+
     public function index()
     {
-        $items = About::all();
 
-        return view('pages.pengajuan')->with([
-            'items' => $items
-        ]);
+        $test = Infosampah::all();
+        
+        // dd($items= Infosampah::all());
+        return view('pages.pengajuan', ['test' =>$test]);
     }
-
     /**
      * Show the form for creating a new resource.
      *

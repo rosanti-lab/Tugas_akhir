@@ -9,11 +9,19 @@ use Illuminate\Support\Facades\DB;
 class InfosampahController extends Controller
 
 {
+    // public function index()
+    // {
+
+    //     $items = Infosampah::all();
+
+    //     return view('pages.pengajuan', compact('pengajuan', $items));
+    // }
+
     public function data()
     {
         $infosampah = DB::table('info_sampah')->get();
 
-        // return $edulevels;
+        
         return view('infosampah.data', ['info_sampah' =>$infosampah]);
     }
 

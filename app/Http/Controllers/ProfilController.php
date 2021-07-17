@@ -48,6 +48,7 @@ class ProfilController extends Controller
             ->update([
                 'judul'=>$request->judul,             //nama dari database->nama dari form input
                 'konten'=>$request->konten,
+                // 'image'=>$request->image,
 
             ]);
             return redirect('/profil');

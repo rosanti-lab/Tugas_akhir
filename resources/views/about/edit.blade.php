@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <label for="email">Image</label>
-                <input type="file" class="form-control" id="photo" placeholder="masukan gambar" name="image" required value="{{$item['photo']}}">
+                <input type="file" class="form-control" id="photo" placeholder="masukan gambar" name="photo" required value="{{$item['photo']}}">
             </div>
 
             <div class="form-group">

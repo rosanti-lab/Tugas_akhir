@@ -56,7 +56,7 @@
                                         <nav> 
                                         <ul id="navigation">                                                                                          
                                             <li><a href="">Home</a></li>
-                                            <li><a href="about">About</a></li>
+                                            <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
@@ -112,14 +112,10 @@
                             <div class="section-tittle mb-35">
                                 <span>Budidaya Maggot Wiralodra</span>
                                 <h2>Pengajuan Sampah Organik</h2>
-                                @foreach ($items as $item)
-                                    <!-- <h1>{{ $item->title }}</h1> -->
-
-                                    <div class="image main">
-                                        <img src="{{ url($item->photo) }}" class="img-fluid" alt="" />
-                                    </div>
-                                    <p>{!! $item->konten !!}</p>
+                                @foreach($test as $link)
+                                    {{ $link['konten'] }}
                                 @endforeach
+                                
                             </div>
                             <a href="about.html" class="btn">More About Us</a>
                         </div>

@@ -44,7 +44,7 @@
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('profil')}}"> Profil </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('about')}}"> About </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infosampah')}}"> Info Sampah Organik </a></li>
-                               
+                                <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infotransaksi')}}"> Info Transaksi </a></li>                               
                         </ul>
                     </li>
                    
@@ -59,7 +59,6 @@
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-puzzle-piece"></i><a href="{{ url ('profil')}}">Sampah Organik</a></li>
                                 <li><i class="fa fa-puzzle-piece"></i><a href="">Transaksi Maggot</a></li>
-                                <li><i class="fa fa-puzzle-piece"></i><a href="">Tentang Maggot</a></li>
                             </ul>
                     </li>
                    
