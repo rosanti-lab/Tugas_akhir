@@ -87,7 +87,7 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="contact.html" class="btn header-btn">Get A Qoue</a>
+                                    <a href="/logout" class="btn header-btn">Logout</a>
                                 </div>
                             </div>
                         </div> 

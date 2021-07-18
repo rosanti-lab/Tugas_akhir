@@ -13,15 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//==============web==============
 Route::get('/', function () {
     return view('index');
 });
+//=========================================
+
+Route::group(['middleware' => ['auth','CekRole:admin']], function () {
 Route::get('home', function(){
     return view ('home');
 });
-Route::get('homecsr', function(){
-    return view ('homecsr');
 });
+
+Route::group(['middleware' => ['auth','CekRole:csr']], function () {
+    Route::get('homecsr', function(){
+        return view ('homecsr');
+    });
+});
+
 Route::get('web', function(){
     return view ('app');
 });
@@ -35,22 +44,31 @@ Route::get('about', function(){
 // Route::get('/login', function(){
 //     return view ('login.login');
 // });
-Route::get('/login', 'LoginController@login');
+//===============LOGIN===================================================
+Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/postlogin', 'LoginController@postlogin')->name ('postlogin');
 Route::get('/daftar', 'LoginController@daftar');
+Route::post('/post_daftar', 'LoginController@postDaftar');
+Route::get('/logout', 'LoginController@logout');
+//========================================================================
 
 
-
-Route::get('sampahorganik', 'SampahorganikController@data');
+//============================= Middleware User =====================================
+Route::group(['middleware' => ['auth','CekRole:user']], function () {
 Route::post('sampahorganik', 'SampahorganikController@tambahdata');
+});
+//===================================================================================
+Route::get('sampahorganik', 'SampahorganikController@data');
 Route::get('sampahorganik/edit/{id}', 'SampahorganikController@edit');
 Route::get('/sampahorganik/destroy/{id}', 'SampahorganikController@destroy');
 
-//user
+//==================ROUTE USER =======================================
 Route::get('/about_user', 'AboutController@index');
 Route::get('/infosampah', 'InfosampahController@index');
 Route::get('/pengajuan', 'PengajuanController@index');
 Route::get('/transaksi_user', 'TransaksiController@index');
+//===================================================================
+
 //profil//
 Route::get('profil', 'ProfilController@data');
 Route::get('profil/add', 'ProfilController@add');

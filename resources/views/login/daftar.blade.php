@@ -33,7 +33,7 @@
 					{{ __('Register') }}</span>
 
                 <div class="card-body">
-                    <form method="POST" action="/post_register">
+                    <form method="POST" action="/post_daftar">
                         @csrf
 
                         <div class="form-group row">
@@ -63,49 +63,10 @@
                         </div>
 
 
-                        <!-- ======================================================================== -->
-                        <div class="form-group row">
-
-                            <div class="col-md-12">
-                                <input id="no_hp" type="no_hp" class="input100" name="no_hp" value="{{ old('no_hp') }}" required autocomplete="no_hp" placeholder="nomor telepon">
-
-                                @error('no_hp')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                     
 
 
 
-
-                        <div class="form-group row">
-
-                            <div class="col-md-12">
-                                <input id="alamat" type="alamat" class="input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" placeholder="alamat">
-
-                                @error('alamat')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-<!-- =========================================================================== -->
-
-                        <!-- <div class="form-group row">
-
-                        <div class="col-md-12">
-                            <input id="no_hp" type="text" class="input100" name="no_hp" value="{{ old('no_hp') }}" required autocomplete="no_hp" autofocus placeholder="nomor hp">
-
-                            @error('no_hp')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            </div>
-                            </div> -->
 
                         <div class="form-group row">
                             <div class="col-md-12">
@@ -136,7 +97,7 @@
 						<span class="txt1">
 							Sudah punya akun?
 						</span>
-						<a class="txt1 bo1 hov1" href="/loginn">
+						<a class="txt1 bo1 hov1" href="/login">
 							Login disini						
 						</a>
 					</div>
