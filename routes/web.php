@@ -32,12 +32,14 @@ Route::get('about', function(){
     return view ('pages');
 });
 
-Route::get('/login', 'AuthController@login')->name('login');
-Route::post('/postlogin', 'AuthController@postlogin');
-Route::get('/logout', 'AuthController@logout');
-Route::get('/logoutc', 'AuthController@logout');
-Route::get('/registerr', 'AuthController@register');
-Route::post('/post_register', 'AuthController@post_register');
+// Route::get('/login', function(){
+//     return view ('login.login');
+// });
+Route::get('/login', 'LoginController@login');
+Route::post('/postlogin', 'LoginController@postlogin')->name ('postlogin');
+Route::get('/daftar', 'LoginController@daftar');
+
+
 
 Route::get('sampahorganik', 'SampahorganikController@data');
 Route::post('sampahorganik', 'SampahorganikController@tambahdata');
