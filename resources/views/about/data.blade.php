@@ -64,7 +64,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->title}}</td>
-                                    <td>{{ $item->photo}}</td>
+                                    <td><img src="{{ asset('assets/img/' . $item->photo) }}" alt="" style="width: 30%"></td>
                                     <td>{{ substr(strip_tags($item->konten),0,50) }} ...</td>
                                     
                                     <td class="text-center">

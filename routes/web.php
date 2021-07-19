@@ -13,23 +13,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//==============web==============
+//==============web=======================
 Route::get('/', function () {
     return view('index');
 });
 //=========================================
 
+//=========================== Middlewere Admin =================================
 Route::group(['middleware' => ['auth','CekRole:admin']], function () {
-Route::get('home', function(){
-    return view ('home');
+    Route::get('home', function(){
+        return view ('home');
+    });
 });
-});
+//===============================================================================
 
+//=========================== Middleware CSR =====================================
 Route::group(['middleware' => ['auth','CekRole:csr']], function () {
     Route::get('homecsr', function(){
         return view ('homecsr');
     });
 });
+//=================================================================================
+
+//============================= Middleware User =====================================
+Route::group(['middleware' => ['auth','CekRole:user']], function () {
+    Route::post('sampahorganik', 'SampahorganikController@tambahdata');
+});
+//===================================================================================
+
+Route::group(['middleware' => ['auth','CekRole:user']], function () {
+    Route::post('transaksi', 'TransaksiController@tambahdata');
+});
+
 
 Route::get('web', function(){
     return view ('app');
@@ -52,16 +67,6 @@ Route::post('/post_daftar', 'LoginController@postDaftar');
 Route::get('/logout', 'LoginController@logout');
 //========================================================================
 
-
-//============================= Middleware User =====================================
-Route::group(['middleware' => ['auth','CekRole:user']], function () {
-Route::post('sampahorganik', 'SampahorganikController@tambahdata');
-});
-//===================================================================================
-Route::get('sampahorganik', 'SampahorganikController@data');
-Route::get('sampahorganik/edit/{id}', 'SampahorganikController@edit');
-Route::get('/sampahorganik/destroy/{id}', 'SampahorganikController@destroy');
-
 //==================ROUTE USER =======================================
 Route::get('/about_user', 'AboutController@index');
 Route::get('/infosampah', 'InfosampahController@index');
@@ -75,6 +80,10 @@ Route::get('profil/add', 'ProfilController@add');
 Route::get('profil/edit/{id_profil}', 'ProfilController@edit');
 Route::post('profil', 'ProfilController@addProcess');
 Route::get('/profil/destroy/{id_profil}', 'ProfilController@destroy');
+
+Route::get('sampahorganik', 'SampahorganikController@data');
+Route::get('sampahorganik/edit/{id}', 'SampahorganikController@edit');
+Route::get('/sampahorganik/destroy/{id}', 'SampahorganikController@destroy');
 
 
 Route::get('about', 'AboutController@data');
@@ -100,10 +109,14 @@ Route::get('/infotransaksi/destroy/{id_info_transaksi}', 'InfotransaksiControlle
 
 Route::post('/edulevels', 'PengajuanController@pengajuan')->middleware('auth');
 
-Route::post('transaksi', 'TransaksiController@tambahdata');
+
 Route::get('/transaksi', 'TransaksiController@data');
+Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
+Route::get('/transaksi/destroy/{id}', 'TransaksiController@destroy');
 
 Route::patch('/infosampah/update/{id}', 'InfosampahController@update');
 Route::patch('/profil/update/{id}', 'ProfilController@update');
 Route::patch('/about/update/{id}', 'AboutController@update');
 Route::patch('/sampahorganik/update/{id}', 'SampahorganikController@update');
+Route::patch('/infotransaksi/update/{id}', 'InfotransaksiController@update');
+Route::patch('/transaksi/update/{id}', 'TransaksiController@update');

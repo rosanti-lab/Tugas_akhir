@@ -52,9 +52,10 @@
                                 <th>Berat (kg) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
-                                <th>Action</th>
+                                <th>Aksi</th>
                                 <th>Status Pengiriman</th>
                                 <th>Status Transaksi</th>
+                                
                             </tr>
                         </thread>
                         <tbody>
@@ -66,19 +67,20 @@
                                     <td>{{ $item->telephon}}</td>
                                     <td>{{ $item->jenis_maggot}}</td>
                                     <td>{{ $item->berat}}</td>
-                                    <td>{{ $item->bukti_tf}}</td>
+                                    <td><img src="{{ asset('assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 30%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
-                                    <td>{{ $item->Aksi}}</td>
+                                    
                                     <td class="text-center">
-                                        <a href="{{ url('sampahorganik/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a> 
-                                        <a href="{{ url('sampahorganik/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
+                                        <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
                                             <i class=""></i>Delete
                                         </a>    
                                     </td>
                                     <td>{{ $item->status_pengiriman}}</td>
                                     <td>{{ $item->status_transaksi}}</td>
+                                   
                                 </tr>
                             @endforeach
 

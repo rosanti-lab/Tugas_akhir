@@ -38,47 +38,51 @@
     <!-- Preloader Start -->
     <header>
         <!-- Header Start -->
-       <div class="header-area">
-            <div class="main-header ">
-               <div class="header-bottom  header-sticky">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                            <div class="col-xl-2 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-10 col-lg-10">
-                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
-                                    <!-- Main-menu -->
-                                    <div class="main-menu d-none d-lg-block">
-                                        <nav> 
-                                        <ul id="navigation">                                                                                          
-                                            <li><a href="">Home</a></li>
+        <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top d-none d-lg-block">
+                <div class="container">
+                    <div class="col-xl-12">
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2">
+                        </div>
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">    
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                            <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
-                                        </nav>
-                                    </div>
-                                    <!-- Header-btn -->
-                                    <div class="header-right-btn d-none d-lg-block ml-20">
-                                        <a href="contact.html" class="btn header-btn">Get A Qoue</a>
-                                    </div>
+                                    </nav>
                                 </div>
-                            </div> 
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
+                                <!-- Header-btn -->
+                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                    <a href="/logout" class="btn header-btn">Logout</a>
+                                </div>
                             </div>
+                        </div> 
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                     </div>
-               </div>
+                </div>
             </div>
-       </div>
+        </div>
+    </div>
         <!-- Header End -->
     </header>
     <main>
@@ -112,13 +116,8 @@
                             <div class="section-tittle mb-35">
                                 <span>Budidaya Maggot Wiralodra</span>
                                 <h2>Langkah & Cara Melakukan Pembelian</h2>
-                                @foreach ($items as $item)
-                                    <!-- <h1>{{ $item->title }}</h1> -->
-
-                                    <div class="image main">
-                                        <img src="{{ url($item->photo) }}" class="img-fluid" alt="" />
-                                    </div>
-                                    <p>{!! $item->konten !!}</p>
+                                @foreach($transaksi as $tran)
+                                    {{ $tran['konten'] }}
                                 @endforeach
                             </div>
                             <a href="about.html" class="btn">More About Us</a>
@@ -133,6 +132,9 @@
 			        </div>
                         <!-- about-img -->
                         <div class="about-img ">
+                            <div class="contact-right formulir_">
+                            <form method="post" action="/transaksi" enctype="multipart/form-data" >
+                        @csrf
                             <div class="form-group">
                                 <label for="">Nama</label>
                                 <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
@@ -156,16 +158,17 @@
 							</div>
                             <div class="form-group">
                                 <label for="">Berat (kg) </label>
-                                <input type="text" class="form-control" id="" placeholder="masukan nomor telepon " name="berat" required>
+                                <input type="text" class="form-control" id="" placeholder="masukan berat yang ingin di beli " name="berat" required>
                             </div>
                             <div>
                                 <label for="">Bukti Pembayaran</label>
                                 <input type="file"  id=""  name="bukti_tf" required>
-                            </div>
+                            </div><br>
+                            <form method="post" action="" enctype="multipart/form-data">
                             <br>
                             <div class="form-group">
                                 <label for="">Jasa Kirim </label>
-                                <select name="jenis_maggot" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
+                                <select name="jasa_pengiriman" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
 									<option value="" disabled="disable" selected="select">- Pilih salah satu -</option>
 									<option value="JNE">JNE</option>
 									<option value="J&T">J&T</option>

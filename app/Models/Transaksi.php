@@ -9,4 +9,8 @@ class transaksi extends Model
 {
     protected $table = 'transaksi';
 
+    public function transaksi(){                                              // sesuai nama tabel
+        return $this->belongsTo('\App\transaksi','id','id');
+    }
+
 }

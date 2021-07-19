@@ -24,6 +24,7 @@ class CreateTransaksisTables extends Migration
             $table->string('jasa_pengiriman');
             $table->string('status_pengiriman');
             $table->string('status_transaksi');
+            $table->enum('status',['Y','N']);
             $table->timestamps();
         });
     }
