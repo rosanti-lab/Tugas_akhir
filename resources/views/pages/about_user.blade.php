@@ -114,10 +114,10 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="about-caption mb-50">
                             <div class="section-tittle mb-35">
-                                <span>About Our Maggot</span>
-                                <h2>Budidaya Maggot Wiralodra</h2>
+                                <span>Budidaya Maggot Wiralodra</span>
+                                
                                 @foreach ($items as $item)
-                                    <!-- <h1>{{ $item->title }}</h1> -->
+                                    <h1>{{ $item->title }}</h1>
 
                                     <div class="image main">
                                         <img src="{{ url($item->photo) }}" class="img-fluid" alt="" />
@@ -125,8 +125,7 @@
                                     <p>{!! $item->konten !!}</p>
                                 @endforeach
                             </div>
-                            <!-- <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replication of the designers is intended.</p>
-                            <p>Brook presents your services with flexible, convefnient and chient anipurpose layouts. You can select your favorite layouts.</p> -->
+                            
                             <a href="about.html" class="btn">More About Us</a>
                         </div>
                     </div>
@@ -134,8 +133,7 @@
                         <!-- about-img -->
                         <div class="about-img ">
                             <div class="about-font-img">
-                                <img src="{{ url($item->photo) }}" class="img-fluid" alt="" />
-                                <img src="assets/img/maggot4.jpeg" width="400px" Height="400px" alt="">
+                                <img src="{{ asset('assets/img/' . $item->photo) }}" alt="" style="width: 500px" Height="400px" alt ="">
                             </div>
                             <div class="about-back-img d-none d-lg-block">
                                 <img src="assets/img/gallery/about1.png" alt="">

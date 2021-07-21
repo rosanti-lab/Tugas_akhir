@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class ProfilController extends Controller
 {
+
+    public function index()
+    {
+
+        $profil = Profil::all();
+        
+        // dd($items= Infosampah::all());
+        return view('view.index', ['profil' =>$profil]);
+    }
+
     public function data()
     {
         $profil = DB::table('profil')->get();
@@ -59,5 +69,14 @@ class ProfilController extends Controller
         $profil = Profil::where('id_profil',$id);
         $profil->delete();
         return redirect('/profil');
+    }
+
+    public function tambahdata(Request $request)
+    {
+        DB::table('profil') -> insert([
+            'judul' => $request->judul,
+            'konten' => $request->konten
+        ]);
+        return redirect('/index');
     }
 }

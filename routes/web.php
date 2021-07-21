@@ -79,10 +79,14 @@ Route::get('profil', 'ProfilController@data');
 Route::get('profil/add', 'ProfilController@add');
 Route::get('profil/edit/{id_profil}', 'ProfilController@edit');
 Route::post('profil', 'ProfilController@addProcess');
+Route::patch('/profil/update/{id}', 'ProfilController@update');
 Route::get('/profil/destroy/{id_profil}', 'ProfilController@destroy');
+Route::post('profil', 'ProfilController@tambahdata');
+
 
 Route::get('sampahorganik', 'SampahorganikController@data');
 Route::get('sampahorganik/edit/{id}', 'SampahorganikController@edit');
+Route::patch('/sampahorganik/update/{id}', 'SampahorganikController@update');
 Route::get('/sampahorganik/destroy/{id}', 'SampahorganikController@destroy');
 
 
@@ -90,6 +94,7 @@ Route::get('about', 'AboutController@data');
 Route::get('about/add', 'AboutController@add');
 Route::get('about/edit/{id}', 'AboutController@edit');
 Route::post('about', 'AboutController@addProcess');
+Route::patch('/about/update/{id}', 'AboutController@update');
 Route::get('/about/destroy/{id}', 'AboutController@destroy');
 
 
@@ -97,11 +102,14 @@ Route::get('infosampah', 'InfosampahController@data');
 Route::get('infosampah/edit/{id_info_sampah}', 'InfosampahController@edit');
 Route::get('infosampah/add', 'InfosampahController@add');
 Route::post('infosampah', 'InfosampahController@addProcess');
+Route::patch('/infosampah/update/{id}', 'InfosampahController@update');
 Route::get('/infosampah/destroy/{id_info_sampah}', 'InfosampahController@destroy');
+
 
 Route::get('infotransaksi', 'InfotransaksiController@data');
 Route::get('infotransaksi/add', 'InfotransaksiController@add');
 Route::post('infotransaksi', 'InfotransaksiController@addProcess');
+Route::patch('/infotransaksi/update/{id}', 'InfotransaksiController@update');
 Route::get('infotransaksi/edit/{id_info_transaksi}', 'InfotransaksiController@edit');
 Route::get('/infotransaksi/destroy/{id_info_transaksi}', 'InfotransaksiController@destroy');
 
@@ -113,10 +121,7 @@ Route::post('/edulevels', 'PengajuanController@pengajuan')->middleware('auth');
 Route::get('/transaksi', 'TransaksiController@data');
 Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
 Route::get('/transaksi/destroy/{id}', 'TransaksiController@destroy');
-
-Route::patch('/infosampah/update/{id}', 'InfosampahController@update');
-Route::patch('/profil/update/{id}', 'ProfilController@update');
-Route::patch('/about/update/{id}', 'AboutController@update');
-Route::patch('/sampahorganik/update/{id}', 'SampahorganikController@update');
-Route::patch('/infotransaksi/update/{id}', 'InfotransaksiController@update');
 Route::patch('/transaksi/update/{id}', 'TransaksiController@update');
+
+
+Route::get('admin', 'AdminController@data');
