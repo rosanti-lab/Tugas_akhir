@@ -125,3 +125,12 @@ Route::patch('/transaksi/update/{id}', 'TransaksiController@update');
 
 
 Route::get('admin', 'AdminController@data');
+Route::get('/admin/destroy/{id}', 'AdminController@destroy');
+
+
+Route::get('mon_sampah', 'MonsampahController@data');
+Route::get('mon_sampah/add', 'MonsampahController@add');
+Route::post('mon_sampah', 'MonsampahController@addProcess');
+Route::patch('/mon_sampah/update/{id}', 'MonsampahController@update');
+Route::get('mon_sampah/edit/{id}', 'MonsampahController@edit');
+Route::get('/mon_sampah/destroy/{id}', 'MonsampahController@destroy');

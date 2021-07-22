@@ -15,4 +15,11 @@ class AdminController extends Controller
         
         return view('admin.data', ['users' =>$admin]);
     }
+
+    public function destroy($id)
+    {
+        $admin = Admin::where('id',$id);
+        $admin->delete();
+        return redirect('/admin');
+    }
 }

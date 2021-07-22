@@ -38,25 +38,14 @@
                     <li>
                         <a href="{{ url ('main2')}}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Monitoring</a>
-                            <ul class="sub-menu children dropdown-menu">
-                                <li><i class="fa fa-puzzle-piece"></i><a href="{{ url ('profil')}}">Sampah Organik</a></li>
-                                <li><i class="fa fa-puzzle-piece"></i><a href="">Transaksi Maggot</a></li>
-                                <li><i class="fa fa-puzzle-piece"></i><a href="">Tentang Maggot</a></li>
-                            </ul>
-                    </li>
                    
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Sampah Organik </a>
+                        <a href="{{ url ('mon_sampah')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Sampah Organik </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Monitoring </a>
+                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Pembelian Maggot </a>
                     </li>
-                    <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Transaksi </a>
-                    </li>
-                    
+                
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

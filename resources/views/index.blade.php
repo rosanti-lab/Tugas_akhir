@@ -149,7 +149,8 @@
                     <div class="single-cat text-center mb-50">
                         <div class="cat-cap">
                             <h5><a href="services.html">Mitra Binaan </a></h5>
-                            <p>Budidaya Maggot Wiralodra adalah usaha ternak yang bekerjasama dengan mitra Binaan Tim CSR Pertamina RU VI Balongan. Kerjasama ini sudah berjalan 3 tahun sejak pembangunan pertama tempat untuk ternak maggot.</p>
+                            <p>Budidaya Maggot Wiralodra adalah usaha ternak yang bekerjasama dengan mitra Binaan Tim CSR Pertamina RU VI Balongan. 
+                                <br>Kerjasama ini sudah berjalan 3 tahun sejak pembangunan pertama tempat untuk ternak maggot.</p>
                         </div>
                     </div>
                 </div>
@@ -452,15 +453,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Form Start -->
-                <!-- <div class="col-xl-4 col-lg-5 col-md-8">
-                    <div class="testimonial-form text-center">
-                        <h3>Always listening, always understanding.</h3>
-                        <input type="text" placeholder="Incoterms">
-                        <button name="submit" class="submit-btn">Request a Quote</button>
-                    </div>
-                </div> -->
-                <!-- Form End -->
             </div>
         </div>
     </div>
@@ -475,18 +467,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                <div class="footer-heading">
-                    <div class="row justify-content-between">
-                        <div class="col-xl-6 col-lg-8 col-md-8">
-                            <div class="wantToWork-caption wantToWork-caption2">
-                                <h2>We Understand The Importance Approaching Each Work!</h2>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4">
-                            <span class="contact-number f-right">+ 1 212-683-9756</span>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -494,9 +475,9 @@
                             <div class="footer-tittle">
                                 <h4>COMPANY</h4>
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Company</a></li>
-                                    <li><a href="#"> Press & Blog</a></li>
+                                    <li><a href="about_user">About Us</a></li>
+                                    <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
+                                    <li><a href="transaksi_user"> Transaksi Maggot</a></li>
                                     <li><a href="#"> Privacy Policy</a></li>
                                 </ul>
                             </div>
@@ -505,12 +486,15 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Open hour</h4>
+                                <h4>Jam Operasional Kerja</h4>
                                 <ul>
-                                    <li><a href="#">Monday 11am-7pm</a></li>
-                                    <li><a href="#"> Tuesday-Friday 11am-8pm</a></li>
-                                    <li><a href="#"> Saturday 10am-6pm</a></li>
-                                    <li><a href="#"> Sunday 11am-6pm</a></li>
+                                    <li>Senin 08.00 - 16.00</li>
+                                    <li>Selasa 08.00 - 16.00</li>
+                                    <li>Rabu 08.00 - 16.00</li>
+                                    <li>Kamis 08.00 - 16.00</li>
+                                    <li>Jum'at 08.00 - 16.00</li>
+                                    <li>Sabtu 08.00 - 15.00</li>
+                                    <li>Minggu 08.00 - 16.00</li>
                                 </ul>
                             </div>
                         </div>
