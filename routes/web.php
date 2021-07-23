@@ -39,10 +39,18 @@ Route::group(['middleware' => ['auth','CekRole:csr']], function () {
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::post('sampahorganik', 'SampahorganikController@tambahdata');
 });
+Route::group(['middleware' => ['auth','CekRole:user']], function () {
+    Route::get('/form_pengajuan', 'PengajuanController@form');
+});
 //===================================================================================
 
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::post('transaksi', 'TransaksiController@tambahdata');
+});
+
+Route::group(['middleware' => ['auth','CekRole:user']], function () {
+    Route::get('form_transaksi', 'TransaksiController@form');
+
 });
 
 
@@ -72,6 +80,8 @@ Route::get('/about_user', 'AboutController@index');
 Route::get('/infosampah', 'InfosampahController@index');
 Route::get('/pengajuan', 'PengajuanController@index');
 Route::get('/transaksi_user', 'TransaksiController@index');
+// Route::get('/form_transaksi', 'TransaksiController@form');
+Route::get('/form_pengajuan', 'PengajuanController@form');
 //===================================================================
 
 //profil//

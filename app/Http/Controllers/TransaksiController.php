@@ -18,6 +18,16 @@ class TransaksiController extends Controller
         return view('pages.transaksi_user', ['transaksi' =>$transaksi]);
     }
 
+    public function form()
+    {
+
+        $form_transaksi = Infotransaksi::all();
+        
+        // dd($items= Infosampah::all());
+        return view('pages.form_transaksi', ['form_transaksi' =>$form_transaksi]);
+    }
+    
+    
     // public function index()
     // {
     //     $items = Transaksi::all();

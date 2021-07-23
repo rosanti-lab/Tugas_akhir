@@ -117,55 +117,32 @@
                                 <span>Budidaya Maggot Wiralodra</span>
                                 <h2>Pengajuan Sampah Organik</h2>
                                 @foreach($test as $link)
+                                   
                                     {{ $link['konten'] }}
+
+                                    <div class="image main">
+                                        <img src="{{ url($link->image) }}" class="img-fluid" alt="" />
+                                    </div>
+
                                 @endforeach
                                 
                             </div>
-                            <a href="about.html" class="btn">More About Us</a>
+                            <a href="form_pengajuan" class="btn">Ajukan Pengajuan klik disini</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
-                    
-                    <div class="col-md-12">
-                        <div class="section-tittle mb-35">
-                            <h4>Form Pengajuan Penjemputan Sampah Organik</h4>
-                        </div>
-			        </div>
-                        <!-- about-img -->
-                        <div class="about-img ">
-                            <div class="contact-right formulir_">
-                            <form method="post" action="/sampahorganik" enctype="multipart/form-data" >
-                        @csrf
-        
-                            <div class="form-group">
-                                <label for="">Nama</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
+                         <!-- about-img -->
+                         <div class="about-img ">
+                            <div class="about-font-img">
+                                <img src="{{ asset('assets/img/' . $link->image) }}" alt="" style="width: 500px" Height="400px" alt ="">
                             </div>
-                            <div class="form-group">
-                                <label for="">Alamat Lengkap</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Nomor Telepon </label>
-                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Tanggal Pengajuan Penjemputan</label>
-                                <br>
-                                <input type="date" name="tanggal" placeholder="" style="display: width: 49%; height: 42.16px;" required>
-                            </div>
-                            <div>
-                                <label for="">foto Sampah Organik</label>
-                                <input type="file"  id=""  name="image" required>
-                            </div><br>
-                            
-                            <form method="post" action="" enctype="multipart/form-data">
-
-                            <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
-                            </form>
+                            <div class="about-back-img d-none d-lg-block">
+                                <img src="assets/img/gallery/about1.png" alt="">
                             </div>
                         </div>
                     </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -188,6 +165,7 @@
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
+                                    <li><a href="form_pengajuan"> form pengajuan</a></li>
                                     
                                 </ul>
                             </div>

@@ -93,11 +93,11 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Transaksi Maggot</h2>
+                                <h2>Form Transaksi</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li> 
+                                        <li class="breadcrumb-item"><a href="transaksi_user">Transaksi</a></li> 
                                     </ol>
                                 </nav>
                             </div>
@@ -110,22 +110,70 @@
         <!--? About Area Start -->
         <div class="about-low-area section-padding30">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="about-caption mb-50">
-                            <div class="section-tittle mb-35">
-                                <span>Budidaya Maggot Wiralodra</span>
-                                <h2>Langkah & Cara Melakukan Pembelian</h2>
-                                @foreach($transaksi as $tran)
-                                    {{ $tran['konten'] }}
-                                @endforeach
+                    
+                <div class="col-md-12">
+                        <div class="section-tittle mb-35">
+                            <h4>Form Transaksi Maggot Wiralodra</h4>
+                        </div>
+			        </div>
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <div class="contact-right formulir_">
+                            <form method="post" action="/transaksi" enctype="multipart/form-data" >
+                        @csrf
+                            <div class="form-group">
+                                <label for="">Nama</label>
+                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
                             </div>
-                            <a href="form_transaksi" class="btn">klik disini untuk </a>
+                            <div class="form-group">
+                                <label for="">Alamat Lengkap</label>
+                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Nomor Telepon </label>
+                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="select-items">
+                                        <select name="jenis_maggot" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
+                                            <option value="">Jenis Maggot</option>
+                                            <option value="Larva">Larva</option>
+                                            <option value="Maggot"> Maggot</option>
+                                            <option value="Pupa">Pupa</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <br>
+                                <label for="">Berat (kg) </label>
+                                <input type="text" class="form-control" id="" placeholder="masukan berat yang ingin di beli " name="berat" required>
+                            </div>
+                            <div>
+                                <label for="">Bukti Pembayaran</label>
+                                <input type="file"  id=""  name="bukti_tf" required>
+                            </div><br>
+                            <form method="post" action="" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <div class="select-items">
+                                        <select name="jasa_pengiriman" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
+                                            <option value="" disabled="disable" selected="select">Jasa Kirim</option>
+                                            <option value="JNE">JNE</option>
+                                            <option value="J&T">J&T</option>
+                                            <option value="SiCepat">SiCepat</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            
+                            <form method="post" action="" enctype="multipart/form-data">
+
+                            <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
+                            
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                    </div>
-                    
                 </div>
             </div>
         </div>

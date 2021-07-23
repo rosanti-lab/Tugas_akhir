@@ -230,7 +230,7 @@
                             </div>
                         </div>
                         <!-- form -->
-                        <form action="#" class="contact-form">
+                        <!-- <form action="#" class="contact-form">
                             <div class="row ">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="input-form">
@@ -274,7 +274,7 @@
                                     </div>
                                 </div>
                                 <!-- Height Width length -->
-                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="input-form">
                                         <input type="text" placeholder="Height">
                                     </div>
@@ -288,9 +288,9 @@
                                     <div class="input-form">
                                         <input type="text" placeholder="length">
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- Radio Button -->
-                                <div class="col-lg-12">
+                                <!-- <div class="col-lg-12">
                                     <div class="radio-wrapper mb-30 mt-15">
                                         <label>Extra services:</label>
                                         <div class="select-radio">
@@ -312,13 +312,13 @@
                                             </div>
                                         </div>
                                     </div> 
-                                </div>
+                                </div> -->
                                 <!-- Button -->
-                                <div class="col-lg-12">
+                                <!-- <div class="col-lg-12">
                                     <button name="submit" class="submit-btn">Request a Quote</button>
-                                </div>
+                                </div> -->
                             </div>
-                        </form>	
+                        </form>	 
                     </div>
                 </div>
             </div>
@@ -403,25 +403,44 @@
     </div> - -->
     <!-- Team Ara End -->
     <!--? Testimonial Start -->
-    <div class="testimonial-area testimonial-padding section-bg" data-background="assets/img/gallery/section_bg04.jpg">
+    <!-- <div class="testimonial-area testimonial-padding section-bg" data-background="assets/img/gallery/section_bg04.jpg">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-xl-7 col-lg-7">
                     <!-- Section Tittle -->
-                    <div class="section-tittle section-tittle2 mb-25">
+                    <!-- <div class="section-tittle section-tittle2 mb-25">
                         <span>Clients Testimonials</span>
                         <h2>What Our Clients Say!</h2>
-                    </div> 
-                    <div class="h1-testimonial-active mb-70">
+                    </div>  -->
+                    <!-- <div class="h1-testimonial-active mb-70">
                         <!-- Single Testimonial -->
-                        <div class="single-testimonial ">
+                        <!-- <div class="single-testimonial ">
                             <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
+                            <!-- <div class="testimonial-caption ">
+                                <div class="testimonial-top-cap">
+                                    <p>Srem ipsum adolor dfsit amet, consectetur adipiscing elit, sed dox beiusmod tempor incci didunt ut labore et dolore magna aliqua. Quis cipsucm suspendisse ultrices gravida. Risus commodo vivercra maecenas accumsan lac.</p>
+                                </div> --> 
+                                <!-- founder -->
+                                <!-- <div class="testimonial-founder d-flex align-items-center">
+                                    <div class="founder-img">
+                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Jhaon smith</span>
+                                        <p>Creative designer</p>
+                                    </div>
+                                </div> -->
+                            <!-- </div>
+                        </div> -->
+                        <!-- Single Testimonial -->
+                        <!-- <div class="single-testimonial ">
+                            <!-- Testimonial Content -->
+                            <!-- <div class="testimonial-caption ">
                                 <div class="testimonial-top-cap">
                                     <p>Srem ipsum adolor dfsit amet, consectetur adipiscing elit, sed dox beiusmod tempor incci didunt ut labore et dolore magna aliqua. Quis cipsucm suspendisse ultrices gravida. Risus commodo vivercra maecenas accumsan lac.</p>
                                 </div>
                                 <!-- founder -->
-                                <div class="testimonial-founder d-flex align-items-center">
+                                <!-- <div class="testimonial-founder d-flex align-items-center">
                                     <div class="founder-img">
                                         <img src="assets/img/gallery/Homepage_testi.png" alt="">
                                     </div>
@@ -431,31 +450,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial ">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <div class="testimonial-top-cap">
-                                    <p>Srem ipsum adolor dfsit amet, consectetur adipiscing elit, sed dox beiusmod tempor incci didunt ut labore et dolore magna aliqua. Quis cipsucm suspendisse ultrices gravida. Risus commodo vivercra maecenas accumsan lac.</p>
-                                </div>
-                                <!-- founder -->
-                                <div class="testimonial-founder d-flex align-items-center">
-                                    <div class="founder-img">
-                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
-                                    </div>
-                                    <div class="founder-text">
-                                        <span>Jhaon smith</span>
-                                        <p>Creative designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <!-- </div> --> 
+                    <!-- </div> -->
+                <!-- </div>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> --> 
     <!-- Testimonial End -->
     <!--? Blog Area Start -->
     

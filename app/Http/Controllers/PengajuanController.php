@@ -38,6 +38,16 @@ class PengajuanController extends Controller
         // dd($items= Infosampah::all());
         return view('pages.pengajuan', ['test' =>$test]);
     }
+
+    public function form()
+    {
+
+        $form_pengajuan = Infosampah::all();
+        
+        return view('pages.form_pengajuan', ['form_pengajuan' =>$form_pengajuan]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

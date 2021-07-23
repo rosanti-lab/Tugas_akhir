@@ -56,7 +56,7 @@
                             @foreach ( $info_sampah as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $item->image}}</td>
+                                    <td><img src="{{ asset('assets/img/' . $item->image) }}" alt="" style="width: 30%"></td>
                                     <td>{{ $item->judul}}</td>
                                     <td>{{ substr(strip_tags($item->konten),0,50) }} ...</td>
                                     <td class="text-center">

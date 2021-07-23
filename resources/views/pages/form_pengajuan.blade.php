@@ -88,16 +88,16 @@
     <main>
         <!--? slider Area Start-->
         <div class="slider-area ">
-            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot4.jpeg">
+            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/organik2.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Transaksi Maggot</h2>
+                                <h2>Form Pengajuan Sampah Organik</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li> 
+                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li> 
                                     </ol>
                                 </nav>
                             </div>
@@ -113,19 +113,49 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="about-caption mb-50">
-                            <div class="section-tittle mb-35">
-                                <span>Budidaya Maggot Wiralodra</span>
-                                <h2>Langkah & Cara Melakukan Pembelian</h2>
-                                @foreach($transaksi as $tran)
-                                    {{ $tran['konten'] }}
-                                @endforeach
-                            </div>
-                            <a href="form_transaksi" class="btn">klik disini untuk </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                    </div>
                     
+                    <div class="col-md-12">
+                        <div class="section-tittle mb-35">
+                            <h4>Form Pengajuan Penjemputan Sampah Organik</h4>
+                        </div>
+			        </div>
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <div class="contact-right formulir_">
+                            <form method="post" action="/sampahorganik" enctype="multipart/form-data" >
+                        @csrf
+        
+                            <div class="form-group">
+                                <label for="">Nama</label>
+                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Alamat Lengkap</label>
+                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Nomor Telepon </label>
+                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Tanggal Pengajuan Penjemputan</label>
+                                <br>
+                                <input type="date" name="tanggal" placeholder="" style="display: width: 49%; height: 42.16px;" required>
+                            </div>
+                            <div>
+                                <label for="">foto Sampah Organik</label>
+                                <input type="file"  id=""  name="image" required>
+                            </div><br>
+                            
+                            <form method="post" action="" enctype="multipart/form-data">
+
+                            <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
