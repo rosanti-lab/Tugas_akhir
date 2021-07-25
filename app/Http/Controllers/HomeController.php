@@ -17,11 +17,16 @@ class HomeController extends Controller
 
 //=========================================
 
-    public function data ()
+    public function form_rajaongkir()
+    {
+        return view('app');
+    }
+
+    public function data()
     {
         $couriers = Courier::pluck('title', 'code');
-        $provinces = Province::pluck('title', 'province_id')
-        return view('welcome',compact('provinces','couriers'));
+        $provinces = Province::pluck('title', 'province_id');
+        return view('app',compact('provinces','couriers'));
     }
 
     public function getCities($id)
@@ -37,7 +42,7 @@ class HomeController extends Controller
             'destination'   => $request -> city_destination,// ID kota/kabupaten tujuan
             'weight'        => $request -> weight,          // berat barang dalam gram
             'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
-        ]) -> get();
+        ])->get();
     }
 
 

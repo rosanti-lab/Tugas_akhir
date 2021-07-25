@@ -1,441 +1,332 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Form Cek Ongkir </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" >
-		<title>Startup 3.0.5 - Project</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-				<link rel="icon" href="i/favicon.png" type="image/x-icon">
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,600,500,700,800,900|Nunito:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
-		<!-- Bootstrap 4.3.1 CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-		<!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<!-- FontAwesome CSS -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<!-- Startup 3 CSS (Styles for all blocks) -->
-		<link href="{{asset('style/assetscss/style.css}}" rel="stylesheet" />
-				<!-- jQuery 3.3.1 -->
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-			</head> 
-	<body><!-- Navigation Mobile type 2 -->
+		<!-- CSS here -->
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slicknav.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/flaticon.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/animate.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/themify-icons.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slick.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
+   </head>
 
-<a class="open_menu color-main bg-light radius_full"><i class="fas fa-bars lh-40"></i></a>
-<div class="navigation_mobile bg-light type2">
-	<a class="close_menu color-main"><i class="fas fa-times"></i></a>
-	<div class="px-40 pt-60 pb-60 text-center inner">
-			
-		<div><a href="#" class="f-heading f-22 link color-main mb-20">Home</a></div>
-					
-		<div><a href="#" class="f-heading f-22 link color-main mb-20">Popular</a></div>
-					
-		<div><a href="#" class="f-heading f-22 link color-main mb-20">Recent</a></div>
-					
-		<div><a href="#" class="f-heading f-22 link color-main mb-20">Featured</a></div>
-					
-		<div><a href="#" class="f-heading f-22 link color-main mb-20">Designers</a></div>
-					
-		<div><a href="#" class="f-heading f-22 link color-main mb-20">Team</a></div>
-						<div><a href="#" class="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Help</a></div>
-						<div><a href="#" class="f-12 link color-main op-7 text-uppercase sp-20 mb-20">F.A.Q.</a></div>
-						<div><a href="#" class="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Support</a></div>
-						<div><a href="#" class="f-12 link color-main op-7 text-uppercase sp-20 mb-20">About Us</a></div>
-						<div><a href="#" class="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Blog</a></div>
-						<div><a href="#" class="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Careers</a></div>
-						<div class="socials mt-60">
-						<a href="#" target="_blank" class="link color-main f-18 mx-10"><i class="fab fa-twitter"></i></a>
-						<a href="#" target="_blank" class="link color-main f-18 mx-10"><i class="fab fa-facebook"></i></a>
-						<a href="#" target="_blank" class="link color-main f-18 mx-10"><i class="fab fa-dribbble"></i></a>
-						<a href="#" target="_blank" class="link color-main f-18 mx-10"><i class="fab fa-instagram"></i></a>
-						<a href="#" target="_blank" class="link color-main f-18 mx-10"><i class="fab fa-behance"></i></a>
-					</div>
-	</div>
-</div><!-- Header 16 -->
-
-<style>
-	.header_16{
-		background-image:url(i/header_16_bg.jpg);
-	}
-	@media(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
-		.header_16{
-			background-image:url(i/header_16_bg@2x.jpg);
-		}
-	}
-</style>
-
-<header class="pt-145 pb-115 header_16">
-
-	<!-- Header Menu 16 -->
-
-	<nav class="header_menu_16 pt-30 pb-30 mt-15">
-		<div class="container px-xl-0">
-			<div class="row justify-content-center">
-				<div class="col-xl-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1200">
-					<div class="row align-items-baseline">
-						<div class="col-lg-9 d-flex align-items-center f-18 medium">
-							<div class="mr-15 logo color-white">Startup 3</div>
-							<a href="#" class="mx-15 link color-white">Tour</a>
-							<a href="#" class="mx-15 link color-white">Prices</a>
-							<a href="#" class="mx-15 link color-white">About</a>
-							<a href="#" class="mx-15 link color-white">F.A.Q.</a>
-							<a href="#" class="mx-15 link color-white">Support</a>
+   <body>
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top d-none d-lg-block">
+                <div class="container">
+                    <div class="col-xl-12">
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2">
+                        </div>
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="about_user">About</a></li>
+                                            <li><a href="pengajuan">pengajuan sampah organik</a></li>
+                                            <li><a href="transaksi_user">transaksi</a>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Header-btn -->
+                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                    <a href="/logout" class="btn header-btn">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? slider Area Start-->
+        <div class="slider-area ">
+            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/organik2.jpeg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap">
+                                <h2>Cek Ongkir</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+        <!--? About Area Start -->
+        <div class="card-body">
+			<form class="form-horizontal" role="form" method="POST" action="/">
+				{{ csrf_field () }}
+				<div class = "form-group-sm">
+					<div class="col-md-6">
+						<div class = form-group>
+							<label for=""> Provinsi Asal</label>
+							<select name="province_origin" class="form-control">
+								<option value="">--Provinsi--</option>
+								@foreach($provinces as $province => $value)
+								<option value="{{ $province }}"> {{$value}} </option>
+								@andforeach
+							</select>
 						</div>
-						<div class="col-lg-3 d-flex justify-content-end align-items-baseline">
-							<a href="#" class="btn sm action-1">Buy $38</a>
+					</div>
+
+					<div class = "col-md-6">
+						<div class = "form-group">
+						<label for=""> Kota Asal</label>
+						<select name="city_origin" class="form-control">
+							<option value="">--Kota--</option>
+						</select>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
 
-	<div class="container px-xl-0 color-white">
-		<div class="row justify-content-center">
-			<div class="col-xl-10">
-				<div class="row flex-column-reverse flex-md-row align-items-stretch text-center text-md-left">
-					<div class="col-lg-7 col-md-9 pt-40">
-						<div class="mb-3 logo d-block d-xl-none color-white logo_mobile">Startup 3</div>
-						<h1 class="mb-20 big" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Suit Up Your Startup</h1>
-						<div class="f-22 text-adaptive" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-							We have created a new product that will help 
-							designers, developers and companies create 
-							websites for their startups quickly and easily.						</div>
-						<div class="mt-80 row blocks">
-							<div class="mt-30 col-sm-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-								<i class="f-50 fas fa-cogs"></i>								<div class="mt-30 mb-25 semibold f-20 title">Based on Bootstrap 4</div>
-								<div class="text-adaptive">
-									HTML layout is based on one of the most common and reliable framework - Bootstrap.								</div>
-							</div>
-							<div class="mt-30 col-sm-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
-								<i class="f-50 fab fa-html5"></i>								<div class="mt-30 mb-25 semibold f-20 title">HTML5 &amp; CSS3</div>
-								<div class="text-adaptive">
-									We used only time-tested technologies for the best results.								</div>
-							</div>
+					<div class="col-md-6">
+						<div class = form-group>
+							<label for=""> Kurir</label>
+							<select name="courier" class="form-control">
+								<option value="">--Provinsi--</option>
+								@foreach($couriers as $courier => $value)
+								<option value="{{ $courier }}"> {{$value}} </option>
+								@andforeach
+							</select>
 						</div>
 					</div>
-					<div class="col-lg-5 col-md-3 d-flex align-items-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1200">
-						<img srcset="i/header_16_img@2x.png 2x" src="i/header_16_img.png" class="ml-30 mh-full img" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
 
-<!-- Feature 37 -->
-
-<section class="feature_37 bg-light pt-100 pb-65">
-	<div class="container px-xl-0">
-		<div class="row justify-content-between">
-			<div class="col-xl-1"></div>
-			<div class="col-lg-5 col-md-6 mb-50 mb-md-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-				<h2 class="mb-20 small">
-					Create a beautiful, 
-					responsive website 
-					like this one in under 
-					60 minutes
-				</h2>
-				<div class="mb-25 f-18 medium color-heading op-7 text-adaptive">
-					Introducing 30 brand new designed and coded 
-					blocks for your next impressive project
-				</div>
-				<a href="#" class="btn sm action-1 f-16">Explore</a>
-			</div>
-			<div class="col-md-1"></div>
-			<div class="col-md-5" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-				<div class="mb-55 d-flex align-items-center advantage">
-					<i class="fas fa-sync-alt color-gray f-26 lh-24 w-30 mr-20"></i>
-					<div class="f-14 semibold text-uppercase sp-20 title">Useful Components</div>
-				</div>
-				<div class="mb-55 d-flex align-items-center advantage">
-					<i class="far fa-file color-gray f-26 lh-24 w-30 mr-20"></i>
-					<div class="f-14 semibold text-uppercase sp-20 title">30 New Feature Pages</div>
-				</div>
-				<div class="mb-55 d-flex align-items-center advantage">
-					<i class="far fa-clone color-gray f-26 lh-24 w-30 mr-20"></i>
-					<div class="f-14 semibold text-uppercase sp-20 title">Thoroughly Structured Layers</div>
-				</div>
-				<div class="mb-55 d-flex align-items-center advantage">
-					<i class="fas fa-desktop color-gray f-26 lh-24 w-30 mr-20"></i>
-					<div class="f-14 semibold text-uppercase sp-20 title">Ready to Prototype</div>
-				</div>
-				<div class="mb-55 d-flex align-items-center advantage">
-					<i class="fas fa-columns color-gray f-26 lh-24 w-30 mr-20"></i>
-					<div class="f-14 semibold text-uppercase sp-20 title"> 12 Column Grid</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Content 6 -->
-
-<style>
-	.content_6{
-		background-image:url(i/content_6_bg.jpg);
-	}
-	@media(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
-		.content_6{
-			background-image:url(i/content_6_bg@2x.jpg);
-		}
-	}
-</style>
-
-<section class="content_6 pt-125 pb-105">
-	<div class="container px-xl-0 text-center color-white">
-		<div class="row justify-content-center">
-			<div class="col-lg-8 col-md-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-				<h2>The Third Sneak-Peek of Startup Framework</h2>
-			</div>
-			<div class="mt-35 col-xl-7 col-lg-8 col-md-10 f-22 text-adaptive" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-				We have created a new product that will help designers, developers 
-				and companies create websites for their <br />startups quickly and easily.			</div>
-		</div>
-	</div>
-</section>
-
-<!-- Ecommerce 30 -->
-
-<style>
-	#ecommerce_30_block_1 .bg{
-		background-image:url(i/ecommerce_30_bg_1.jpg);
-	}
-	@media(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
-		#ecommerce_30_block_1 .bg{
-			background-image:url(i/ecommerce_30_bg_1@2x.jpg);
-		}
-	}
-	#ecommerce_30_block_2 .bg{
-		background-image:url(i/ecommerce_30_bg_2.jpg);
-	}
-	@media(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
-		#ecommerce_30_block_2 .bg{
-			background-image:url(i/ecommerce_30_bg_2@2x.jpg);
-		}
-	}
-</style>
-
-<section class="ecommerce_30 bg-light pt-85 pb-85 text-center text-md-left">
-	<div class="container px-xl-0">
-		<div class="row">
-			<div class="mt-15 mb-15 col-xl-8 col-md-6 d-md-flex align-items-stretch product big" id="ecommerce_30_block_1" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-				<div class="relative holder radius10">
-					<div class="absolute bg"></div>
-					<div class="px-50 pt-50 pb-60 relative d-md-flex flex-column justify-content-between align-items-start h-full inner">
-						<div class="top">
-							<div class="mb-2 f-14 color-heading semibold text-uppercase sp-20 subtitle">Make Your Own Design</div>
-							<h2 class="mb-60 small">Collect Your Unique Feature</h2>
+					<div class = "col-md-6">
+						<div class = "form-group">
+							<label for=""> Berat (g)</label>
+							<input type="number" name="weight" id="" class="form-control" value="1000">
 						</div>
-						<a href="#" class="btn action-2">Try Right Now</a>
 					</div>
+					<button type ="submit" class="btn btn-primary"> Submit</button>
 				</div>
-			</div>
-			<div class="mt-15 mb-15 col-xl-4 col-md-6 d-md-flex align-items-stretch product small" id="ecommerce_30_block_2" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-				<div class="relative holder radius10">
-					<div class="absolute bg"></div>
-					<div class="px-50 pt-50 pb-60 relative d-md-flex flex-column justify-content-between align-items-start h-full inner">
-						<div class="top">
-							<div class="mb-2 f-14 color-white semibold text-uppercase sp-20 subtitle">For first</div>
-							<h2 class="mb-60 small color-white">Take 15% Discount!</h2>
-						</div>
-						<a href="#" class="btn action-white"><span class="color-main">Try Right Now</span></a>
-					</div>
-				</div>
-			</div>
+			</form>
 		</div>
-	</div>
-</section>
 
-<!-- Pricing Table 4 -->
+    </main>
+    <footer>
+    <!--? Footer Start-->
+    <div class="footer-area footer-bg">
+        <div class="container">
+            <div class="footer-top footer-padding">
+                <!-- footer Heading -->
 
-<section class="pricing_table_4 pt-105 pb-100 color-white">
-	<div class="container px-xl-0">
-		<div class="row justify-content-center text-center">
-			<div class="col-xl-8 col-lg-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-				<h2 class="small">Plans &amp; Pricing</h2>
-			</div>
-			<div class="col-xl-6 col-lg-8 col-md-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-				<div class="mt-25 mb-55 f-22 text-adaptive">
-					Startup Framework is free forever — you only pay for 
-					custom domain hosting or to export your site.
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="mb-70 mb-lg-0 col-lg-4 col-md-7 col-sm-8">
-				<div class="mx-auto mw-370 px-70 pt-60 pb-55 radius10 block">
-					<div class="f-22 title" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Starter</div>
-					<div class="mt-30 mb-40 f-58 d-flex align-items-start price" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-						<b>9.99</b>
-						<div class="mt-1 ml-5 f-16">$</div>
-					</div>
-					<ul class="px-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-						<li class="mb-10">2 GB of space</li>
-						<li class="mb-10">14 days of backups</li>
-						<li class="mb-10">Social integrations</li>
-						<li class="mb-10">Client billing</li>
-						<li class="mb-10 op-7 disabled">Remote access</li>
-						<li class="mb-10 op-7 disabled">Custom domain</li>
-						<li class="mb-10 op-7 disabled">24 hours support</li>
-						<li class="mb-10 op-7 disabled">Admin tools</li>
-						<li class="mb-10 op-7 disabled">Collaboration tools</li>
-						<li class="mb-10 op-7 disabled">User management</li>
-					</ul>
-					<div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-						<a href="#" class="mt-15 btn lg border-transparent-white">Get Started</a>
-					</div>
-				</div>
-			</div>
-			<div class="mb-70 mb-lg-0 col-lg-4 col-md-7 col-sm-8">
-				<div class="mx-auto mw-370 px-70 pt-60 pb-55 radius10 block">
-					<div class="f-22 title" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">Professional</div>
-					<div class="mt-30 mb-40 f-58 d-flex align-items-start price" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
-						<b>19.99</b>
-						<div class="mt-1 ml-5 f-16">$</div>
-					</div>
-					<ul class="px-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
-						<li class="mb-10">2 GB of space</li>
-						<li class="mb-10">14 days of backups</li>
-						<li class="mb-10">Social integrations</li>
-						<li class="mb-10">Client billing</li>
-						<li class="mb-10">Remote access</li>
-						<li class="mb-10">Custom domain</li>
-						<li class="mb-10">24 hours support</li>
-						<li class="mb-10 op-7 disabled">Admin tools</li>
-						<li class="mb-10 op-7 disabled">Collaboration tools</li>
-						<li class="mb-10 op-7 disabled">User management</li>
-					</ul>
-					<div data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
-						<a href="#" class="mt-15 btn lg action-3">Get Started</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-7 col-sm-8">
-				<div class="mx-auto mw-370 px-70 pt-60 pb-55 radius10 block">
-					<div class="f-22 title" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">Team</div>
-					<div class="mt-30 mb-40 f-58 d-flex align-items-start price" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-						<b>49.99</b>
-						<div class="mt-1 ml-5 f-16">$</div>
-					</div>
-					<ul class="px-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-						<li class="mb-10">2 GB of space</li>
-						<li class="mb-10">14 days of backups</li>
-						<li class="mb-10">Social integrations</li>
-						<li class="mb-10">Client billing</li>
-						<li class="mb-10">Remote access</li>
-						<li class="mb-10">Custom domain</li>
-						<li class="mb-10">24 hours support</li>
-						<li class="mb-10">Admin tools</li>
-						<li class="mb-10">Collaboration tools</li>
-						<li class="mb-10">User management</li>
-					</ul>
-					<div data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-						<a href="#" class="mt-15 btn lg border-transparent-white">Get Started</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+                <!-- Footer Menu -->
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>COMPANY</h4>
+                                <ul>
+                                    <li><a href="about_user">About Us</a></li>
+                                    <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
+                                    <li><a href="transaksi_user"> Transaksi Maggot</a></li>
+                                    <li><a href="form_pengajuan"> form pengajuan</a></li>
 
-<!-- Footer 3 -->
-
-<footer class="footer_3 bg-light pt-100 pb-100 text-center text-lg-left">
-	<div class="container px-xl-0">
-		<div class="row">
-			<div class="col-xl-1"></div>
-			<div class="mb-50 mb-lg-0 col-lg-4" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-				<div class="row">
-					<div class="col-12">
-						<a href="#" class="logo link color-main">Startup 3</a>
-					</div>
-					<div class="mt-30 mb-35 col-xl-7 col-lg-9 color-heading text-adaptive description">
-						Be sure to take a look at 
-						our <a href="#" class="link color-heading">Terms of Use</a> and 
-						<a href="#" class="link color-heading">Privacy Policy</a>
-					</div>
-					<div class="col-12 socials">
-						<a href="#" class="f-18 link color-main mr-30"><i class="fab fa-twitter"></i></a>
-						<a href="#" class="f-18 link color-main mr-30"><i class="fab fa-facebook-square"></i></a>
-						<a href="#" class="f-18 link color-main mr-30"><i class="fab fa-google-plus-g"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-7 col-lg-8">
-				<div class="row no-gutters">
-					<div class="col-md-3 col-6 mb-50 mb-md-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
-						<div class="mb-35 f-18 semibold title">Product</div>
-						<div class="mb-10"><a href="#" class="link color-main">Features</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Pricing</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Tour</a></div>
-					</div>
-					<div class="col-md-3 col-6 mb-50 mb-md-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-						<div class="mb-35 f-18 semibold title">Work</div>
-						<div class="mb-10"><a href="#" class="link color-main">Our Portfolio</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Lastest Work</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Brands</a></div>
-					</div>
-					<div class="col-md-3 col-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="450">
-						<div class="mb-35 f-18 semibold title">Stuff</div>
-						<div class="mb-10"><a href="#" class="link color-main">Privacy</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Support</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Help Desk</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">FAQ</a></div>
-					</div>
-					<div class="col-md-3 col-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-						<div class="mb-35 f-18 semibold title">About</div>
-						<div class="mb-10"><a href="#" class="link color-main">About Us</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Blog</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Team</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Career</a></div>
-						<div class="mb-10"><a href="#" class="link color-main">Contact</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Jam Operasional Kerja</h4>
+                                <ul>
+                                    <li>Senin 08.00 - 16.00</li>
+                                    <li>Selasa 08.00 - 16.00</li>
+                                    <li>Rabu 08.00 - 16.00</li>
+                                    <li>Kamis 08.00 - 16.00</li>
+                                    <li>Jum'at 08.00 - 16.00</li>
+                                    <li>Sabtu 08.00 - 15.00</li>
+                                    <li>Minggu 08.00 - 16.00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>RESOURCES</h4>
+                                <ul>
+                                    <li><a href="#">Home Insurance</a></li>
+                                    <li><a href="#">Travel Insurance</a></li>
+                                    <li><a href="#"> Car Insurance</a></li>
+                                    <li><a href="#"> Business Insurance</a></li>
+                                    <li><a href="#"> Heal Insurance</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <!-- logo -->
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                            </div>
+                            <div class="footer-tittle">
+                                <div class="footer-pera">
+                                    <p class="info1">GThe trade war currently ensuing between te US anfd several natxions around thdhe globe, most fiercely with.</p>
+                                </div>
+                            </div>
+                            <!-- Footer Social -->
+                            <div class="footer-social ">
+                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right text-center">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
 </footer>
-<!-- forms alerts -->
-<div class="alert alert-success alert-dismissible alert-form-success" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	Thanks for your message!
-</div>
-<div class="alert alert-warning alert-dismissible alert-form-check-fields" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	Please, fill in required fields.
-</div>
-<div class="alert alert-danger alert-dismissible alert-form-error" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	An error occurred while sending data :(
-</div>
-<!-- popup with video -->
-<div class="overlay"></div>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
 
-<div class="video_popup">
-	<a class="close">
-		<img srcset="i/close_white@2x.png 2x" src="i/close_white.png" alt="" />
-	</a>
-	<div class="d-flex align-items-center justify-content-center w-full h-full iframe_container"></div>
-</div>
+    <!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{{ asset('logisticexpress-master')}}./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/popper.min.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.slicknav.min.js"></script>
 
-<!-- Bootstrap 4.3.1 JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<!-- Google maps JS API -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
-<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-<script src="js/jquery.maskedinput.min.js"></script>
-<!-- Startup 3 JS (Custom js for all blocks) -->
-<script src="{{asset('style/assetsjs/script.js}}"></script>
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/owl.carousel.min.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/slick.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/wow.min.js"></script>
+		<script src="{{ asset('logisticexpress-master')}}./assets/js/animated.headline.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.magnific-popup.js"></script>
 
-</body>
+		<!-- Nice-select, sticky -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
+		<script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
+
+        <!-- contact js -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
+
+		<!-- Jquery Plugins, main Jquery -->
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
+        <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
+		<script>
+			$(document).ready(function (){
+				$('select[name="province_origin"]').on('change', function(){
+					let provinceId = $(this).val();
+						if(provinceId) {
+							jQuery.ajax({
+								url:'/province' +provinceId+ '/cities',
+								type:"GET",
+								dataType:"json",
+								success:function (data) {
+									$('select[name="city_origin"]').empty();
+									$.each(data, function (key, value){
+									$('select[name="city_origin"]').append('<option value="' + key +'">' + value + '</option>');
+									});
+								},
+							});
+						}else{
+							$('select[name="city_origin"]').empty();
+						}
+				});
+
+				$('select[name="province_destination"]').on('change', function(){
+					let provinceId = $(this).val();
+						if(provinceId) {
+							jQuery.ajax({
+								url:'/province' +provinceId+ '/cities',
+								type:"GET",
+								dataType:"json",
+								success:function (data) {
+									$('select[name="city_destination"]').empty();
+									$.each(data, function (key, value){
+									$('select[name="city_destination"]').append('<option value="' + key +'">' + value + '</option>');
+									});
+								}
+							});
+						}else{
+							$('select[name="city_destination"]').empty();
+						}
+				});
+			}
+		</script>
+
+
+    </body>
 </html>

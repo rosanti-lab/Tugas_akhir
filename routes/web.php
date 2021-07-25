@@ -53,10 +53,12 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
 
 });
 
+Route::get('/app', 'HomeController@form_rajaongkir');
+Route::get('/app/province/{id}/cities', 'HomeController@getCities');
 
-Route::get('web', function(){
-    return view ('app');
-});
+// Route::get('web', function(){
+//     return view ('app');
+// });
 Route::get('profil', function(){
     return view ('data');
 });
