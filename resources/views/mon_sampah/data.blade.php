@@ -7,7 +7,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Selamat datang di halaman Dashboard Tim CSR</h1> 
+                        <h1>Selamat datang di halaman Dashboard Tim CSR</h1>
                     </div>
                 </div>
             </div>
@@ -61,11 +61,11 @@
                                     <td class="text-center">
                                         <a href="{{ url('mon_sampah/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
-                                        </a> 
+                                        </a>
                                         <a href="{{ url('mon_sampah/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
-                                        </a> 
-                                        
+                                        </a>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -76,6 +76,6 @@
                         </table>
                     </div>
         </div>
-    
+
 </div>
 @endsection

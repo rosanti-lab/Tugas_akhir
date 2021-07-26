@@ -1,13 +1,13 @@
 @extends('main')
 
-@section('title', 'profil')
+@section('title', 'Dashboard')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <!-- <h1>Dashboard</h1> -->
+                        <h1>Selamat datang di halaman Dashboard Tim CSR</h1>
                     </div>
                 </div>
             </div>
@@ -25,25 +25,15 @@
 @endsection
 
 @section('content')
-        <div class="content mt-3">
 
-
-            <div class="animated fadeIn">
-
-            @if (session('status'))
-            <div class="alert alert-success">
-                {{session('status')}}
-            </div>
-            @endif
-
-
-                <div class="card">
+<div class="content mt-3">
+        <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Profil</strong>
+                            <strong> Monitoring Pendapatan Sampah Organik</strong>
                         </div>
                         <div class="pull-right">
-                            <a href="{{ url('profil/add') }}" class="btn btn-success btn-sm">
+                            <a href="{{ url('csr/add') }}" class="btn btn-success btn-sm">
                                 <i class="fa fa-plus"></i>Add
                             </a>
                         </div>
@@ -52,28 +42,27 @@
                         <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>No. </th>
-                                <th>Judul </th>
-                                <th>Descripsi </th>
-                                <th>Status </th>
-                                <th>Date Update </th>
-                                <th>Action</th>
+                                <th style="width: 20px;">No</th>
+                                <th>Minggu Ke-</th>
+                                <th>Tanggal</th>
+                                <th>Total Sampah Organik</th>
+                                <th>Status Monitoring</th>
+                                <th style="width: 156px;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $profil as $item)
+                            @foreach ( $sampah as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $item->judul}}</td>
-                                    <td>{{ substr(strip_tags($item->konten),0,50) }} ...</td>
-                                    <td>{{ $item->status}}</td>
-                                    <td>{{ $item->updated_at}}</td>
+                                    <td>{{ $item->hari}}</td>
+                                    <td>{{ $item->tanggal}}</td>
+                                    <td>{{ $item->total_sampah}}</td>
+                                    <td>{{ $item->status_monitoring}}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('profil/edit/' .$item->id_profil) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('csr/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
-                                        <!-- <button  type="submit" class="btn btn-danger btn-xs "onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">HAPUS</button></form>  -->
-                                        <a href="{{ url('profil/destroy/' .$item->id_profil) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
+                                        <a href="{{ url('csr/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
                                         </a>
 
@@ -82,12 +71,11 @@
                             @endforeach
 
                         </tbody>
+
+
                         </table>
                     </div>
-                </div>
-
-            </div>
-
         </div>
 
+</div>
 @endsection

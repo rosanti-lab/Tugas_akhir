@@ -27,7 +27,7 @@
 @section('content')
         <div class="content mt-3">
 
-            
+
             <div class="animated fadeIn">
                 <div class="card">
                     <div class ="card-header">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">
-                        <thread>
+                        <thead>
                             <tr>
                                 <th>No. </th>
                                 <th>Name </th>
@@ -55,7 +55,7 @@
 
                                 <th>Action</th>
                             </tr>
-                        </thread>
+                        </thead>
                         <tbody>
                             @foreach ( $sampahorganik as $item)
                                 <tr>
@@ -70,11 +70,11 @@
                                     <td class="text-center">
                                         <a href="{{ url('sampahorganik/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
-                                        </a> 
+                                        </a>
                                         <a href="{{ url('sampahorganik/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
                                             <i class=""></i>Delete
-                                        </a> 
-                                        
+                                        </a>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -90,4 +90,3 @@
 
 @endsection
 
-      

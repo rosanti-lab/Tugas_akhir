@@ -17,7 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    
+
     <script src="{{ asset('style2/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('style2/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('style2/assets/js/plugins.js') }}"></script>
@@ -38,14 +38,14 @@
                     <li>
                         <a href="{{ url ('main2')}}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
                     </li>
-                   
+
                     <li>
-                        <a href="{{ url ('mon_sampah')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Sampah Organik </a>
+                        <a href="{{ url ('csr_sampahorganik') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Sampah Organik </a>
                     </li>
                     <li>
                         <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Pembelian Maggot </a>
                     </li>
-                
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -123,8 +123,8 @@
         @yield('breadcrumbs')
 
         @yield('content')
-       
-    </div>    
+
+    </div>
 
 </body>
 </html>

@@ -45,7 +45,7 @@ class TransaksiController extends Controller
         return json_encode($city);
     }
 
-    public function submit(Request $request)
+    public function check_ongkir(Request $request)
     {
         $cost = RajaOngkir::ongkosKirim([
             'origin'        => $request -> city_origin,     // ID kota/kabupaten asal
@@ -54,7 +54,8 @@ class TransaksiController extends Controller
             'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
 
-        dd($cost[0]['costs'][2]);
+        return response()->json($cost);
+
     }
 
 
@@ -115,6 +116,7 @@ class TransaksiController extends Controller
             'jasa_pengiriman' => $request->jasa_pengiriman,
         ]);
         // dd($cek);
+
         return redirect('/transaksi_user');
 
     }

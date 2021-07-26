@@ -36,7 +36,7 @@ class HomeController extends Controller
         return json_encode($city);
     }
 
-    public function submit(Request $request)
+    public function check_ongkir(Request $request)
     {
         $cost = RajaOngkir::ongkosKirim([
             'origin'        => $request -> city_origin,     // ID kota/kabupaten asal
@@ -45,7 +45,7 @@ class HomeController extends Controller
             'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
         //  dd($cost[0]['costs'][2]['cost']['value']);
-            dd($cost);
+        return response()->json($cost);
     }
 
 

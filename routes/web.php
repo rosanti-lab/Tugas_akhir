@@ -55,11 +55,11 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
 
 Route::get('/app', 'HomeController@data');
 Route::get('/app/province/{id}/cities', 'HomeController@getCities');
-Route::post('/app', 'HomeController@submit');
+Route::post('/app/checkongkir', 'HomeController@check_ongkir');
 
 Route::get('/form_transaksi', 'TransaksiController@data1');
 Route::get('/form_transaksi/province/{id}/cities', 'TransaksiController@getCities');
-Route::post('/form_transaksi', 'TransaksiController@submit');
+Route::post('/form_transaksi/checkongkir', 'TransaksiController@check_ongkir');
 
 // Route::get('web', function(){
 //     return view ('app');
@@ -151,3 +151,6 @@ Route::post('mon_sampah', 'MonsampahController@addProcess');
 Route::patch('/mon_sampah/update/{id}', 'MonsampahController@update');
 Route::get('mon_sampah/edit/{id}', 'MonsampahController@edit');
 Route::get('/mon_sampah/destroy/{id}', 'MonsampahController@destroy');
+
+
+Route::get('csr_sampahorganik', 'CsrsampahorganikController@data');
