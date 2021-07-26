@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Budidaya Maggot WIralodra-About Us </title>
+        <title>Budidaya Maggot WIralodra-Form Transaksi </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -138,25 +138,14 @@
                                 <div class="select-items">
                                         <select name="jenis_maggot" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
                                             <option value="">Pembelian</option>
-                                            {{-- <option value="Larva">Larva</option> --}}
-                                            <option value="Maggot"> Maggot</option>
-                                            {{-- <option value="Pupa">Pupa</option> --}}
+                                            <option value="1 Kg ">1 Kg Rp. 40.000 <Rp class="40 000"></Rp></option>
+                                            <option value="2 Kg "> 2 Kg Rp. 80.000<Rp class="80 000"></Rp></option>
+                                            <option value="3 Kg ">3 Kg  Rp. 120.000<Rp class="120 000"></Rp></option>
                                         </select>
                                 </div>
                             </div>
                             <br>
-                            {{-- <div class="form-group">
-                                <br>
-                                <label for="">Pilih Berat (kg) yang Ingin di Beli</label>
-                                <div class="select-items">
-                                    <select name="berat" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
-                                        <option value="">Pilih Berat </option>
-                                        <option value="1 Kg">1 Kg</option>
-                                        <option value="2 Kg"> 2 Kg</option>
-                                        <option value="3 Kg"> 3 KG</option>
-                                    </select>
-                                </div>
-                            </div> --}}
+
                             <br>
 
                                 <div class="col-md-6">
@@ -214,15 +203,12 @@
                                 <div class = "col-md-6">
                                     <div class = "form-group">
                                         <label for=""> Berat (g)</label>
-                                        <input type="number" name="weight" id="" class="form-control" value="1000">
+                                        <input type="number" name="berat" id="" class="form-control" value="1000">
                                     </div>
                                 </div>
                             <br>
                             <br>
                             <form method="post" action="" enctype="multipart/form-data">
-
-                            <br>
-                            <br>
 
                             <div>
                                 <label for="">Bukti Pembayaran</label>

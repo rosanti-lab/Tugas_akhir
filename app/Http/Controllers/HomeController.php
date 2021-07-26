@@ -44,8 +44,8 @@ class HomeController extends Controller
             'weight'        => $request -> weight,          // berat barang dalam gram
             'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
-
-        dd($cost);
+        //  dd($cost[0]['costs'][2]['cost']['value']);
+            dd($cost);
     }
 
 

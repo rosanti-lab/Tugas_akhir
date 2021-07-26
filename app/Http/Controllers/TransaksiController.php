@@ -54,7 +54,7 @@ class TransaksiController extends Controller
             'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
 
-        dd($cost);
+        dd($cost[0]['costs'][2]);
     }
 
 
@@ -114,7 +114,9 @@ class TransaksiController extends Controller
             'bukti_tf' => $request->bukti_tf,
             'jasa_pengiriman' => $request->jasa_pengiriman,
         ]);
+        // dd($cek);
         return redirect('/transaksi_user');
+
     }
 
 
