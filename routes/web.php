@@ -57,6 +57,10 @@ Route::get('/app', 'HomeController@data');
 Route::get('/app/province/{id}/cities', 'HomeController@getCities');
 Route::post('/app', 'HomeController@submit');
 
+Route::get('/form_transaksi', 'TransaksiController@data1');
+Route::get('/form_transaksi/province/{id}/cities', 'TransaksiController@getCities');
+Route::post('/form_transaksi', 'TransaksiController@submit');
+
 // Route::get('web', function(){
 //     return view ('app');
 // });

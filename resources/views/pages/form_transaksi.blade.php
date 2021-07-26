@@ -25,7 +25,7 @@
 
    <body>
     <!--? Preloader Start -->
-    <div id="preloader-active">
+    {{-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Preloader Start -->
     <header>
         <!-- Header Start -->
@@ -108,9 +108,8 @@
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
-        <div class="about-low-area section-padding30">
+        <div class="about-low-area section-padding30 ">
             <div class="container">
-
                 <div class="col-md-12">
                         <div class="section-tittle mb-35">
                             <h4>Form Transaksi Maggot Wiralodra</h4>
@@ -146,7 +145,7 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <br>
                                 <label for="">Pilih Berat (kg) yang Ingin di Beli</label>
                                 <div class="select-items">
@@ -157,21 +156,71 @@
                                         <option value="3 Kg"> 3 KG</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
+                            <br>
+
+                                <div class="col-md-6">
+                                    <div class = form-group>
+                                        <label for=""> Provinsi Asal</label>
+                                        <select name="province_origin" class="form-control">
+                                        @foreach ($provinces as $province => $value )
+                                        <option value="{{ $province }}"> {{$value}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class = "col-md-6">
+                                    <div class = "form-group">
+                                    <label for=""> Kota Asal</label>
+                                    <select name="city_origin" class="form-control">
+                                        <option value="">--Kota--</option>
+                                    </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class = form-group>
+                                        <label for=""> Provinsi Tujuan</label>
+                                        <select name="province_destination" class="form-control">
+                                            <option value="">--Provinsi--</option>
+                                            @foreach ($provinces as $province => $value)
+                                            <option value="{{$province}}"> {{$value}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class = "col-md-6">
+                                    <div class = "form-group">
+                                    <label for=""> Kota Tujuan</label>
+                                    <select name="city_destination" class="form-control">
+                                        <option value="">--Kota--</option>
+                                    </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class = form-group>
+                                        <label for="">Kurir</label>
+                                        <select name="courier" class="form-control">
+                                            @foreach ($couriers as $courier => $value)
+                                            <option value="{{$courier}}"> {{$value}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class = "col-md-6">
+                                    <div class = "form-group">
+                                        <label for=""> Berat (g)</label>
+                                        <input type="number" name="weight" id="" class="form-control" value="1000">
+                                    </div>
+                                </div>
                             <br>
                             <br>
                             <form method="post" action="" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="">Plih Jasa Kurir untuk Pengiriman</label>
-                                <div class="select-items">
-                                        <select name="jasa_pengiriman" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
-                                            <option value="" disabled="disable" selected="select">Jasa Kirim</option>
-                                            <option value="JNE">JNE</option>
-                                            <option value="J&T">J&T</option>
-                                            <option value="SiCepat">SiCepat</option>
-                                        </select>
-                                </div>
-                            </div>
+
                             <br>
                             <br>
 
@@ -320,6 +369,59 @@
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
+        <script>
+			$(document).ready(function (){
+				$('select[name="province_origin"]').on('change', function(){
+					let provinceId = $(this).val();
+                    console.log(provinceId);
+						if(provinceId) {
+							jQuery.ajax({
+								url:'/form_transaksi/province/' +provinceId+ '/cities',
+								type:"GET",
+								dataType:"json",
+								success:function (data) {
+                                    console.log(data);
+									$('select[name="city_origin"]').empty();
+									$.each(data, function (key, value){
+									$('select[name="city_origin"]').append('<option value="' + key +'">' + value + '</option>');
+									});
+                                    $('select[name="city_origin"]').niceSelect('update');
+								},
+                                error:function(err){
+                                    console.log(err);
+                                }
+							});
+						}else{
+							$('select[name="city_origin"]').empty();
+						}
+				});
+
+				$('select[name="province_destination"]').on('change', function(){
+					let provinceId = $(this).val();
+                    console.log(provinceId);
+						if(provinceId) {
+							jQuery.ajax({
+								url:'/form_transaksi/province/' +provinceId+ '/cities',
+								type:"GET",
+								dataType:"json",
+								success:function (data) {
+                                    $('select[name="city_destination"]').empty();
+									$.each(data, function (key, value){
+									$('select[name="city_destination"]').append('<option value="' + key +'">' + value + '</option>');
+									});
+                                    $('select[name="city_destination"]').niceSelect('update');
+                                },
+                                error:function(err){
+                                    console.log(err);
+                                }
+							});
+						}else{
+                            $('select[name="city_destination"]').empty();
+                        }
+				});
+			});
+		</script>
+
 
     </body>
 </html>

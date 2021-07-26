@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 // use App\Models\About;
 use App\Models\Infotransaksi;
 use App\Models\Transaksi;
+use App\Courier;
+use App\Province;
+use App\City;
+use Kavist\RajaOngkir\Facades\RajaOngkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +17,7 @@ class TransaksiController extends Controller
     {
 
         $transaksi = Infotransaksi::all();
-        
+
         // dd($items= Infosampah::all());
         return view('pages.transaksi_user', ['transaksi' =>$transaksi]);
     }
@@ -22,12 +26,38 @@ class TransaksiController extends Controller
     {
 
         $form_transaksi = Infotransaksi::all();
-        
+
         // dd($items= Infosampah::all());
         return view('pages.form_transaksi', ['form_transaksi' =>$form_transaksi]);
     }
-    
-    
+
+    public function data1()
+    {
+        $couriers = Courier::pluck('title', 'code');
+        $provinces = Province::pluck('title', 'province_id');
+        // dd($provinces);
+        return view('pages.form_transaksi',compact('provinces','couriers'));
+    }
+
+    public function getCities($id)
+    {
+        $city = City::where('province_id', $id)->pluck('title', 'city_id');
+        return json_encode($city);
+    }
+
+    public function submit(Request $request)
+    {
+        $cost = RajaOngkir::ongkosKirim([
+            'origin'        => $request -> city_origin,     // ID kota/kabupaten asal
+            'destination'   => $request -> city_destination,// ID kota/kabupaten tujuan
+            'weight'        => $request -> weight,          // berat barang dalam gram
+            'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+        ])->get();
+
+        dd($cost);
+    }
+
+
     // public function index()
     // {
     //     $items = Transaksi::all();

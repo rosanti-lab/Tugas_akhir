@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class profil extends Model
+class Profil extends Model
 {
     protected $table = 'profil';
 
