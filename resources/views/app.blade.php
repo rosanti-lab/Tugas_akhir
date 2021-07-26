@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Form Cek Ongkir </title>
+        <title>Budidaya Maggot WIralodra-About Us </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -88,16 +88,16 @@
     <main>
         <!--? slider Area Start-->
         <div class="slider-area ">
-            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/organik2.jpeg">
+            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot2.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Cek Ongkir</h2>
+                                <h2>About us</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
+                                        <li class="breadcrumb-item"><a href="#">About</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -108,19 +108,26 @@
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
-        <div class="card-body">
-			<form class="form-horizontal" role="form" method="POST" action="/">
-				{{ csrf_field () }}
-				<div class = "form-group-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        Cek Ongkir
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" role="form" method="POST" action="/">
+				    {{ csrf_field () }}
+				    <div class = "form-group-sm">
+
 					<div class="col-md-6">
 						<div class = form-group>
 							<label for=""> Provinsi Asal</label>
 							<select name="province_origin" class="form-control">
-								<option value="">--Provinsi--</option>
-								@foreach($provinces as $province => $value)
-								<option value="{{ $province }}"> {{$value}} </option>
-								@andforeach
-							</select>
+                            @foreach ($provinces as $province => $value )
+                            <option value="{{ $province }}"> {{$value}}</option>
+                            @endforeach
+                            </select>
 						</div>
 					</div>
 
@@ -135,12 +142,32 @@
 
 					<div class="col-md-6">
 						<div class = form-group>
-							<label for=""> Kurir</label>
-							<select name="courier" class="form-control">
+							<label for=""> Provinsi Tujuan</label>
+							<select name="province_destination" class="form-control">
 								<option value="">--Provinsi--</option>
-								@foreach($couriers as $courier => $value)
-								<option value="{{ $courier }}"> {{$value}} </option>
-								@andforeach
+                                @foreach ($provinces as $province => $value)
+                                <option value="{{$province}}"> {{$value}}</option>
+                                @endforeach
+							</select>
+						</div>
+					</div>
+
+                    <div class = "col-md-6">
+						<div class = "form-group">
+						<label for=""> Kota Tujuan</label>
+						<select name="city_destination" class="form-control">
+							<option value="">--Kota--</option>
+						</select>
+						</div>
+					</div>
+
+                    <div class="col-md-6">
+						<div class = form-group>
+							<label for="">Kurir</label>
+							<select name="courier" class="form-control">
+                                @foreach ($couriers as $courier => $value)
+                                <option value="{{$courier}}"> {{$value}}</option>
+                                @endforeach
 							</select>
 						</div>
 					</div>
@@ -152,10 +179,96 @@
 						</div>
 					</div>
 					<button type ="submit" class="btn btn-primary"> Submit</button>
+                    </div>
 				</div>
 			</form>
-		</div>
+            </div>
+        </div>
+        <!-- About Area End -->
 
+        <!-- contact-form end -->
+        <!--Team Ara Start -->
+        <div class="team-area section-padding30">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="cl-xl-7 col-lg-8 col-md-10">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-70">
+                            <span>Our Team Mambers</span>
+                            <h2>What We Can Do For You</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-team mb-30 text-center">
+                            <div class="team-img">
+                                <img src="assets/img/gallery/team1.png" alt="">
+                                <div class="team-caption">
+                                    <h3><a href="#">Mancherwan Kolin</a></h3>
+                                    <p>Health agent</p>
+                                    <!-- Blog Social -->
+                                    <div class="team-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-team mb-30 text-center">
+                            <div class="team-img">
+                                <img src="assets/img/gallery/team2.png" alt="">
+                                <div class="team-caption">
+                                    <h3><a href="#">Mancherwan Kolin</a></h3>
+                                    <p>Health agent</p>
+                                    <!-- Blog Social -->
+                                    <div class="team-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-team mb-30 text-center">
+                            <div class="team-img">
+                                <img src="assets/img/gallery/team3.png" alt="">
+                                <div class="team-caption">
+                                    <h3><a href="#">Mancherwan Kolin</a></h3>
+                                    <p>Health agent</p>
+                                    <!-- Blog Social -->
+                                    <div class="team-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team Ara End -->
+        <!--? Testimonial Start -->
+
+        <!-- Testimonial End -->
+         <!--? Blog Area Start -->
+        <!-- Blog Area End -->
     </main>
     <footer>
     <!--? Footer Start-->
@@ -174,7 +287,6 @@
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
-                                    <li><a href="form_pengajuan"> form pengajuan</a></li>
 
                                 </ul>
                             </div>
@@ -285,7 +397,7 @@
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-		<script>
+        <script>
 			$(document).ready(function (){
 				$('select[name="province_origin"]').on('change', function(){
 					let provinceId = $(this).val();
@@ -314,19 +426,18 @@
 								type:"GET",
 								dataType:"json",
 								success:function (data) {
-									$('select[name="city_destination"]').empty();
+                                    $('select[name="city_destination"]').empty();
 									$.each(data, function (key, value){
 									$('select[name="city_destination"]').append('<option value="' + key +'">' + value + '</option>');
 									});
-								}
+                                },
 							});
 						}else{
-							$('select[name="city_destination"]').empty();
-						}
+                            $('select[name="city_destination"]').empty();
+                        }
 				});
-			}
+			});
 		</script>
-
 
     </body>
 </html>

@@ -56,9 +56,9 @@
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav> 
-                                        <ul id="navigation">    
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
@@ -73,7 +73,7 @@
                                     <a href="/logout" class="btn header-btn">Logout</a>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -97,7 +97,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="transaksi_user">Transaksi</a></li> 
+                                        <li class="breadcrumb-item"><a href="transaksi_user">Transaksi</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -110,7 +110,7 @@
         <!--? About Area Start -->
         <div class="about-low-area section-padding30">
             <div class="container">
-                    
+
                 <div class="col-md-12">
                         <div class="section-tittle mb-35">
                             <h4>Form Transaksi Maggot Wiralodra</h4>
@@ -135,27 +135,34 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="">produk yang akan di @includeIf('view.name', ['some' => 'data'])</label>
                                 <div class="select-items">
                                         <select name="jenis_maggot" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
-                                            <option value="">Jenis Maggot</option>
-                                            <option value="Larva">Larva</option>
+                                            <option value="">Pembelian</option>
+                                            {{-- <option value="Larva">Larva</option> --}}
                                             <option value="Maggot"> Maggot</option>
-                                            <option value="Pupa">Pupa</option>
+                                            {{-- <option value="Pupa">Pupa</option> --}}
                                         </select>
                                 </div>
                             </div>
                             <br>
                             <div class="form-group">
                                 <br>
-                                <label for="">Berat (kg) </label>
-                                <input type="text" class="form-control" id="" placeholder="masukan berat yang ingin di beli " name="berat" required>
+                                <label for="">Pilih Berat (kg) yang Ingin di Beli</label>
+                                <div class="select-items">
+                                    <select name="berat" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
+                                        <option value="">Pilih Berat </option>
+                                        <option value="1 Kg">1 Kg</option>
+                                        <option value="2 Kg"> 2 Kg</option>
+                                        <option value="3 Kg"> 3 KG</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div>
-                                <label for="">Bukti Pembayaran</label>
-                                <input type="file"  id=""  name="bukti_tf" required>
-                            </div><br>
+                            <br>
+                            <br>
                             <form method="post" action="" enctype="multipart/form-data">
                             <div class="form-group">
+                                <label for="">Plih Jasa Kurir untuk Pengiriman</label>
                                 <div class="select-items">
                                         <select name="jasa_pengiriman" class="form-control" style="border-radius: 0; padding: .7em .8em .7em .8em; height: 42.16px;">
                                             <option value="" disabled="disable" selected="select">Jasa Kirim</option>
@@ -167,17 +174,24 @@
                             </div>
                             <br>
                             <br>
-                            
+
+                            <div>
+                                <label for="">Bukti Pembayaran</label>
+                                <input type="file"  id=""  name="bukti_tf" required>
+                            </div><br>
+                            <br>
+                            <br>
+
                             <form method="post" action="" enctype="multipart/form-data">
 
                             <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-       
+
     </main>
     <footer>
     <!--? Footer Start-->
@@ -185,7 +199,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                
+
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -196,7 +210,7 @@
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -295,17 +309,17 @@
 		<!-- Nice-select, sticky -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
 		<script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
-        
+
         <!-- contact js -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-        
+
     </body>
 </html>

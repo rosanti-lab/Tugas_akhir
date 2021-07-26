@@ -26,6 +26,7 @@ class HomeController extends Controller
     {
         $couriers = Courier::pluck('title', 'code');
         $provinces = Province::pluck('title', 'province_id');
+        // dd($provinces);
         return view('app',compact('provinces','couriers'));
     }
 
@@ -43,6 +44,8 @@ class HomeController extends Controller
             'weight'        => $request -> weight,          // berat barang dalam gram
             'courier'       => $request ->  courier,      // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
+
+        dd($cost);
     }
 
 
