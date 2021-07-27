@@ -27,7 +27,7 @@
 @section('content')
         <div class="content mt-3">
 
-            
+
             <div class="animated fadeIn">
                 <div class="card">
                     <div class ="card-header">
@@ -42,22 +42,22 @@
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">
-                        <thread>
+                        <thead>
                             <tr>
                                 <th>No. </th>
                                 <th>Nama </th>
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
-                                <th>Jenis Maggot </th>
+                                {{-- <th>Jenis Maggot </th> --}}
                                 <th>Berat (kg) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
                                 <th>Aksi</th>
                                 <th>Status Pengiriman</th>
                                 <th>Status Transaksi</th>
-                                
+
                             </tr>
-                        </thread>
+                        </thead>
                         <tbody>
                             @foreach ( $transaksi as $item)
                                 <tr>
@@ -65,22 +65,22 @@
                                     <td>{{ $item->name}}</td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
-                                    <td>{{ $item->jenis_maggot}}</td>
+                                    {{-- <td>{{ $item->jenis_maggot}}</td> --}}
                                     <td>{{ $item->berat}}</td>
-                                    <td><img src="{{ asset('assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 30%"></td>
+                                    <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
-                                    
+
                                     <td class="text-center">
                                         <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
-                                        </a> 
+                                        </a>
                                         <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
                                             <i class=""></i>Delete
-                                        </a>    
+                                        </a>
                                     </td>
                                     <td>{{ $item->status_pengiriman}}</td>
                                     <td>{{ $item->status_transaksi}}</td>
-                                   
+
                                 </tr>
                             @endforeach
 
@@ -95,4 +95,3 @@
 
 @endsection
 
-      

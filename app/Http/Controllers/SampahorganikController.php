@@ -53,5 +53,5 @@ class SampahorganikController extends Controller
         ]);
         return redirect('/pengajuan');
     }
-    
+
 }

@@ -13,4 +13,8 @@ class Transaksi extends Model
         return $this->belongsTo('\App\transaksi','id','id');
     }
 
+    protected $fillable = [
+        'name', 'alamat', 'telephon', 'berat', 'bukti_tf','jasa_pengiriman'
+    ];
+
 }

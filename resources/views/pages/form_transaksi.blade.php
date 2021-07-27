@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.3.2/dist/select2-bootstrap4.min.css" rel="stylesheet" />
-    <title>Laravel Raja Ongkir - SantriKoding.com</title>
+    <title>Form Transaksi-Maggot Wiralodra</title>
 </head>
 <body style="background: #f3f3f3">
 
@@ -91,16 +91,16 @@
                     <hr>
                     <div class="form-group">
                         <label>PROVINSI TUJUAN</label>
-                        <select class="form-control kurir" name="courier">
+                        <select class="form-control kurir" name="jasa_pengiriman">
                             <option value="0">-- pilih kurir --</option>
                             <option value="jne">JNE</option>
-                            <option value="pos">POS</option>
-                            <option value="tiki">TIKI</option>
+                            <option value="j&t">J&T</option>
+                            <option value="sicepat">SICEPAT</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="font-weight-bold">BERAT (GRAM)</label>
-                        <input type="number" class="form-control" name="weight" id="weight" placeholder="Masukkan Berat (GRAM)">
+                        <input type="number" class="form-control" name="berat" id="weight" placeholder="Masukkan Berat (GRAM)">
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -48,5 +49,5 @@ class LoginController extends Controller
       Auth::logout();
       return redirect('/login');
 }
-    
+
 }

@@ -106,16 +106,30 @@ class TransaksiController extends Controller
 
     public function tambahdata(Request $request)
     {
-        DB::table('transaksi') -> insert([
-            'name' => $request->name,
-            'alamat' => $request->alamat,
-            'telephon' => $request->telephon,
-            'jenis_maggot' => $request->jenis_maggot,
-            'berat' => $request->berat,
-            'bukti_tf' => $request->bukti_tf,
-            'jasa_pengiriman' => $request->jasa_pengiriman,
+        $request->validate([
+            'name' => 'required',
+            'alamat' => 'required',
+            'telephon' => 'required',
+            'berat' => 'required',
+            'jasa_pengiriman' => 'required',
+            'bukti_tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        // dd($cek);
+
+        $input = $request->all();
+
+        if ($image = $request->file('bukti_tf')) {
+            $destinationPath = 'public/assets/bukti_tf/';
+
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+
+            $image->move($destinationPath, $profileImage);
+        // dd($image);
+
+            $input['bukti_tf'] = "$profileImage";
+        // dd($input);
+
+        }
+        Transaksi::create($input);
 
         return redirect('/transaksi_user');
 

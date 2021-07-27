@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
 });
 
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
-    Route::get('form_transaksi', 'TransaksiController@form');
+    Route::get('/transaksi_user', 'TransaksiController@tambahdata');
 
 });
 

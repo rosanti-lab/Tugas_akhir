@@ -51,7 +51,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $mon_sampah as $item)
+                            @foreach ($mon_sampah as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->hari}}</td>
