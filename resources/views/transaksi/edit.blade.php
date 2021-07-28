@@ -14,7 +14,7 @@
 
             <div class="form-group">
                 <label for="email">STATUS PENGIRIMAN</label>
-                <input type="text" class="form-control" id="berat" placeholder="masukan berat" name="berat" required value="{{$item['status_pengiriman']}}">
+                <input type="text" class="form-control" id="berat" placeholder="masukan status pengiriman" name="status_pengiriman" required value="{{$item['status_pengiriman']}}">
             </div>
             <!-- <div class="col-md-4">
                             <div class="form-group">

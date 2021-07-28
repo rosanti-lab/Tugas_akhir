@@ -27,7 +27,7 @@
 @section('content')
         <div class="content mt-3">
 
-            
+
             <div class="animated fadeIn">
 
             @if (session('status'))
@@ -36,7 +36,7 @@
             </div>
             @endif
 
-            
+
                 <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">
-                        <thread>
+                        <thead>
                             <tr>
                                 <th>No. </th>
                                 <th>Judul </th>
@@ -58,7 +58,7 @@
                                 <th>Deskripsi </th>
                                 <th>Action</th>
                             </tr>
-                        </thread>
+                        </thead>
                         <tbody>
                             @foreach ( $about as $item)
                                 <tr>
@@ -66,15 +66,15 @@
                                     <td>{{ $item->title}}</td>
                                     <td><img src="{{ asset('assets/img/' . $item->photo) }}" alt="" style="width: 30%"></td>
                                     <td>{{ substr(strip_tags($item->konten),0,50) }} ...</td>
-                                    
+
                                     <td class="text-center">
                                         <a href="{{ url('about/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
-                                        </a> 
+                                        </a>
                                         <a href="{{ url('about/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
-                                        </a> 
-                                        
+                                        </a>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -89,4 +89,3 @@
         </div>
 
 @endsection
-      

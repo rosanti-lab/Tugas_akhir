@@ -56,9 +56,9 @@
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav> 
-                                        <ul id="navigation">    
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
@@ -69,11 +69,11 @@
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                {{-- <div class="header-right-btn d-none d-lg-block ml-20">
                                     <a href="/logout" class="btn header-btn">Logout</a>
-                                </div>
+                                </div> --}}
                             </div>
-                        </div> 
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -97,7 +97,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="#">About</a></li> 
+                                        <li class="breadcrumb-item"><a href="#">About</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -115,7 +115,7 @@
                         <div class="about-caption mb-50">
                             <div class="section-tittle mb-35">
                                 <span>Budidaya Maggot Wiralodra</span>
-                                
+
                                 @foreach ($items as $item)
                                     <h1>{{ $item->title }}</h1>
 
@@ -125,7 +125,7 @@
                                     <p>{!! $item->konten !!}</p>
                                 @endforeach
                             </div>
-                            
+
                             <a href="about.html" class="btn">More About Us</a>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
             </div>
         </div>
         <!-- About Area End -->
-        
+
         <!-- contact-form end -->
         <!--Team Ara Start -->
         <div class="team-area section-padding30">
@@ -155,7 +155,7 @@
                         <div class="section-tittle text-center mb-70">
                             <span>Our Team Mambers</span>
                             <h2>What We Can Do For You</h2>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -224,7 +224,7 @@
         </div>
         <!-- Team Ara End -->
         <!--? Testimonial Start -->
-       
+
         <!-- Testimonial End -->
          <!--? Blog Area Start -->
         <!-- Blog Area End -->
@@ -235,7 +235,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                
+
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -246,7 +246,7 @@
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -345,17 +345,17 @@
 		<!-- Nice-select, sticky -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
 		<script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
-        
+
         <!-- contact js -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-        
+
     </body>
 </html>

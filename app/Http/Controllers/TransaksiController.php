@@ -31,6 +31,16 @@ class TransaksiController extends Controller
         return view('pages.form_transaksi', ['form_transaksi' =>$form_transaksi]);
     }
 
+    public function index_userlogin()
+    {
+
+        $transaksi = Infotransaksi::all();
+
+        // dd($items= Infosampah::all());
+        return view('pages.transaksi_userlogin', ['transaksi' =>$transaksi]);
+    }
+
+
     public function data1()
     {
         $couriers = Courier::pluck('title', 'code');
@@ -57,16 +67,6 @@ class TransaksiController extends Controller
         return response()->json($cost);
 
     }
-
-
-    // public function index()
-    // {
-    //     $items = Transaksi::all();
-
-    //     return view('pages.transaksi_user')->with([
-    //         'items' => $items
-    //     ]);
-    // }
 
 
     public function data()

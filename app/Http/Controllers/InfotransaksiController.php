@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\DB;
 class InfotransaksiController extends Controller
 
 {
-   
+
     public function data()
     {
         $infotransaksi = DB::table('info_transaksi')->get();
 
-        
+
         return view('infotransaksi.data', ['info_transaksi' =>$infotransaksi]);
     }
 
@@ -31,6 +31,7 @@ class InfotransaksiController extends Controller
             ->update([
                 'judul'=>$request->judul,             //nama dari database->nama dari form input
                 'konten'=>$request->konten,
+                'image'=>$request->image,
 
             ]);
             return redirect('/infotransaksi');
@@ -44,15 +45,16 @@ class InfotransaksiController extends Controller
     public function addProcess(Request $request)
     {
         $infotransaksi = new Infotransaksi;
-        
-        
+
+
         $infotransaksi->judul = $request->judul;
         $infotransaksi->konten = $request->konten;
+        $infotransaksi->image = $request->image;
 
         $infotransaksi->save();
 
         return redirect('/infotransaksi');
-    
+
     }
 
     public function destroy($id)

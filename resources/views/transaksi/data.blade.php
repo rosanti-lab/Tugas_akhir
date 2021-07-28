@@ -34,11 +34,11 @@
                         <div class="pull-left">
                             <strong> Data Sampah Organik Yang masuk</strong>
                         </div>
-                        <div class="pull-right">
+                        {{-- <div class="pull-right">
                             <a href="" class="btn btn-success btn-sm">
                                 <i class="fa fa-plus"></i>Add
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">

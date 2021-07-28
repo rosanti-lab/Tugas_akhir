@@ -10,18 +10,32 @@
     <link rel="stylesheet" href="{{ asset('style/assets/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('styleassets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/cs-skin-elastic.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/scss/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets2/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('') }}"> --}}
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+ {{-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"> --}}
 </head>
 <body>
-    
+
     <script src="{{ asset('style/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('style/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('style/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('style/assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets2/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+    <script>
+    $(document).ready(function (){
+        $('#example').DataTAble();
+    });
+    </script>
+
+    {{-- <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> --}}
+    
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -45,10 +59,10 @@
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('profil')}}"> Profil </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('about')}}"> About </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infosampah')}}"> Info Sampah Organik </a></li>
-                                <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infotransaksi')}}"> Info Transaksi </a></li>                               
+                                <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infotransaksi')}}"> Info Transaksi </a></li>
                         </ul>
                     </li>
-                   
+
                     <li>
                         <a href="{{ url ('sampahorganik')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Sampah Organik </a>
                     </li>
@@ -62,8 +76,8 @@
                                 <li><i class="fa fa-puzzle-piece"></i><a href="">Transaksi Maggot</a></li>
                             </ul>
                     </li>
-                   
-                   
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -141,8 +155,8 @@
         @yield('breadcrumbs')
 
         @yield('content')
-       
-    </div>    
+
+    </div>
 
 </body>
 </html>

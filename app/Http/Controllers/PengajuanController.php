@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PengajuanController extends Controller
-{   
+{
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-   
+
 
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class PengajuanController extends Controller
     {
 
         $test = Infosampah::all();
-        
+
         // dd($items= Infosampah::all());
         return view('pages.pengajuan', ['test' =>$test]);
     }
@@ -43,7 +43,7 @@ class PengajuanController extends Controller
     {
 
         $form_pengajuan = Infosampah::all();
-        
+
         return view('pages.form_pengajuan', ['form_pengajuan' =>$form_pengajuan]);
     }
 
@@ -76,7 +76,7 @@ class PengajuanController extends Controller
         $data['photo'] = $request->file('photo')->store(
             'about', 'public'
         );
-       
+
         About::create($data);
         return redirect()->route('abouts.index');
     }
@@ -126,7 +126,7 @@ class PengajuanController extends Controller
         $data['photo'] = $request->file('photo')->store(
             'about', 'public'
         );
-       
+
         $item = About::findOrFail($id);
         $item->update($data);
 
@@ -149,7 +149,7 @@ class PengajuanController extends Controller
 
     public function pengajuan($id)
     {
-        $nama = nama::where('id',$id)->FirstOrFail();        //nampilin produk sesuai id
+        $nama = About::where('id',$id)->FirstOrFail();        //nampilin produk sesuai id
         // $desain= desain::select('foto')->where('nama_kategori',$id)->get();                         //pilih desain
         // $bahan= hargabahan::select('id_bahan','bahan_ukuran')->where('nama_kategori',$id)->get();
         // $ukuran= ukuran::select('id_ukuran','ukuran')->where('nama_kategori',$id)->get();
@@ -162,5 +162,5 @@ class PengajuanController extends Controller
 
 
 
-    
+
 }

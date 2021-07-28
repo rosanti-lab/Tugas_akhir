@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Budidaya Maggot WIralodra-About Us </title>
+        <title>Budidaya Maggot WIralodra </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -21,6 +21,9 @@
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slick.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
+
+
+
    </head>
 
    <body>
@@ -56,9 +59,9 @@
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav> 
-                                        <ul id="navigation">    
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
@@ -70,10 +73,10 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="/logout" class="btn header-btn">Logout</a>
+                                    <a href="/logout" class="btn header-btn">Login</a>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -97,7 +100,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li> 
+                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -108,28 +111,53 @@
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
-        <div class="about-low-area section-padding30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="about-caption mb-50">
-                            <div class="section-tittle mb-35">
-                                <span>Budidaya Maggot Wiralodra</span>
-                                <h2>Langkah & Cara Melakukan Pembelian</h2>
-                                @foreach($transaksi as $tran)
-                                    {{ $tran['konten'] }}
-                                @endforeach
-                            </div>
-                            <a href="form_transaksi" class="btn">klik disini untuk </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                    </div>
-                    
+        <div class="container-fluid tm-container-content tm-mt-60">
+            <div class="row mb-4">
+                <h2 class="col-6 tm-text-primary">
+                    Latest Photos
+                </h2>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <form action="" class="tm-text-primary">
+                        Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
+                    </form>
                 </div>
             </div>
-        </div>
-       
+<!------------------------tampilan produk---------------------------------------------------->
+            <div class="row tm-mb-90 tm-gallery">
+                @foreach ($transaksi as $tran)
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
+                    <figure class="effect-ming tm-video-item">
+                        <img src="{{asset('assets/img/'.$tran->image)}}" alt="Image" class="img-fluid">
+                        <figcaption class="d-flex align-items-center justify-content-center">
+                            <h2>{{$tran->judul}}</h2>
+                            {{-- <p style="font-size:10px; font-style:bold;">{{$tran->konten}}</p></h3> --}}
+                            {{-- <a href="photo-detail.html">{{$tran->konten}}</a> --}}
+                        </figcaption>
+                    </figure>
+                    <div class="d-flex justify-content-between tm-text-gray">
+                        <button style="color: black" href="/form_transaksi/{{$tran['id_info_transaksi']}}" class="tm-text-gray-light">Beli Sekarang</button>
+                        <span><p style="font-size:20px; font-style:bold;">{{$tran->konten}}</p></h3></span>
+                    </div>
+                </div>
+                @endforeach
+            </div> <!-- row -->
+
+            <div class="row tm-mb-90">
+                <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
+                    <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a>
+                    <div class="tm-paging d-flex">
+                        <a href="javascript:void(0);" class="active tm-paging-link">1</a>
+                        <a href="javascript:void(0);" class="tm-paging-link">2</a>
+                        <a href="javascript:void(0);" class="tm-paging-link">3</a>
+                        <a href="javascript:void(0);" class="tm-paging-link">4</a>
+                    </div>
+                    <a href="javascript:void(0);" class="btn btn-primary tm-btn-next">Next Page</a>
+                </div>
+            </div>
+        </div>>
+
+
+
     </main>
     <footer>
     <!--? Footer Start-->
@@ -137,7 +165,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                
+
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -148,7 +176,7 @@
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -247,17 +275,17 @@
 		<!-- Nice-select, sticky -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
 		<script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
-        
+
         <!-- contact js -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-        
+
     </body>
 </html>

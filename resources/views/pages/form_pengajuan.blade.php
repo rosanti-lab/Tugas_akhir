@@ -70,7 +70,7 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="/logout" class="btn header-btn">Logout</a>
+                                    <a href="/logout" class="btn header-btn">Login</a>
                                 </div>
                             </div>
                         </div> 

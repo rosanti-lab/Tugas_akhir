@@ -55,24 +55,42 @@
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav> 
-                                        <ul id="navigation">    
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <div class="nav-left">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                  <!-- USER INFO -->
+                                                  <li class="btn btn-default" class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px;"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu">
+                                                    <li> <a  href="/logout">Logout </a> </li>
+                                                    <li><a href="/profil">Lihat Profil </a></li>
+                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    </ul>
+                                                  </li>
+                                                @else
+                                                    <a class="btn btn-default" href="/login">Login</a>
+                                                                {{-- </div>
+                                                                 </li> --}}
+                                                  @endif
+                                                {{-- </ul> --}}
+                                            </div>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                {{-- <div class="header-right-btn d-none d-lg-block ml-20">
                                     <a href="/logout" class="btn header-btn">Logout</a>
-                                </div>
+                                </div> --}}
                             </div>
-                        </div> 
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -103,12 +121,12 @@
                                 </div>
                                 <div class="search-form">
                                     <a href="#">Track & Trace</a>
-                                </div>	
-                            </form>	
+                                </div>
+                            </form>
                             <!-- Hero Pera -->
                             <!-- <div class="hero-pera">
                                 <p>For order status inquiry</p>
-                            </div> --> 
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -116,8 +134,8 @@
         </div>
     </div>
     <!-- slider Area End-->
-    
-    
+
+
     <!-- our info End -->
     <!--? Categories Area Start -->
     <div class="categories-area section-padding30">
@@ -134,13 +152,13 @@
 
             <section class="tiles">
 								<article class="style1">
-								
+
 								</article>
 								<article class="style2">
-								
+
 								</article>
 								<!-- <article class="style3">
-								
+
 								</article> -->
 							</section>
 
@@ -149,7 +167,7 @@
                     <div class="single-cat text-center mb-50">
                         <div class="cat-cap">
                             <h5><a href="services.html">Mitra Binaan </a></h5>
-                            <p>Budidaya Maggot Wiralodra adalah usaha ternak yang bekerjasama dengan mitra Binaan Tim CSR Pertamina RU VI Balongan. 
+                            <p>Budidaya Maggot Wiralodra adalah usaha ternak yang bekerjasama dengan mitra Binaan Tim CSR Pertamina RU VI Balongan.
                                 <br>Kerjasama ini sudah berjalan 3 tahun sejak pembangunan pertama tempat untuk ternak maggot.</p>
                         </div>
                     </div>
@@ -209,7 +227,7 @@
                 </div>
             </div>
         </div>
-    </div> --> 
+    </div> -->
     <!-- About Area End -->
     <!--? contact-form start -->
     <section class="contact-form-area section-bg  pt-115 pb-120 fix" data-background="assets/img/gallery/section_bg02.jpg">
@@ -311,14 +329,14 @@
                                                 <label for="radio-5" class="radio-label">Packaging</label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div> -->
                                 <!-- Button -->
                                 <!-- <div class="col-lg-12">
                                     <button name="submit" class="submit-btn">Request a Quote</button>
                                 </div> -->
                             </div>
-                        </form>	 
+                        </form>
                     </div>
                 </div>
             </div>
@@ -334,7 +352,7 @@
                     <div class="section-tittle text-center mb-70">
                         <span>Our Team Mambers</span>
                         <h2>What We Can Do For You</h2>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <!-- <div class="row">
@@ -419,7 +437,7 @@
                             <!-- <div class="testimonial-caption ">
                                 <div class="testimonial-top-cap">
                                     <p>Srem ipsum adolor dfsit amet, consectetur adipiscing elit, sed dox beiusmod tempor incci didunt ut labore et dolore magna aliqua. Quis cipsucm suspendisse ultrices gravida. Risus commodo vivercra maecenas accumsan lac.</p>
-                                </div> --> 
+                                </div> -->
                                 <!-- founder -->
                                 <!-- <div class="testimonial-founder d-flex align-items-center">
                                     <div class="founder-img">
@@ -450,15 +468,15 @@
                                     </div>
                                 </div>
                             </div>
-                        <!-- </div> --> 
+                        <!-- </div> -->
                     <!-- </div> -->
                 <!-- </div>
             </div>
         </div> -->
-    <!-- </div> --> 
+    <!-- </div> -->
     <!-- Testimonial End -->
     <!--? Blog Area Start -->
-    
+
     <!-- Blog Area End -->
 </main>
 <footer>
@@ -467,7 +485,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                
+
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -577,17 +595,17 @@
     <!-- Nice-select, sticky -->
     <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
     <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
-    
+
     <!-- contact js -->
     <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
     <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
     <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
     <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
     <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
-    
-    <!-- Jquery Plugins, main Jquery -->	
+
+    <!-- Jquery Plugins, main Jquery -->
     <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
     <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-    
+
 </body>
 </html>

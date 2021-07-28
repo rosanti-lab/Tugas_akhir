@@ -26,8 +26,7 @@
 
 @section('content')
         <div class="content mt-3">
-
-
+            <table class="table table-bordered" id="users-table">
             <div class="animated fadeIn">
                 <div class="card">
                     <div class ="card-header">
@@ -41,7 +40,7 @@
                         </div>
                     </div>
                     <div class="card-body table-responsive">
-                        <table class="table table-bordered">
+                        <table id="zero_config" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>No. </th>
@@ -61,7 +60,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->name}}</td>
-                                    <td>{{ $item->image}}</td>
+                                    <td><img src="{{ asset('public/assets/pengajuan/' . $item->image) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
                                     <td>{{ $item->berat}}</td>

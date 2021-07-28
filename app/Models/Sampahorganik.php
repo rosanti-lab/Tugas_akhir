@@ -12,4 +12,8 @@ class Sampahorganik extends Model
     public function sampahorganik(){                                              // sesuai nama tabel
         return $this->belongsTo('\App\sampahorganik','id','id');
     }
+
+    protected $fillable = [
+        'name', 'alamat', 'telephon','tanggal' ,'image'
+    ];
 }

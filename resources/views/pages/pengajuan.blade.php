@@ -56,24 +56,39 @@
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav> 
-                                        <ul id="navigation">    
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <div class="nav-left">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                  <!-- USER INFO -->
+                                                  <li class="btn btn-default" class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px;"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu">
+                                                    <li> <a  href="/logout">Log Out </a> </li>
+                                                    <li><a href="/profil">Lihat Profil </a></li>
+                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    </ul>
+                                                  </li>
+                                                @else
+                                                    {{-- <a class="btn btn-default" href="/login">Login</a> --}}
+                                                                {{-- </div>
+                                                                 </li> --}}
+                                                  @endif
+                                                {{-- </ul> --}}
+                                            </div>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="/logout" class="btn header-btn">Logout</a>
-                                </div>
                             </div>
-                        </div> 
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -97,7 +112,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li> 
+                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -117,7 +132,7 @@
                                 <span>Budidaya Maggot Wiralodra</span>
                                 <h2>Pengajuan Sampah Organik</h2>
                                 @foreach($test as $link)
-                                   
+
                                     {{ $link['konten'] }}
 
                                     <div class="image main">
@@ -125,7 +140,7 @@
                                     </div>
 
                                 @endforeach
-                                
+
                             </div>
                             <a href="form_pengajuan" class="btn">Ajukan Pengajuan klik disini</a>
                         </div>
@@ -141,12 +156,12 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
             </div>
         </div>
-       
+
     </main>
     <footer>
     <!--? Footer Start-->
@@ -154,7 +169,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                
+
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -166,7 +181,7 @@
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
                                     <li><a href="form_pengajuan"> form pengajuan</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -265,17 +280,17 @@
 		<!-- Nice-select, sticky -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
 		<script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
-        
+
         <!-- contact js -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-        
+
     </body>
 </html>

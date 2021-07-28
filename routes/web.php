@@ -140,6 +140,8 @@ Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
 Route::get('/transaksi/destroy/{id}', 'TransaksiController@destroy');
 Route::patch('/transaksi/update/{id}', 'TransaksiController@update');
 
+Route::get('/transaksi_userlogin', 'TransaksiController@index_userlogin');
+
 
 Route::get('admin', 'AdminController@data');
 Route::get('/admin/destroy/{id}', 'AdminController@destroy');

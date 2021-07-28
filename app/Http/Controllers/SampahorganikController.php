@@ -44,14 +44,45 @@ class SampahorganikController extends Controller
 
     public function tambahdata(Request $request)
     {
-        DB::table('sampahorganik') -> insert([
-            'name' => $request->name,
-            'alamat' => $request->alamat,
-            'telephon' => $request->telephon,
-            'tanggal' => $request->tanggal,
-            'image' => $request->image
+        $request->validate([
+            'name' => 'required',
+            'alamat' => 'required',
+            'telephon' => 'required',
+            'tanggal' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $input = $request->all();
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'public/assets/pengajuan/';
+
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+
+            $image->move($destinationPath, $profileImage);
+        // dd($image);
+
+            $input['image'] = "$profileImage";
+        // dd($input);
+
+        }
+        Sampahorganik::create($input);
+
         return redirect('/pengajuan');
+
     }
+
+
+    // public function tambahdata(Request $request)
+    // {
+    //     DB::table('sampahorganik') -> insert([
+    //         'name' => $request->name,
+    //         'alamat' => $request->alamat,
+    //         'telephon' => $request->telephon,
+    //         'tanggal' => $request->tanggal,
+    //         'image' => $request->image
+    //     ]);
+    //     return redirect('/pengajuan');
+    // }
 
 }

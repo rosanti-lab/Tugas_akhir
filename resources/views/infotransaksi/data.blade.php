@@ -45,6 +45,7 @@
                                 <th style="width: 20px;">No</th>
                                 <th>Title</th>
                                 <th>Description</th>
+                                <th>Image</th>
                                 <th style="width: 156px;">Actions</th>
                             </tr>
                         </thead>
@@ -54,15 +55,16 @@
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->judul}}</td>
                                     <td>{{ substr(strip_tags($item->konten),0,50) }} ...</td>
-                                    
+                                    <td><img src="{{ asset('assets/img/' . $item->image) }}" alt="" style="width: 30%"></td>
+
                                     <td class="text-center">
                                         <a href="{{ url('infotransaksi/edit/' .$item->id_info_transaksi) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
-                                        </a> 
+                                        </a>
                                         <a href="{{ url('infotransaksi/destroy/' .$item->id_info_transaksi) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
-                                        </a> 
-                                        
+                                        </a>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -73,6 +75,6 @@
                         </table>
                     </div>
         </div>
-    
+
 </div>
 @endsection

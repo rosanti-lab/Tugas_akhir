@@ -25,7 +25,7 @@
 @endsection
 
 @section('content')
-        <div class="content mt-3"> 
+        <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="card">
                     <div class ="card-header">
@@ -61,6 +61,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                <label>IMAGE</label>
+                                <input type="file" name="image" class="form-control" placeholder="Enter title" maxlength="150" required="require" autofocus>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <div class="fg-line">
@@ -86,9 +94,9 @@
 
                         </form>
                     </div>
-                    
+
                     </div>
-                        
+
                     </div>
                 </div>
 
@@ -97,4 +105,3 @@
         </div>
 
 @endsection
-      
