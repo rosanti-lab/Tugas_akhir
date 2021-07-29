@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 // use App\Models\About;
 use App\Models\Infotransaksi;
+use App\Models\Produk;
 use App\Models\Transaksi;
 use App\Courier;
 use App\Province;
@@ -16,7 +17,7 @@ class TransaksiController extends Controller
     public function index()
     {
 
-        $transaksi = Infotransaksi::all();
+        $transaksi = Produk::all();
 
         // dd($items= Infosampah::all());
         return view('pages.transaksi_user', ['transaksi' =>$transaksi]);

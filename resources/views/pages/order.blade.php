@@ -90,76 +90,50 @@
     </header>
     <main>
         <!--? slider Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot4.jpeg">
-                <div class="container">
+        isi disini
+        <div id="wrapshopcart">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="card">
+                    <div class="heading text-center">
+                      <h4>Detail Pesanan</h4>
+                    </div>
                     <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap">
-                                <h2>Transaksi Maggot</h2>
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li>
-                                    </ol>
-                                </nav>
+                    @foreach($item as $item)
+                    <pre>
+                      Nama     :{{ $item->name}}
+                      {{-- Alamat   :{{ $item->alamat}} --}}
+                     </pre>
+                     <pre>
+                      {{-- Nama Produk  :  {{ $item->produk}}
+                      desain       :  <a style="color:#FF0000;" href="/download/{{$item->desain}}"  >{{ $item->desain}}</a>
+                      bahan        :  {{ $item->harga_bahan->bahan_ukuran}}
+                      ukuran       :  {{ $item->ukuran->ukuran}}
+                      @if($item->produk=='Kaos Pendek')
+                      warna        :  {{ $item->warna}}
+                      @elseif($item->produk=='Kaos Panjang') @else @endif
+                      Detail       :  {{ $item->detail}}
+                      Quantity     :  {{ $item->qty}}
+                      harga        :  @currency($item->harga)</pre> --}}
+                      @endforeach
+                  {{-- <Pre>
+                                                                                        {{-- Total   : @currency($item->total)</pre> --}}
+                  {{-- <form action="/pesanan/destroy/{{$item['id']}}" method="post">
+                    @method('delete')
+                    @csrf
+                            <button style="float:right;" type="submit" class="btn btn-danger btn-xs "onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">BATAL</button></form> --}}
+
+                        <a style="float:right;"   class="btn btn-success btn-xs pesan">ORDER</a >
+                    </form>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- slider Area End-->
-        <!--? About Area Start -->
-        <!------------------------tampilan produk---------------------------------------------------->
-        <div class="container-fluid tm-container-content tm-mt-60" style="padding-left: 280px">
-            <div class="row mb-4">
-                <h2 class="col-6 tm-text-primary">
-                    Produk Budidaya Maggot
-                </h2>
-                <div class="col-6 d-flex justify-content-end align-items-center">
-                    <form action="" class="tm-text-primary">
-                        Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
-                    </form>
+                      </div>
+                   </div>
                 </div>
             </div>
 
-            <div class="row tm-mb-90 tm-gallery">
-                @foreach ($transaksi as $produk)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img src="{{asset('assets/img/'.$produk->image)}}" alt="Image" class="img-fluid">
-                        <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>{{$produk->nama}}</h2>
 
-                            {{-- <p style="font-size:10px; font-style:bold;">{{$produk->konten}}</p></h3> --}}
-                            {{-- <a href="photo-detail.html">{{$produk->konten}}</a> --}}
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <a href="form_transaksi" class="btn">Beli Sekarang</a>
-                        {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
-                        <span><p style="font-size:15px; font-style:bold;">{{$produk->harga}}</p><span>
-                    </div>
-                </div>
-                @endforeach
-            </div> <!-- row -->
-
-            <div class="row tm-mb-90">
-                <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
-                    {{-- <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a> --}}
-                    <div class="tm-paging d-flex">
-                        {{-- <a href="javascript:void(0);" class="active tm-paging-link">1</a>
-                        <a href="javascript:void(0);" class="tm-paging-link">2</a>
-                        <a href="javascript:void(0);" class="tm-paging-link">3</a>
-                        <a href="javascript:void(0);" class="tm-paging-link">4</a> --}}
-                    </div>
-                    {{-- <a href="javascript:void(0);" class="btn btn-primary tm-btn-next">Next Page</a> --}}
-                </div>
-            </div>
-        </div>
-
-
+            @section('footer')
 
     </main>
     <footer>

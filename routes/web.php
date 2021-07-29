@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
 });
 
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
-    Route::get('/transaksi_user', 'TransaksiController@tambahdata');
+    Route::get('/form_transaksi', 'TransaksiController@tambahdata');
 
 });
 
@@ -60,6 +60,10 @@ Route::post('/app/checkongkir', 'HomeController@check_ongkir');
 Route::get('/form_transaksi', 'TransaksiController@data1');
 Route::get('/form_transaksi/province/{id}/cities', 'TransaksiController@getCities');
 Route::post('/form_transaksi/checkongkir', 'TransaksiController@check_ongkir');
+
+Route::get('/pembelian', 'PembelihomeController@data1');
+Route::get('/pembelian/province/{id}/cities', 'PembelihomeController@getCities');
+Route::post('/pembelian/checkongkir', 'PembelihomeController@check_ongkir');
 
 // Route::get('web', function(){
 //     return view ('app');
@@ -87,6 +91,7 @@ Route::get('/about_user', 'AboutController@index');
 Route::get('/infosampah', 'InfosampahController@index');
 Route::get('/pengajuan', 'PengajuanController@index');
 Route::get('/transaksi_user', 'TransaksiController@index');
+
 // Route::get('/form_transaksi', 'TransaksiController@form');
 Route::get('/form_pengajuan', 'PengajuanController@form');
 //===================================================================
@@ -156,3 +161,14 @@ Route::get('/mon_sampah/destroy/{id}', 'MonsampahController@destroy');
 
 
 Route::get('csr_sampahorganik', 'CsrsampahorganikController@data');
+
+Route::get('/pembelian', 'PembelihomeController@index');
+Route::get('/pembelian', 'PembelihomeController@pesan');
+
+
+Route::get('produk', 'ProdukController@data');
+Route::get('produk/add', 'ProdukController@add');
+Route::post('produk', 'ProdukController@addProcess');
+Route::patch('/produk/update/{id}', 'ProdukController@update');
+Route::get('produk/edit/{id_produk}', 'ProdukController@edit');
+Route::get('/produk/destroy/{id_produk}', 'ProdukController@destroy');

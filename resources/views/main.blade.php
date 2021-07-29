@@ -35,7 +35,7 @@
     </script>
 
     {{-- <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> --}}
-    
+
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -61,6 +61,9 @@
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infosampah')}}"> Info Sampah Organik </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infotransaksi')}}"> Info Transaksi </a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="{{ url ('produk')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Produk </a>
                     </li>
 
                     <li>
