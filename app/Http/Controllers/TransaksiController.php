@@ -8,6 +8,7 @@ use App\Models\Transaksi;
 use App\Courier;
 use App\Province;
 use App\City;
+use App\User;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,13 +24,15 @@ class TransaksiController extends Controller
         return view('pages.transaksi_user', ['transaksi' =>$transaksi]);
     }
 
-    public function form()
+    public function form($id)
     {
 
         $form_transaksi = Infotransaksi::all();
+        $produk=Produk::where('id',$id)->findOrFail();
 
         // dd($items= Infosampah::all());
-        return view('pages.form_transaksi', ['form_transaksi' =>$form_transaksi]);
+        // return view('pages.form_transaksi', ['form_transaksi' =>$form_transaksi]);
+        return view('pages.form_transaksi', compact('produk'));
     }
 
     public function index_userlogin()
@@ -132,10 +135,40 @@ class TransaksiController extends Controller
         }
         Transaksi::create($input);
 
-        return redirect('/transaksi_user');
+        return redirect('/daftar-pesanan');
 
     }
 
+    public function detail($id)
+    {
+        $detail =Transaksi::where('id',$id)->FirstOrFail();
+        return view('pages.detailpesanan',compact('detail'));
+    }
+
+    public function daftarPesanan()
+    {
+        $pesanan =Transaksi::where('name',auth()->user()->name)->get();
+        return view('pages.daftar_pesanan',compact('pesanan'));
+        // dd($pesanan);
+    }
+
+    public function pembayaran($id)
+    {
+        $item =Transaksi::where('id',$id)->FirstOrFail();
+        return view('pages.pembayaran',compact('item'));
+    }
+
+    public function pembayaranStore(Request $request, $id)
+    {
+        // $item =Transaksi::where('id',$id)->FirstOrFail();
+        $pembayaran=Transaksi::where('id',$id)
+        ->update([
+                'status_pengiriman'=>"Sedang Di Proses",
+                'bukti_tf'=>$request->bukti,
+
+        ]);
+        return redirect('/daftar-pesanan');
+    }
 
 
 }

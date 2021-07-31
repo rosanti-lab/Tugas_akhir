@@ -39,6 +39,7 @@ class LoginController extends Controller
       User::create([
          'name' => $request['name'],
          'email' => $request['email'],
+         'alamat' => $request['alamat'],
          'role' => 'user',
          'password' => Hash::make($request['password']),
      ]);

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail_pesanan extends Model
 {
-    protected $table = 'detail_pesanans';
+    protected $table = 'transaksi';
 
     protected $fillable = ['produk','harga','berat','total','detail'];
 

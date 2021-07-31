@@ -22,7 +22,14 @@
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
 
+            <style type="text/css">
+                body{background:#fff;font-family:arial;}
+                #wrapshopcart{width:70%;margin:3em auto;padding:30px;background:#fff;box-shadow:0 0 10px #ddd;}
+                h1{margin:0;padding:0;font-size:2.5em;font-weight:bold;}
+                p{font-size:1em;margin:0;}
 
+                .btnsubmit{display:inline-block;padding:10px;border:1px solid #ddd;background:#eee;color:#000;text-decoration:none;margin:2em 0;}
+                </style>
 
    </head>
 
@@ -68,13 +75,31 @@
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <div class="nav-left">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                <!-- USER INFO -->
+                                                <li class="btn btn-default" class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px;"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu">
+                                                    <li> <a  href="/logout">Logout </a> </li>
+                                                    <li><a href="/profil">Lihat Profil </a></li>
+                                                    <li><a href="/logoutc">LOG OUT</a></li>
+                                                    </ul>
+                                                </li>
+                                                @else
+                                                    <a class="btn btn-default" href="/login">Login</a>
+                                                                {{-- </div>
+                                                                </li> --}}
+                                                @endif
+                                                {{-- </ul> --}}
+                                            </div>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                {{-- <div class="header-right-btn d-none d-lg-block ml-20">
                                     <a href="/logout" class="btn header-btn">Login</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -89,46 +114,62 @@
         <!-- Header End -->
     </header>
     <main>
-        <!--? slider Area Start-->
-        isi disini
+
         <div id="wrapshopcart">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card">
                     <div class="heading text-center">
-                      <h4>Detail Pesanan</h4>
+                      <h4>Daftar Pesanan</h4>
                     </div>
                     <div class="row">
-                    @foreach($item as $item)
-                    <pre>
-                      Nama     :{{ $item->name}}
-                      Alamat   :{{ $item->alamat}}
-                     </pre>
-                     <pre>
-                      Nama Produk      :  {{ $item->produk}}
-                      No Telephon      :  {{ $item->ukuran->ukuran}}
-                      Berat            :  {{ $item->ukuran->ukuran}}
-                      Jasa Kirim       :  {{ $item->ukuran->ukuran}}
 
-                      Ongkos Kirim     :  {{ $item->detail}}
+                        <table class="table table-sm" >
+                            <thead>
+                              <tr style="background:#fff;">
+                                      <th scope="col">Nama Pelanggan</th>
+                                      <th scope="col">Status Pengiriman</th>
+                                      <th scope="col">Detail</th>
+                                      <th scope="col">Pembayaran</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($pesanan as $item)
+                                  <tr style="background:#fff;">
 
-                      harga            :  @currency($item->harga)</pre> --}}
-                      @endforeach
-                  <Pre>
-                                                            Total   : @currency($item->total)</pre>
-                  <form action="/pesanan/destroy/{{$item['id']}}" method="post">
-                    @method('delete')
-                    @csrf
-                            <button style="float:right;" type="submit" class="btn btn-danger btn-xs "onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">BATAL</button></form>
+                                    <td >{{ $item->name}}</td>
+                                    {{-- <td >{{ $item->status_pengiriman}}</td> --}}
+                                    <td >
+                                    @if($item->status_pengiriman=="Pending")
+                                          <a class="btn btn-xs btn-danger">{{ $item->status_pengiriman}}</a>
+                                    @elseif ($item->status_pengiriman=="Proses Pengiriman")
+                                          <a class="btn btn-xs btn-success">{{ $item->status_pengiriman}}</a>
+                                    @else
+                                          <a class="btn btn-xs btn-warning">{{ $item->status_pengiriman}}</a>
+                                    @endif
 
-                        <a style="float:right;"   class="btn btn-success btn-xs pesan">ORDER</a >
-                    </form>
-                            </div>
-                        </div>
-                      </div>
+                                          </td>
+                                          <td ><a class="btn btn-primary" href="/detail-pesanan/{{$item['id']}}">detail</a></td>
+
+                                    <td >
+                                        @if($item->status_pengiriman=="Pending")
+                                          <a href="/pembayaran/{{$item['id']}}" class="btn btn-xs btn-danger">kirim bukti pembayaran</a>
+                                        @else
+                                          <a  class="btn btn-xs btn-success">Sudah Kirim pembayaran</a>
+
+                                        @endif
+                                    </td>
+                                    @endforeach
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+
                    </div>
                 </div>
             </div>
+        </div>
 
 
             @section('footer')

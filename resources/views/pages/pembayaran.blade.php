@@ -23,6 +23,15 @@
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
 
 
+                <style type="text/css">
+                body{background:#fff;font-family:arial;}
+                #wrapshopcart{width:70%;margin:3em auto;padding:30px;background:#fff;box-shadow:0 0 10px #ddd;}
+                h1{margin:0;padding:0;font-size:2.5em;font-weight:bold;}
+                p{font-size:1em;margin:0;}
+
+                .btnsubmit{display:inline-block;padding:10px;border:1px solid #ddd;background:#eee;color:#000;text-decoration:none;margin:2em 0;}
+                </style>
+
 
    </head>
 
@@ -89,47 +98,37 @@
         <!-- Header End -->
     </header>
     <main>
-        <!--? slider Area Start-->
-        isi disini
         <div id="wrapshopcart">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card">
                     <div class="heading text-center">
-                      <h4>Detail Pesanan</h4>
+                      <h4>Konfirmasi Pembayaran</h4>
                     </div>
-                    <div class="row">
-                    @foreach($item as $item)
-                    <pre>
-                      Nama     :{{ $item->name}}
-                      Alamat   :{{ $item->alamat}}
-                     </pre>
-                     <pre>
-                      Nama Produk      :  {{ $item->produk}}
-                      No Telephon      :  {{ $item->ukuran->ukuran}}
-                      Berat            :  {{ $item->ukuran->ukuran}}
-                      Jasa Kirim       :  {{ $item->ukuran->ukuran}}
+                    <div class="alert alert-info">
+                    <p> Nomor Pesanan : {{$item->id}}</p>
+                    <p> Total Pembayaran : @currency($item->total)</p>
+                    </div>
+                    {{-- <form method="post" action="/pembayaran_store" enctype="multipart/form-data"> --}}
+                        <form method="post" action="/pembayaran-store/{{$item['id']}}" enctype="multipart/form-data">
 
-                      Ongkos Kirim     :  {{ $item->detail}}
+            @csrf
+        <div>
+            <label for="bukti">Upload Bukti Pembayaran</label><br>
+            <input type="file"  id="bukti"  name="bukti" required>
+          </div><br>
 
-                      harga            :  @currency($item->harga)</pre> --}}
-                      @endforeach
-                  <Pre>
-                                                            Total   : @currency($item->total)</pre>
-                  <form action="/pesanan/destroy/{{$item['id']}}" method="post">
-                    @method('delete')
-                    @csrf
-                            <button style="float:right;" type="submit" class="btn btn-danger btn-xs "onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">BATAL</button></form>
+          {{-- <form method="post" action="/pembayaran_store/{{$item['id']}}" enctype="multipart/form-data"> --}}
 
-                        <a style="float:right;"   class="btn btn-success btn-xs pesan">ORDER</a >
-                    </form>
+          <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
+        </form></form>
+
                             </div>
                         </div>
                       </div>
                    </div>
                 </div>
             </div>
-
 
             @section('footer')
 

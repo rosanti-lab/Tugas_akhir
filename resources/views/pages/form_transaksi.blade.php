@@ -36,17 +36,18 @@
                             </div>
                             <div class="contact-right formulir_">
                             <form method="post" action="transaksi" enctype="multipart/form-data" >
+
                     <div class="col-lg-6 col-md-12">
                                     <!-- about-img -->
                     <div class="about-img ">
                         @csrf
                             <div class="form-group">
                                 <label for="">Nama</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
+                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required value="{{auth()->user()->name}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat Lengkap</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" required>
+                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" value="{{auth()->user()->alamat}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Nomor Telepon </label>
@@ -113,8 +114,8 @@
                                         <select class="form-control kurir" name="jasa_pengiriman">
                                             <option value="0">-- pilih kurir --</option>
                                             <option value="jne">JNE</option>
-                                            <option value="j&t">J&T</option>
-                                            <option value="sicepat">SICEPAT</option>
+                                            <option value="pos">POS</option>
+                                            <option value="tiki">TIKI</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

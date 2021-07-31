@@ -52,9 +52,9 @@
                                 <th>Berat (kg) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
-                                <th>Aksi</th>
                                 <th>Status Pengiriman</th>
-                                <th>Status Transaksi</th>
+
+                                <th>Aksi</th>
 
                             </tr>
                         </thead>
@@ -69,7 +69,7 @@
                                     <td>{{ $item->berat}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
-
+                                    <td>{{ $item->status_pengiriman}}</td>
                                     <td class="text-center">
                                         <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
@@ -78,8 +78,7 @@
                                             <i class=""></i>Delete
                                         </a>
                                     </td>
-                                    <td>{{ $item->status_pengiriman}}</td>
-                                    <td>{{ $item->status_transaksi}}</td>
+                                    {{-- <td>{{ $item->status_transaksi}}</td> --}}
 
                                 </tr>
                             @endforeach

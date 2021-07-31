@@ -27,7 +27,7 @@
 @section('content')
         <div class="content mt-3">
 
-            
+
             <div class="animated fadeIn">
 
             @if (session('status'))
@@ -36,7 +36,7 @@
             </div>
             @endif
 
-            
+
                 <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
@@ -50,32 +50,34 @@
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">
-                        <thread>
+                        <thead>
                             <tr>
                                 <th>No. </th>
                                 <th>Nama </th>
                                 <th>Email </th>
+                                <th>Alamat </th>
                                 <th>Password </th>
                                 <th>Role</th>
                                 <th>Aksi</th>
                             </tr>
-                        </thread>
+                        </thead>
                         <tbody>
                             @foreach ( $users as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->name}}</td>
                                     <td>{{ $item->email}}</td>
+                                    <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->password}}</td>
                                     <td>{{ $item->role}}</td>
                                     <td class="text-center">
                                         <a href="{{ url('admin/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
-                                        </a> 
+                                        </a>
                                         <a href="{{ url('admin/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
-                                        </a> 
-                                        
+                                        </a>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -90,4 +92,3 @@
         </div>
 
 @endsection
-      

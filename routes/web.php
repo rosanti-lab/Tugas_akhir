@@ -38,6 +38,13 @@ Route::group(['middleware' => ['auth','CekRole:csr']], function () {
 //============================= Middleware User =====================================
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::post('sampahorganik', 'SampahorganikController@tambahdata');
+    Route::get('/daftar-pesanan', 'TransaksiController@daftarPesanan');
+    Route::get('/detail-pesanan/{id}', 'TransaksiController@detail');
+    Route::get('/pembayaran/{id}', 'TransaksiController@pembayaran');
+    Route::post('/pembayaran-store/{id}', 'TransaksiController@pembayaranStore');
+
+
+
 });
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::get('/form_pengajuan', 'PengajuanController@form');
@@ -49,7 +56,7 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
 });
 
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
-    Route::get('/form_transaksi', 'TransaksiController@tambahdata');
+    // Route::get('form_transaksi/{id}', 'TransaksiController@tambahdata');
 
 });
 
@@ -172,3 +179,6 @@ Route::post('produk', 'ProdukController@addProcess');
 Route::patch('/produk/update/{id}', 'ProdukController@update');
 Route::get('produk/edit/{id_produk}', 'ProdukController@edit');
 Route::get('/produk/destroy/{id_produk}', 'ProdukController@destroy');
+
+
+Route::get('/detailpesanan/edit/{id}', 'TransaksiController@detail');

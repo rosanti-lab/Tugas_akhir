@@ -4,7 +4,7 @@
 	<title>Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{{asset('loginn/images/icons/favicon.ico')}}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/bootstrap/css/bootstrap.min.css')}}">
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/animate/animate.css')}}">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/css-hamburgers/hamburgers.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/select2/select2.min.css')}}">
@@ -62,8 +62,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input id="                                <input id="alamat" type="Alamat Lengkap" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat">
+                                " type="alamat" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat">
 
-                     
+                                @error('alamat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+
 
 
 
@@ -98,7 +111,7 @@
 							Sudah punya akun?
 						</span>
 						<a class="txt1 bo1 hov1" href="/login">
-							Login disini						
+							Login disini
 						</a>
 					</div>
                             </div>
@@ -111,7 +124,7 @@
 </div>
 
 
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 <script src="{{asset('loginn/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('loginn/vendor/bootstrap/js/popper.js')}}"></script>

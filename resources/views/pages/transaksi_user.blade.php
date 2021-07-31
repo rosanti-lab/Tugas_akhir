@@ -66,15 +66,32 @@
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
+                                            <li><a href="contact.html">Contact</a></li>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <div class="nav-left">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                <!-- USER INFO -->
+                                                <li class="btn btn-default" class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px;"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu">
+                                                    <li> <a  href="/logout">Logout </a> </li>
+                                                    <li><a href="/profil">Lihat Profil </a></li>
+                                                    <li><a href="/logoutc">LOG OUT</a></li>
+                                                    </ul>
+                                                </li>
+                                                @else
+                                                    <a class="btn btn-default" href="/login">Login</a>
+                                                                {{-- </div>
+                                                                </li> --}}
+                                                @endif
+                                                {{-- </ul> --}}
+                                            </div>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="/logout" class="btn header-btn">Login</a>
-                                </div>
+
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -137,9 +154,11 @@
                         </figcaption>
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
-                        <a href="form_transaksi" class="btn">Beli Sekarang</a>
+                        {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
                         {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
                         <span><p style="font-size:15px; font-style:bold;">{{$produk->harga}}</p><span>
+                        <a href="form_transaksi" class="btn">Beli Sekarang</a>
+
                     </div>
                 </div>
                 @endforeach

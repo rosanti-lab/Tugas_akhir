@@ -12,10 +12,19 @@
         @method('patch')
 	@csrf
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="email">STATUS PENGIRIMAN</label>
                 <input type="text" class="form-control" id="berat" placeholder="masukan status pengiriman" name="status_pengiriman" required value="{{$item['status_pengiriman']}}">
-            </div>
+            </div> --}}
+            <div class="form-group">
+                <label for="status">status</label>
+                <select name="status_pengiriman" class="form-control" >
+                <option selected='selected'>{{$item->status_pengiriman}}</option>
+                        <option value="Proses Pengiriman">Proses Pengiriman</option>
+                        <option value="dikirim">Dikirim</option>
+                        <option value="selesai">Terkirim</option>
+                </select>
+              </div>
             <!-- <div class="col-md-4">
                             <div class="form-group">
                                 <div class="fg-line">
@@ -28,7 +37,7 @@
                                     </label>
                                     <label class="radio radio-inline m-r-20">
                                         <input type="radio" name="status_pengiriman" value="N">
-                                        <i class="input-helper"></i> Belum 
+                                        <i class="input-helper"></i> Belum
                                     </label>
                                 </div>
                             </div>
@@ -37,7 +46,7 @@
                 <label for="no_telepon">Status Penjemputan</label>
                 <!-- <textarea id="konten" name="konten" class="form-control" rows="10" placeholder="Enter description"></textarea> -->
                 <!-- <input type="text" class="form-control" id="status_penjemputan" rows="10" placeholder="masukan Status Penjemputan" name="konten" required value="{{$item['status_penjemputan']}}">
-            </div> --> 
+            </div> -->
 
             <button type="submit" class="btn btn-warning btn-xs "> Save</button>
 
