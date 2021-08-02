@@ -56,15 +56,32 @@
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav> 
-                                        <ul id="navigation">    
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>                                                                                      
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <li class="nav-right">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                  <!-- USER INFO -->
+                                                  <li class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f15f22"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px; color:#000"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu" style="background-color: #f15f22">
+                                                    <li> <a href="/logout">Logout  </a> </li>
+                                                    <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
+                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    </ul>
+                                                  </li>
+                                                @else
+                                                    <a class="btn btn-default" href="/login">Login</a>
+
+                                                  @endif
+
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -73,7 +90,7 @@
                                     <a href="/logout" class="btn header-btn">Login</a>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -97,7 +114,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li> 
+                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -115,7 +132,7 @@
                         <div class="about-caption mb-50">
                         </div>
                     </div>
-                    
+
                     <div class="col-md-12">
                         <div class="section-tittle mb-35">
                             <h4>Form Pengajuan Penjemputan Sampah Organik</h4>
@@ -126,7 +143,7 @@
                             <div class="contact-right formulir_">
                             <form method="post" action="/sampahorganik" enctype="multipart/form-data" >
                         @csrf
-        
+
                             <div class="form-group">
                                 <label for="">Nama</label>
                                 <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
@@ -148,7 +165,7 @@
                                 <label for="">foto Sampah Organik</label>
                                 <input type="file"  id=""  name="image" required>
                             </div><br>
-                            
+
                             <form method="post" action="" enctype="multipart/form-data">
 
                             <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
@@ -159,7 +176,7 @@
                 </div>
             </div>
         </div>
-       
+
     </main>
     <footer>
     <!--? Footer Start-->
@@ -167,7 +184,7 @@
         <div class="container">
             <div class="footer-top footer-padding">
                 <!-- footer Heading -->
-                
+
                 <!-- Footer Menu -->
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -178,7 +195,7 @@
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -277,17 +294,17 @@
 		<!-- Nice-select, sticky -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.nice-select.min.js"></script>
 		<script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.sticky.js"></script>
-        
+
         <!-- contact js -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/contact.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.form.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.validate.min.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/mail-script.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/jquery.ajaxchimp.min.js"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('logisticexpress-master')}}./assets/js/plugins.js"></script>
         <script src="{{ asset('logisticexpress-master')}}./assets/js/main.js"></script>
-        
+
     </body>
 </html>

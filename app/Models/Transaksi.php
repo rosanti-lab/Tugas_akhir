@@ -14,7 +14,7 @@ class Transaksi extends Model
     }
 
     protected $fillable = [
-        'name', 'alamat', 'telephon', 'berat', 'bukti_tf','jasa_pengiriman'
+        'name', 'alamat', 'telephon', 'berat', 'berat_produk', 'bukti_tf','jasa_pengiriman'
     ];
 
 }

@@ -64,8 +64,8 @@
 
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="                                <input id="alamat" type="Alamat Lengkap" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat">
-                                " type="alamat" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat">
+                                <input id="alamat" type="Alamat Lengkap" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat">
+                                {{-- " type="alamat" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat"> --}}
 
                                 @error('alamat')
                                     <span class="invalid-feedback" role="alert">

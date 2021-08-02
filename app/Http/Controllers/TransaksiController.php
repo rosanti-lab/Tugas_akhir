@@ -114,6 +114,7 @@ class TransaksiController extends Controller
             'name' => 'required',
             'alamat' => 'required',
             'telephon' => 'required',
+            'berat_produk' => 'required',
             'berat' => 'required',
             'jasa_pengiriman' => 'required',
             'bukti_tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

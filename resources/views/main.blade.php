@@ -55,7 +55,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropwown-toggle" data-toggle="dropdown" arial-haspopup="true" ariaa-expanded="false"><i class="menu-icon fa fa laptop"></i>Website </a>
                         <ul class= "sub-menu children dropdown-menu">
-                                <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('admin')}}"> Admin </a></li>
+                                <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('admin')}}"> Users </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('profil')}}"> Profil </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('about')}}"> About </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infosampah')}}"> Info Sampah Organik </a></li>

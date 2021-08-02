@@ -64,24 +64,23 @@
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <div class="nav-left">
+                                            <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
                                                   <!-- USER INFO -->
-                                                  <li class="btn btn-default" class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px;"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
-                                                    <ul class="dropdown-menu">
-                                                    <li> <a  href="/logout">Logout </a> </li>
-                                                    <li><a href="/profil">Lihat Profil </a></li>
+                                                  <li class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f15f22"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px; color:#000"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu" style="background-color: #f15f22">
+                                                    <li> <a href="/logout">Logout  </a> </li>
+                                                    <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
                                                       <li><a href="/logoutc">LOG OUT</a></li>
                                                     </ul>
                                                   </li>
                                                 @else
                                                     <a class="btn btn-default" href="/login">Login</a>
-                                                                {{-- </div>
-                                                                 </li> --}}
+
                                                   @endif
-                                                {{-- </ul> --}}
-                                            </div>
+
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>

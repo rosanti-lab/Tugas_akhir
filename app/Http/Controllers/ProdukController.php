@@ -29,7 +29,7 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::where('id_produk',$id)->FirstOrFail();
-        $produk = DB::table('produk')->where('id_produk',$id)->get();
+        $produk = DB::table('produks')->where('id_produk',$id)->get();
         return view('produk.edit',compact('produk','produk'));
     }
 

@@ -48,8 +48,8 @@
                                 <th>Nama </th>
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
-                                {{-- <th>Jenis Maggot </th> --}}
-                                <th>Berat (kg) </th>
+                                <th>Berat Produk </th>
+                                <th>Berat (Kurir) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
                                 <th>Status Pengiriman</th>
@@ -65,7 +65,7 @@
                                     <td>{{ $item->name}}</td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
-                                    {{-- <td>{{ $item->jenis_maggot}}</td> --}}
+                                    <td>{{ $item->berat_produk}}</td>
                                     <td>{{ $item->berat}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>

@@ -77,13 +77,30 @@
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
+                                            <li class="nav-right">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                  <!-- USER INFO -->
+                                                  <li class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f15f22"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px; color:#000"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu" style="background-color: #f15f22">
+                                                    <li> <a href="/logout">Logout  </a> </li>
+                                                    <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
+                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    </ul>
+                                                  </li>
+                                                @else
+                                                    <a class="btn btn-default" href="/login">Login</a>
+
+                                                  @endif
+
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                {{-- <div class="header-right-btn d-none d-lg-block ml-20">
                                     <a href="/logout" class="btn header-btn">Login</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -116,9 +133,12 @@
                                    Nama           :   {{ $detail->name}}
                                    Alamat         :   {{ $detail->alamat}}
                                    Telephone      :   {{ $detail->telephon}}
-                                   Berat          :   {{ $detail->berat}}
+                                   Berat Produk   :   {{ $detail->berat_produk}}
                                    Jasa Pengiriman:   {{ $detail->jasa_pengiriman}}
                                    Bukti Transfer :   {{ $detail->bukti_tf}}
+                                   Harga          :    @currency($detail->harga)
+
+
                                   </pre>
 
                                 @endif
@@ -131,7 +151,11 @@
             </div>
         </div>
 
-
+        <div class="pull-right">
+            <a href="{{ url('daftar-pesanan') }}" class="btn btn-secondary btn-sm">
+                <i class="fa fa-undo"></i>Back
+            </a>
+        </div>
             @section('footer')
 
     </main>

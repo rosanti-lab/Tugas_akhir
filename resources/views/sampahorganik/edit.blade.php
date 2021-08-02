@@ -9,8 +9,8 @@
     </div>
     <div class="card-body card-block">
         <form method="post" action="/sampahorganik/update/{{$item->id}}">
-        <!-- {{ csrf_field() }}
-        {{ method_field('PUT') }} -->
+        {{-- <!-- {{ csrf_field() }}
+        {{ method_field('PUT') }} --> --}}
         @method('patch')
 	@csrf
 
@@ -30,7 +30,7 @@
                                     </label>
                                     <label class="radio radio-inline m-r-20">
                                         <input type="radio" name="status_penjemputan" value="N">
-                                        <i class="input-helper"></i> Belum 
+                                        <i class="input-helper"></i> Belum
                                     </label>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                 <label for="no_telepon">Status Penjemputan</label>
                 <!-- <textarea id="konten" name="konten" class="form-control" rows="10" placeholder="Enter description"></textarea> -->
                 <!-- <input type="text" class="form-control" id="status_penjemputan" rows="10" placeholder="masukan Status Penjemputan" name="konten" required value="{{$item['status_penjemputan']}}">
-            </div> --> 
+            </div> -->
 
             <button type="submit" class="btn btn-warning btn-xs "> Save</button>
 

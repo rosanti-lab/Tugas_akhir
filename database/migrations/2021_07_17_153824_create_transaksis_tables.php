@@ -19,6 +19,7 @@ class CreateTransaksisTables extends Migration
             $table->string('alamat');
             $table->string('telephon');
             $table->string('jenis_maggot');
+            $table->string('berat_produk');
             $table->string('berat');
             $table->text('bukti_tf');
             $table->string('jasa_pengiriman');

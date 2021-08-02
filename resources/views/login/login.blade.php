@@ -4,7 +4,7 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<!-- <link rel="icon" type="image/png" href="{{asset('loginn/images/icons/favicon.ico')}}"/> -->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/bootstrap/css/bootstrap.min.css')}}">
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/animate/animate.css')}}">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/css-hamburgers/hamburgers.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('loginn/vendor/select2/select2.min.css')}}">
@@ -24,12 +24,14 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+                {{-- <li><a href="/"><img src="assets/img/logo_wiralodra.jpg" alt="" style="width: 30%" ></a></li> --}}
 				<form class="login100-form validate-form" action="{{route('postlogin')}}" method="POST">
                 @csrf
+                {{-- <li><a href="/"><img src="assets/img/logo_wiralodra.jpg" alt="" style="width: 30%" ></a></li> --}}
 					<span class="login100-form-title p-b-55">
 						Login
 					</span>
@@ -50,8 +52,8 @@
 						</span>
 					</div>
 
-					
-					
+
+
 					<div class="container-login100-form-btn p-t-25">
 						<button class="login100-form-btn">
 							Login
@@ -62,18 +64,18 @@
 							Belum punya akun?
 						</span>
 						<a class="txt1 bo1 hov1" href="/daftar">
-							Register Sekarang						
+							Register Sekarang
 						</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
-	
 
-	
-<!--===============================================================================================-->	
+
+
+
+<!--===============================================================================================-->
 	<script src="{{asset('loginn/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('loginn/vendor/bootstrap/js/popper.js')}}"></script>

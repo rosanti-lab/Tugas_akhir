@@ -24,8 +24,9 @@
                             {{-- <div class="about-font-img">
                                 <img src="{{ asset('assets/img/' . $produk->image) }}" alt="" style="width: 500px" Height="400px" alt =""> --}}
                             </div>
-                            <div class="about-back-img d-none d-lg-block">
-                                <img src="assets/img/gallery/about1.png" alt="">
+                            <div class="col-lg-6 col-md-12">
+                                {{-- <img src="assets/img/gallery/about1.png" alt=""> --}}
+                                <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 400px" Height="100px" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -55,7 +56,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Berat Produk </label>
-                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="berat" required>
+                                <input type="text" class="form-control" id="" placeholder="masukan berat produk " name="berat_produk" required>
                             </div>
                     <div class="row">
                         <div class="col-md-3">
