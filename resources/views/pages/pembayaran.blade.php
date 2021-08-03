@@ -85,7 +85,7 @@
                                                     <ul class="dropdown-menu" style="background-color: #f15f22">
                                                     <li> <a href="/logout">Logout  </a> </li>
                                                     <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
-                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    <li><a href="/daftar-pengajuan">Pengajuan Penjemputan Sampah</a></li>
                                                     </ul>
                                                   </li>
                                                 @else
@@ -132,7 +132,7 @@
             @csrf
         <div>
             <label for="bukti">Upload Bukti Pembayaran</label><br>
-            <input type="file"  id="bukti"  name="bukti" required>
+            <input type="file"  id="bukti"  name="bukti_tf" required>
           </div><br>
 
           {{-- <form method="post" action="/pembayaran_store/{{$item['id']}}" enctype="multipart/form-data"> --}}

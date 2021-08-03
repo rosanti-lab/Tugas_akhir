@@ -85,7 +85,7 @@
                                                     <ul class="dropdown-menu" style="background-color: #f15f22">
                                                     <li> <a href="/logout">Logout  </a> </li>
                                                     <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
-                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    <li><a href="/daftar-pengajuan">Pengajuan Penjemputan Sampah</a></li>
                                                     </ul>
                                                   </li>
                                                 @else
@@ -133,10 +133,12 @@
                                    Nama           :   {{ $detail->name}}
                                    Alamat         :   {{ $detail->alamat}}
                                    Telephone      :   {{ $detail->telephon}}
+                                   Nama Produk    :   {{ $detail->nama}}
                                    Berat Produk   :   {{ $detail->berat_produk}}
                                    Jasa Pengiriman:   {{ $detail->jasa_pengiriman}}
-                                   Bukti Transfer :   {{ $detail->bukti_tf}}
-                                   Harga          :    @currency($detail->harga)
+                                   Bukti Transfer :   <img src="{{ asset('public/assets/bukti_tf/' . $detail->bukti_tf) }}" alt="" style="width: 10%">
+                                   {{-- Bukti Transfer :    <img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"> --}}
+                                   Harga          :   {{ $detail->harga}}
 
 
                                   </pre>

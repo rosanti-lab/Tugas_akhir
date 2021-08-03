@@ -127,37 +127,40 @@
                             <thead>
                               <tr style="background:#fff;">
                                       <th scope="col">Nama Pelanggan</th>
-                                      <th scope="col">Status Pengiriman</th>
-                                      <th scope="col">Detail</th>
-                                      <th scope="col">Pembayaran</th>
+                                      <th scope="col">Tanggal Pengajuan</th>
+                                      <th scope="col">Tanggal Penjemputan</th>
+                                      <th scope="col">Status Penjemputan</th>
+                                      {{-- <th scope="col">Detail</th>
+                                      <th scope="col">Pembayaran</th> --}}
                                   </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($pesanan as $item)
+                                @foreach($pengajuan as $item)
                                   <tr style="background:#fff;">
 
                                     <td >{{ $item->name}}</td>
-                                    {{-- <td >{{ $item->status_pengiriman}}</td> --}}
+                                    <td >{{ $item->created_at}}</td>
+                                    <td >{{ $item->tanggal}}</td>
                                     <td >
-                                    @if($item->status_pengiriman=="Pending")
-                                          <a class="btn btn-xs btn-danger">{{ $item->status_pengiriman}}</a>
-                                    @elseif ($item->status_pengiriman=="Proses Pengiriman")
-                                          <a class="btn btn-xs btn-success">{{ $item->status_pengiriman}}</a>
+                                    @if($item->status_penjemputan=="menunggu")
+                                          <a class="btn btn-xs btn-danger">{{ $item->status_penjemputan}}</a>
+                                    @elseif ($item->status_pengiriman=="Menuju Tempat")
+                                          <a class="btn btn-xs btn-success">{{ $item->status_penjemputan}}</a>
                                     @else
-                                          <a class="btn btn-xs btn-warning">{{ $item->status_pengiriman}}</a>
+                                          <a class="btn btn-xs btn-warning">{{ $item->status_penjemputan}}</a>
                                     @endif
 
-                                          </td>
-                                          <td ><a class="btn btn-primary" href="/detail-pesanan/{{$item['id']}}">detail</a></td>
+                                          {{-- </td>
+                                          <td ><a class="btn btn-primary" href="/detail-pesanan/{{$item['id']}}">detail</a></td> --}}
 
-                                    <td >
+                                    {{-- <td >
                                         @if($item->status_pengiriman=="Pending")
                                           <a href="/pembayaran/{{$item['id']}}" class="btn btn-xs btn-danger">kirim bukti pembayaran</a>
                                         @else
                                           <a  class="btn btn-xs btn-success">Sudah Kirim pembayaran</a>
 
                                         @endif
-                                    </td>
+                                    </td> --}}
                                     @endforeach
                                   </tr>
                                 </tbody>

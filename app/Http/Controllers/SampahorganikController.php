@@ -68,8 +68,15 @@ class SampahorganikController extends Controller
         }
         Sampahorganik::create($input);
 
-        return redirect('/pengajuan');
+        return redirect('/daftar-pengajuan');
 
+    }
+
+    public function daftarPengajuan()
+    {
+        $pengajuan =Sampahorganik::where('name',auth()->user()->name)->get();
+        return view('pages.daftar_pengajuan',compact('pengajuan'));
+        // dd($pesanan);
     }
 
 

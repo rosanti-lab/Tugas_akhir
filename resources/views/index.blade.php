@@ -72,7 +72,7 @@
                                                     <ul class="dropdown-menu" style="background-color: #f15f22">
                                                     <li> <a href="/logout">Logout  </a> </li>
                                                     <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
-                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    <li><a href="/daftar-pengajuan">Pengajuan Penjemputan Sampah</a></li>
                                                     </ul>
                                                   </li>
                                                 @else

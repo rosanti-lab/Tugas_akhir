@@ -77,7 +77,7 @@
                                                     <ul class="dropdown-menu" style="background-color: #f15f22">
                                                     <li> <a href="/logout">Logout  </a> </li>
                                                     <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
-                                                      <li><a href="/logoutc">LOG OUT</a></li>
+                                                    <li><a href="/daftar-pengajuan">Pengajuan Penjemputan Sampah</a></li>
                                                     </ul>
                                                   </li>
                                                 @else
@@ -156,7 +156,7 @@
                         {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
                         {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
                         <span><p style="font-size:15px; font-style:bold;">{{$produk->harga}}</p><span>
-                        <a href="form_transaksi" class="btn">Beli Sekarang</a>
+                        <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>
 
                     </div>
                 </div>
@@ -167,12 +167,9 @@
                 <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
                     {{-- <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a> --}}
                     <div class="tm-paging d-flex">
-                        {{-- <a href="javascript:void(0);" class="active tm-paging-link">1</a>
-                        <a href="javascript:void(0);" class="tm-paging-link">2</a>
-                        <a href="javascript:void(0);" class="tm-paging-link">3</a>
-                        <a href="javascript:void(0);" class="tm-paging-link">4</a> --}}
+
                     </div>
-                    {{-- <a href="javascript:void(0);" class="btn btn-primary tm-btn-next">Next Page</a> --}}
+
                 </div>
             </div>
         </div>
@@ -260,7 +257,7 @@
                     <div class="col-lg-12">
                         <div class="footer-copy-right text-center">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  {{-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> --}}
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>

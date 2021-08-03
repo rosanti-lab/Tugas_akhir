@@ -19,21 +19,14 @@
                 <input type="text" class="form-control" id="berat" placeholder="masukan berat" name="berat" required value="{{$item['berat']}}">
             </div>
             <div class="col-md-4">
-                            <div class="form-group">
-                                <div class="fg-line">
-                                    <div class="m-b-10">
-                                        <label>Status Penjemputan</label>
-                                    </div>
-                                    <label class="radio radio-inline m-r-20">
-                                        <input type="radio" name="status_penjemputan" value="Y" checked>
-                                        <i class="input-helper"></i> Selesai
-                                    </label>
-                                    <label class="radio radio-inline m-r-20">
-                                        <input type="radio" name="status_penjemputan" value="N">
-                                        <i class="input-helper"></i> Belum
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="status">Status Penjemputan</label>
+                            <select name="status_pengiriman" class="form-control" >
+                            <option selected='selected'>{{$item->status_penjemputan}}</option>
+                                    <option value="Menunggu">Menunggu</option>
+                                    <option value="Proses Penjemputan">Proses Penjemputan</option>
+                                    <option value="selesai">Selesai</option>
+                            </select>
                         </div>
             <!-- <div class="form-group">
                 <label for="no_telepon">Status Penjemputan</label>

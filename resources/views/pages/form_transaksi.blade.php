@@ -36,7 +36,7 @@
                                 <h4>Form Transaksi Maggot Wiralodra</h4>
                             </div>
                             <div class="contact-right formulir_">
-                            <form method="post" action="transaksi" enctype="multipart/form-data" >
+                            <form method="post" action="/transaksi" enctype="multipart/form-data" >
 
                     <div class="col-lg-6 col-md-12">
                                     <!-- about-img -->
@@ -49,6 +49,7 @@
                             <div class="form-group">
                                 <label for="">Alamat Lengkap</label>
                                 <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" value="{{auth()->user()->alamat}}">
+                                <input type="hidden" class="form-control" id="" placeholder="masukan alamat lengkap " name="id_produk" value="{{$produk[0]->id_produk}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Nomor Telepon </label>
@@ -141,12 +142,14 @@
                         </div>
                     </div>
 
-                    <form method="post" action="" enctype="multipart/form-data">
+                    {{-- <form method="post" action="" enctype="multipart/form-data">
 
                         <div>
                             <label for="">Bukti Pembayaran</label>
                             <input type="file"  id=""  name="bukti_tf" required>
-                        </div><br>
+                        </div>
+                        <br>
+                    </form> --}}
                         <form method="post" action="" enctype="multipart/form-data">
 
                         <button type="submit" class="btn btn-warning btn-xs bayar"> Order</button>

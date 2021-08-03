@@ -49,7 +49,7 @@
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
                                 <th>Berat Produk </th>
-                                {{-- <th>Nama Produk </th> --}}
+                                <th>Nama Produk </th>
                                 <th>Berat (Kurir) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
@@ -60,14 +60,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $transaksi as $item)
+                            @foreach ( $barang_terjual as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->name}}</td>
+
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
-                                    <td>{{ $item->berat_produk}}</td>
-                                    {{-- <td>{{ $item->nama}}</td> --}}
+                                    <td>{{ $item->berat_produk}}</td> --}}
+                                    <td>{{ $item->nama}}</td>
                                     <td>{{ $item->berat}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
@@ -79,8 +80,8 @@
                                         <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
                                             <i class=""></i>Delete
                                         </a>
-                                    </td>
-                                    {{-- <td>{{ $item->status_transaksi}}</td> --}}
+                                    </td> --}}
+                                    <td>{{ $item->status_transaksi}}</td>
 
                                 </tr>
                             @endforeach

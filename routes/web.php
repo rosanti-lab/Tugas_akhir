@@ -48,15 +48,18 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
 });
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::get('/form_pengajuan', 'PengajuanController@form');
+    //Route::get('/daftar-pengajuan', 'TransaksiController@daftarPenjemputan');
 });
 //===================================================================================
+
+Route::get('/daftar-pengajuan', 'SampahorganikController@daftarPengajuan');
 
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::post('transaksi', 'TransaksiController@tambahdata');
 });
 
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
-    // Route::get('form_transaksi/{id}', 'TransaksiController@tambahdata');
+    Route::get('form_transaksi/{id_produk}', 'TransaksiController@form');
 
 });
 
@@ -67,7 +70,7 @@ Route::post('/app/checkongkir', 'HomeController@check_ongkir');
 Route::get('/form_transaksi', 'TransaksiController@data1');
 Route::get('/form_transaksi/province/{id}/cities', 'TransaksiController@getCities');
 Route::post('/form_transaksi/checkongkir', 'TransaksiController@check_ongkir');
-
+Route::get('form_transaksi/{id}', 'TransaksiController@form');
 Route::get('/pembelian', 'PembelihomeController@data1');
 Route::get('/pembelian/province/{id}/cities', 'PembelihomeController@getCities');
 Route::post('/pembelian/checkongkir', 'PembelihomeController@check_ongkir');
