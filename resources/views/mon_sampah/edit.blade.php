@@ -9,7 +9,7 @@
     </div>
     <div class="card-body card-block">
         <form method="post" action="/mon_sampah/update/{{$item->id}}">
-       
+
         @method('patch')
 	@csrf
             <div class="form-group">
@@ -18,7 +18,16 @@
             </div>
 
             <div class="col-md-4">
-                            <div class="form-group">
+                <div class="form-group">
+                    <label for="status">Status Monitoring</label>
+                    <select name="status_monitoring" class="form-control" >
+                    <option selected='selected'>{{$item->status_monitoring}}</option>
+                            <option value="Ditunda">Ditunda</option>
+
+                            <option value="selesai">Selesai</option>
+                    </select>
+                </div>
+                            {{-- <div class="form-group">
                                 <div class="fg-line">
                                     <div class="m-b-10">
                                         <label>Status Monitoring</label>
@@ -29,10 +38,10 @@
                                     </label>
                                     <label class="radio radio-inline m-r-20">
                                         <input type="radio" name="status_monitoring" value="N">
-                                        <i class="input-helper"></i> Belum 
+                                        <i class="input-helper"></i> Belum
                                     </label>
                                 </div>
-                            </div>
+                            </div> --}}
                 </div>
 
             <button type="submit" class="btn btn-warning btn-xs "> Edit</button>
@@ -44,6 +53,6 @@
   </div>
 
 
-        
-      
+
+
 @endsection

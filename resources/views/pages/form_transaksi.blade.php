@@ -65,8 +65,8 @@
                             <div class="form-group">
                                 <label for="">Jumlah Pembelian</label>
                                 <select class="form-control" id="" name="berat_produk">
-                                  <option>1 Pack</option>
-                                  <option>2 Pack</option>
+                                  <option>1</option>Pack
+                                  <option>2</option>Pack
                                   {{-- <option>20</option>
                                   <option>25</option> --}}
                                 </select>
@@ -83,12 +83,12 @@
                                     <hr>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">PROVINSI ASAL</label>
-                                        <select class="form-control provinsi-asal" name="province_origin">
+                                        <label class="form-control provinsi-asal" name="province_origin">
                                             <option value="9">Jawa Barat</option>
                                             {{-- @foreach ($provinces as $province => $value) --}}
                                                 {{-- <option value="{{ $provinces[9]  }}">{{ $provinces[9] }}</option> --}}
                                             {{-- @endforeach --}}
-                                        </select>
+                                        </label>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">KOTA / KABUPATEN ASAL</label>

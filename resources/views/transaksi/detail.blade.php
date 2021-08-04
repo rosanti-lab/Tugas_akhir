@@ -8,34 +8,38 @@
         <strong>Detail Data Pembeli</strong>
     </div>
     <div class="card-body card-block">
-        {{-- <form method="post" action="/transaksi/update/{{$item->id_info_sampah}}">
-        <!-- {{ csrf_field() }}
+        <form method="post" action="transaksi/details/{{$details->id_produk}}">
+        {{-- <!-- {{ csrf_field() }}
         {{ method_field('PUT') }} --> --}}
         @method('patch')
 	@csrf
+    <tr>
+        <th>Nama Customer</th>
+        <td>{{ $details->name}}</td>
+    </tr>
             <div class="form-group">
                 <label for="">Nama</label>
-                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="name" name="name" required value="{{$barang_terjual['name']}}">
+                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="name" name="name" required value="{{$details['name']}}">
             </div>
             <div class="form-group">
                 <label for="">Alamat</label>
-                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="alamat" name="alamat" required value="{{$barang_terjual['alamat']}}">
+                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="alamat" name="alamat" required value="{{$details['alamat']}}">
             </div>
             <div class="form-group">
                 <label for="">Nomor Telepon</label>
-                <input type="number" class="form-control" disabled required="inputan tidak boleh kosong" id="telepon" name="telepon" required value="{{$barang_terjual['telepon']}}">
+                <input type="number" class="form-control" disabled required="inputan tidak boleh kosong" id="telepon" name="telepon" required value="{{$details['telepon']}}">
             </div>
             <div class="form-group">
                 <label for="">Nama Produk</label>
-                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="nama" name="name" required value="{{$barang_terjual['name']}}">
+                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="nama" name="name" required value="{{$details['name']}}">
             </div>
             <div class="form-group">
                 <label for="nama_produk">Berat Produk</label>
-                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="berat_produk" name="berat_produk" required value="{{$barang_terjual['berat_produk']}}">
+                <input type="text" class="form-control" disabled required="inputan tidak boleh kosong" id="berat_produk" name="berat_produk" required value="{{$details['berat_produk']}}">
             </div>
             <div class="form-group">
                 <label for="">Berat (Kurir)</label>
-                <input type="number" class="form-control" disabled required="inputan tidak boleh kosong" id="berat" name="berat" required value="{{$barang_terjual['berat']}}">
+                <input type="number" class="form-control" disabled required="inputan tidak boleh kosong" id="berat" name="berat" required value="{{$details['berat']}}">
             </div>
             <div class="form-group">
                 <label for="">Jasa Pengiriman</label>

@@ -56,7 +56,7 @@
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
                                 <th>Nama Produk </th>
-                                <th>Berat Produk </th>
+                                <th>Jumlah Pembelian </th>
                                 <th>Berat (Kurir) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
@@ -73,7 +73,7 @@
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
                                     <td>{{ $item->nama}}</td>
-                                    <td>{{ $item->berat_produk}}</td>
+                                    <td>{{ $item->berat_produk}} Pack</td>
                                     <td>{{ $item->berat}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
@@ -82,7 +82,11 @@
                                         <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
-                                        <a href="{{ url('transaksi/detail/' .$item->id) }}" class="btn btn-danger btn-sm">
+                                        <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
+                                            <i class=""></i>Hapus
+                                        </a>
+                                        <br>
+                                        <a href="{{ url('transaksi/details/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Detail
                                         </a>
                                     </td>

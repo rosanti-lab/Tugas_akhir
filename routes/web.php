@@ -152,10 +152,14 @@ Route::post('/edulevels', 'PengajuanController@pengajuan')->middleware('auth');
 
 Route::get('/transaksi', 'TransaksiController@data');
 Route::get('/transaksi/barang_terjual/{id}', 'TransaksiController@barang_terjual');
-Route::get('/transaksi/detail/{id}', 'TransaksiController@details');
+Route::get('/transaksi/details/{id_produk}', 'TransaksiController@details');
 Route::get('transaksi/edit/{id}', 'TransaksiController@edit');
 Route::get('/transaksi/destroy/{id}', 'TransaksiController@destroy');
 Route::patch('/transaksi/update/{id}', 'TransaksiController@update');
+
+
+Route::get('/mon_transaksi', 'TransaksiController@data');
+
 
 Route::get('/transaksi_userlogin', 'TransaksiController@index_userlogin');
 

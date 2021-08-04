@@ -100,11 +100,11 @@ class TransaksiController extends Controller
     public function details($id)
     {
         //$transaksi = DB::table('transaksi')->get();
-        $barang_terjual =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
+        $details =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->get();
         // dd($transaksi);
 
         // return $edulevels;
-        return view('transaksi.barang_terjual', ['barang_terjual' =>$barang_terjual]);
+        return view('transaksi.detail', ['details' =>$details]);
     }
 
     public function edit($id)
@@ -129,6 +129,7 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::where('id',$id);
         $transaksi->delete();
+        //return redirect('/barang_terjual');
         return redirect('/transaksi');
     }
 

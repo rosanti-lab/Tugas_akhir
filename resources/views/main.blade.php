@@ -76,7 +76,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Monitoring</a>
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-puzzle-piece"></i><a href="{{ url ('mon_sampah')}}">Sampah Organik</a></li>
-                                <li><i class="fa fa-puzzle-piece"></i><a href="">Transaksi Maggot</a></li>
+                                <li><i class="fa fa-puzzle-piece"></i><a href="{{ url ('mon_transaksi')}}">Transaksi Maggot</a></li>
                             </ul>
                     </li>
 

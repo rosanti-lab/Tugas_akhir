@@ -25,7 +25,7 @@
 @endsection
 
 @section('content')
-        <div class="content mt-3"> 
+        <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="card">
                     <div class ="card-header">
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <div class="fg-line">
                                 <label>Minggu Ke-</label>
-                                <input type="text" name="hari" class="form-control" placeholder="Enter title" maxlength="150" required="require" autofocus>
+                                <input type="number" name="hari" class="form-control" placeholder="Enter title" maxlength="150" required="require" autofocus>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <div class="fg-line">
                                     <label>Total Sampah Organik</label>
-                                    <textarea id="text" name="total_sampah" class="form-control" rows="10" placeholder="Enter description"></textarea>
+                                    <input id="number" name="total_sampah" class="form-control"  placeholder="Enter description"maxlength="150" required="require" autofocus>
                                 </div>
                             </div>
                         </div>
@@ -94,9 +94,9 @@
 
                         </form>
                     </div>
-                    
+
                     </div>
-                        
+
                     </div>
                 </div>
 
@@ -105,4 +105,3 @@
         </div>
 
 @endsection
-      

@@ -137,10 +137,12 @@
                                    Jumlah Pembelian :   {{ $detail->berat_produk}}
                                    Jasa Pengiriman  :   {{ $detail->jasa_pengiriman}}
                                    Bukti Transfer   :   <img src="{{ asset('public/assets/bukti_tf/' . $detail->bukti_tf) }}" alt="" style="width: 10%">
-                                   {{-- Bukti Transfer :    <img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"> --}}
-                                   Harga            :   Rp. {{ $detail->harga}}
+                                   Harga            :   Rp. {{ $detail->harga * $detail->berat_produk}}
                                    Ongkos Kirim     :   Rp. {{ $detail->ongkir}}
-                                   Total Pembayaran :   Rp. {{ $detail->harga + $detail->ongkir}}
+                                   <pre>
+                                                                    Total Pembayaran :   Rp. {{ $detail->harga + $detail->ongkir}}
+                                   </pre>
+
 
 
                                   </pre>
