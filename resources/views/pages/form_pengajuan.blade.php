@@ -146,11 +146,11 @@
 
                             <div class="form-group">
                                 <label for="">Nama</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
+                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required value="{{auth()->user()->name}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat Lengkap</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" required>
+                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" value="{{auth()->user()->alamat}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Nomor Telepon </label>

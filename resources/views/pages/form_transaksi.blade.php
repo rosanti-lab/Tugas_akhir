@@ -26,7 +26,10 @@
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 {{-- <img src="assets/img/gallery/about1.png" alt=""> --}}
-                                <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 400px" Height="100px" class="img-fluid">
+                                <img src="{{ asset('assets/img/' . $produk[0]->image) }}" alt="" style="width: 500px" Height="400px" alt ="">
+                                <h2>{{$produk[0]->nama}}</h2>
+                                <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->deskripsi}}</p><span>
+                                {{-- <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 400px" Height="100px" class="img-fluid"> --}}
                             </div>
                         </div>
                     </div>
@@ -55,10 +58,23 @@
                                 <label for="">Nomor Telepon </label>
                                 <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
                             </div>
+                            {{-- <div class="form-group">
+                                <label for="">Nomor Telepon </label>
+                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
+                            </div> --}}
                             <div class="form-group">
+                                <label for="">Jumlah Pembelian</label>
+                                <select class="form-control" id="" name="berat_produk">
+                                  <option>1 Pack</option>
+                                  <option>2 Pack</option>
+                                  {{-- <option>20</option>
+                                  <option>25</option> --}}
+                                </select>
+                              </div>
+                            {{-- <div class="form-group">
                                 <label for="">Berat Produk </label>
                                 <input type="text" class="form-control" id="" placeholder="masukan berat produk " name="berat_produk" required>
-                            </div>
+                            </div> --}}
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card">
@@ -68,16 +84,16 @@
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">PROVINSI ASAL</label>
                                         <select class="form-control provinsi-asal" name="province_origin">
-                                            <option value="0">-- pilih provinsi asal --</option>
-                                            @foreach ($provinces as $province => $value)
-                                                <option value="{{ $province  }}">{{ $value }}</option>
-                                            @endforeach
+                                            <option value="9">Jawa Barat</option>
+                                            {{-- @foreach ($provinces as $province => $value) --}}
+                                                {{-- <option value="{{ $provinces[9]  }}">{{ $provinces[9] }}</option> --}}
+                                            {{-- @endforeach --}}
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">KOTA / KABUPATEN ASAL</label>
                                         <select class="form-control kota-asal" name="city_origin">
-                                            <option value="">-- pilih kota asal --</option>
+                                            <option value="149">Indramayu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -122,7 +138,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">BERAT (GRAM)</label>
-                                        <input type="number" class="form-control" name="berat" id="weight" placeholder="Masukkan Berat (GRAM)">
+                                        <input type="text" class="form-control" value="1000" name="berat" id="weight">
                                     </div>
                                 </div>
                             </div>
@@ -157,15 +173,15 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->
-                    <div class="about-img ">
+                    {{-- <div class="about-img ">
                         <div class="about-font-img">
                             {{-- <img src="{{ asset('assets/img/' . $item->photo) }}" alt="" style="width: 500px" Height="400px" alt =""> --}}
-                            <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 200px" Height="100px" class="img-fluid">
+                            {{-- <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 200px" Height="100px" class="img-fluid">
                         </div>
                         <div class="about-back-img d-none d-lg-block">
                             <img src="assets/img/gallery/about1.png" alt="">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -177,147 +193,7 @@
 
 
 
-<div class="container-fluid mt-5">
-    <div class="col-md-12" style="width: 45%">
-        {{-- <div class="section-tittle mb-35">
-            <h4>Form Transaksi Maggot Wiralodra</h4>
-        </div> --}}
-    </div>
-    {{-- <div class="col-lg-6 col-md-12">
-        <!-- about-img -->
-        <div class="about-img ">
-            <div class="about-font-img">
-                <img src="{{ asset('assets/img/' . $produk->image) }}" alt="" style="width: 500px" Height="400px" alt ="">
-            </div>
-            <div class="about-back-img d-none d-lg-block">
-                <img src="assets/img/gallery/about1.png" alt="">
-            </div>
-        </div>
-    </div>
-        <!-- about-img -->
-        <div class="about-img ">
-            <div class="contact-right formulir_">
-            <form method="post" action="/transaksi" enctype="multipart/form-data" >
-    <div class="col-lg-6 col-md-12">
-                    <!-- about-img -->
-    <div class="about-img ">
-        @csrf
-            <div class="form-group">
-                <label for="">Nama</label>
-                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="">Alamat Lengkap</label>
-                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" required>
-            </div>
-            <div class="form-group">
-                <label for="">Nomor Telepon </label>
-                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
-            </div>
-            <div class="form-group">
-                <label for="">Berat Produk </label>
-                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="berat" required>
-            </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5>ORIGIN</h5>
-                    <hr>
-                    <div class="form-group">
-                        <label class="font-weight-bold" style="font-size: 10px">PROVINSI ASAL</label>
-                        <select class="form-control provinsi-asal" name="province_origin">
-                            <option value="0">-- pilih provinsi asal --</option>
-                            @foreach ($provinces as $province => $value)
-                                <option value="{{ $province  }}">{{ $value }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="font-weight-bold" style="font-size: 10px">KOTA / KABUPATEN ASAL</label>
-                        <select class="form-control kota-asal" name="city_origin">
-                            <option value="">-- pilih kota asal --</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5>DESTINATION</h5>
-                    <hr>
-                    <div class="form-group">
-                        <label class="font-weight-bold" style="font-size: 10px">PROVINSI TUJUAN</label>
-                        <select class="form-control provinsi-tujuan" name="province_destination">
-                            <option value="0">-- pilih provinsi tujuan --</option>
-                            @foreach ($provinces as $province => $value)
-                                <option value="{{ $province  }}">{{ $value }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="font-weight-bold" style="font-size: 10px">KOTA / KABUPATEN TUJUAN</label>
-                        <select class="form-control kota-tujuan" name="city_destination">
-                            <option value="">-- pilih kota tujuan --</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5>KURIR</h5>
-                    <hr>
-                    <div class="form-group">
-                        <label>PROVINSI TUJUAN</label>
-                        <select class="form-control kurir" name="jasa_pengiriman">
-                            <option value="0">-- pilih kurir --</option>
-                            <option value="jne">JNE</option>
-                            <option value="j&t">J&T</option>
-                            <option value="sicepat">SICEPAT</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="font-weight-bold" style="font-size: 10px">BERAT (GRAM)</label>
-                        <input type="number" class="form-control" name="berat" id="weight" placeholder="Masukkan Berat (GRAM)">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-md btn-primary btn-block btn-check" style="font-size: 10px">CEK ONGKOS KIRIM</button>
-        </div>
-    </div>
 
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <div class="card d-none ongkir">
-                <div class="card-body">
-                    <ul class="list-group" id="ongkir"></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <form method="post" action="" enctype="multipart/form-data">
-
-        <div>
-            <label for="">Bukti Pembayaran</label>
-            <input type="file"  id=""  name="bukti_tf" required>
-        </div><br>
-        <br>
-        <br>
-
-        <form method="post" action="" enctype="multipart/form-data">
-
-        <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
-    </form> --}}
-</div>
-    </div>
-
-</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -418,7 +294,7 @@
                         $.each(response[0]['costs'], function (key, value) {
                             $('#ongkir').append(`
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ongkir" id="exampleRadios1" value="${response[0].code.toUpperCase()}|${value.service}|${value.cost[0].value}" checked>
+                                <input class="form-check-input" type="radio" name="ongkir" id="exampleRadios1" value="${value.cost[0].value}" checked>
                                 <label class="form-check-label" for="exampleRadios1">
                                     ${response[0].code.toUpperCase()} : <strong> ${value.service} </strong> - Rp. ${value.cost[0].value} (${value.cost[0].etd} hari)
                                 </label>

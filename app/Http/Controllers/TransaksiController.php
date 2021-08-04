@@ -28,12 +28,13 @@ class TransaksiController extends Controller
     {
 
         $form_transaksi = Infotransaksi::all();
+        //$form_transaksi =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
         $couriers = Courier::pluck('title', 'code');
         $provinces = Province::pluck('title', 'province_id');
 
         $produk=Produk::where('id_produk',$id)->get();
 
-        // dd($produk);
+        // dd($couriers);
         // return view('pages.form_transaksi', ['form_transaksi' =>$form_transaksi]);
         return view('pages.form_transaksi', compact('form_transaksi','produk','provinces','couriers'));
     }
@@ -78,10 +79,32 @@ class TransaksiController extends Controller
 
     public function data()
     {
-        $transaksi = DB::table('transaksi')->get();
+        //$transaksi = DB::table('transaksi')->get();
+        $transaksi =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
+        $produk = DB::table('produks')->get();
 
         // return $edulevels;
-        return view('transaksi.data', ['transaksi' =>$transaksi]);
+        return view('transaksi.data', compact('transaksi', 'produk'));
+    }
+
+    public function barang_terjual($id)
+    {
+        //$transaksi = DB::table('transaksi')->get();
+        $barang_terjual =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->get();
+        // dd($transaksi);
+
+        // return $edulevels;
+        return view('transaksi.barang_terjual', ['barang_terjual' =>$barang_terjual]);
+    }
+
+    public function details($id)
+    {
+        //$transaksi = DB::table('transaksi')->get();
+        $barang_terjual =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
+        // dd($transaksi);
+
+        // return $edulevels;
+        return view('transaksi.barang_terjual', ['barang_terjual' =>$barang_terjual]);
     }
 
     public function edit($id)
@@ -121,6 +144,7 @@ class TransaksiController extends Controller
             'berat' => 'required',
             'jasa_pengiriman' => 'required',
             'id_produk' => 'required',
+            'ongkir'    => 'required',
             //'bukti_tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

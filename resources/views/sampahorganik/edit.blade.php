@@ -16,12 +16,12 @@
 
             <div class="form-group">
                 <label for="email">BERAT (KG)</label>
-                <input type="text" class="form-control" id="berat" placeholder="masukan berat" name="berat" required value="{{$item['berat']}}">
+                <input type="number" class="form-control" id="berat" placeholder="masukan berat" name="berat" required value="{{$item['berat']}} ">
             </div>
             <div class="col-md-4">
                         <div class="form-group">
                             <label for="status">Status Penjemputan</label>
-                            <select name="status_pengiriman" class="form-control" >
+                            <select name="status_penjemputan" class="form-control" >
                             <option selected='selected'>{{$item->status_penjemputan}}</option>
                                     <option value="Menunggu">Menunggu</option>
                                     <option value="Proses Penjemputan">Proses Penjemputan</option>

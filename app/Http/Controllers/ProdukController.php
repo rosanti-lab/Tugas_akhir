@@ -22,15 +22,14 @@ class ProdukController extends Controller
     {
         $produk = DB::table('produks')->get();
 
-
         return view('produk.data', ['produk' =>$produk]);
     }
 
     public function edit($id)
     {
-        $produk = Produk::where('id_produk',$id)->FirstOrFail();
+        $item = Produk::where('id_produk',$id)->FirstOrFail();
         $produk = DB::table('produks')->where('id_produk',$id)->get();
-        return view('produk.edit',compact('produk','produk'));
+        return view('produk.edit',compact('produk','item'));
     }
 
     public function update(Request $request, $id)
@@ -38,15 +37,37 @@ class ProdukController extends Controller
         $produk=Produk::where('id_produk',$id)
             ->update([
                 'nama'=>$request->nama,
-                'image'=>$request->image,           //nama dari database->nama dari form input
-                'deskripsi'=>$request->deskripsi,
+                'deskripsi'=>$request->deskripsi,         //nama dari database->nama dari form input
                 'harga'=>$request->harga,
-                'stok'=>$request->stok,
-
 
             ]);
             return redirect('/produk');
     }
+
+
+
+
+    // public function edit($id)
+    // {
+    //     $produk = Produk::where('id_produk',$id)->FirstOrFail();
+    //     $produk = DB::table('produks')->where('id_produk',$id)->get();
+    //     return view('produk.edit',compact('produk','produk'));
+    // }
+
+    // public function update(Request $request, $id)
+    // {
+    //     $produk=Produk::where('id_produk',$id)
+    //         ->update([
+    //             'nama'=>$request->nama,
+    //             'image'=>$request->image,           //nama dari database->nama dari form input
+    //             'deskripsi'=>$request->deskripsi,
+    //             'harga'=>$request->harga,
+    //             'stok'=>$request->stok,
+
+
+    //         ]);
+    //         return redirect('/produk');
+    // }
 
     public function add()
     {

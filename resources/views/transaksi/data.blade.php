@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Data Sampah Organik Yang masuk</strong>
+                            <strong> Data Transaksi Yang masuk</strong>
                         </div>
                         {{-- <div class="pull-right">
                             <a href="" class="btn btn-success btn-sm">
@@ -45,42 +45,45 @@
                         <thead>
                             <tr>
                                 <th>No. </th>
-                                <th>Nama </th>
+                                {{-- <th>Nama </th>
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
-                                <th>Berat Produk </th>
-                                {{-- <th>Nama Produk </th> --}}
-                                <th>Berat (Kurir) </th>
+                                <th>Jumlah Pembelian </th> --}}
+                                <th>Nama Produk </th>
+                                {{-- <th>Berat (Kurir) </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
-                                <th>Status Pengiriman</th>
+                                <th>Status Pengiriman</th> --}}
 
                                 <th>Aksi</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $transaksi as $item)
+                            @foreach ( $produk as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $item->name}}</td>
+                                    {{-- <td>{{ $item->name}}</td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
-                                    <td>{{ $item->berat_produk}}</td>
-                                    {{-- <td>{{ $item->nama}}</td> --}}
-                                    <td>{{ $item->berat}}</td>
+                                    <td>{{ $item->berat_produk}}</td> --}}
+                                    <td>{{ $item->nama}}</td>
+                                    {{-- <td>{{ $item->berat}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
-                                    <td>{{ $item->status_pengiriman}}</td>
+                                    <td>{{ $item->status_pengiriman}}</td> --}}
                                     <td class="text-center">
-                                        <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
-                                            <i class=""></i>Edit
+                                        <a href="{{ url('transaksi/barang_terjual/' .$item->id_produk) }}" class="btn btn-primary btn-sm">
+                                            <i class=""></i>Data Pembeli
                                         </a>
-                                        <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
+                                        <a href="{{ url('transaksi/destroy/' .$item->id_produk) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
                                         </a>
+                                        {{-- <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                            <i class=""></i>Edit
+                                        </a> --}}
                                     </td>
-                                    {{-- <td>{{ $item->status_transaksi}}</td> --}}
+
 
                                 </tr>
                             @endforeach

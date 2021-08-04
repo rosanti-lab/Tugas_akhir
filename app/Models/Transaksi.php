@@ -18,7 +18,7 @@ class Transaksi extends Model
     // 	return $this->hasMany('App\produk','id','id');
     // }
     protected $fillable = [
-        'name','id_produk', 'alamat', 'telephon', 'berat', 'berat_produk', 'jasa_pengiriman', 'harga',
+        'name','id_produk', 'alamat', 'telephon', 'berat', 'nama', 'ongkir','berat_produk', 'jasa_pengiriman', 'harga',
     ];
 
 }

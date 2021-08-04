@@ -127,18 +127,20 @@
 
                             @if($detail)
                                    <pre style="background=#000;">
-                                   Dibuat Pada    : {{ $detail->created_at}}
-                                   Nomor Pesanan  : {{ $detail->id}}</pre>
+                                   Dibuat Pada      : {{ $detail->created_at}}
+                                   Nomor Pesanan    : {{ $detail->id}}</pre>
                                    <pre>
-                                   Nama           :   {{ $detail->name}}
-                                   Alamat         :   {{ $detail->alamat}}
-                                   Telephone      :   {{ $detail->telephon}}
-                                   Nama Produk    :   {{ $detail->nama}}
-                                   Berat Produk   :   {{ $detail->berat_produk}}
-                                   Jasa Pengiriman:   {{ $detail->jasa_pengiriman}}
-                                   Bukti Transfer :   <img src="{{ asset('public/assets/bukti_tf/' . $detail->bukti_tf) }}" alt="" style="width: 10%">
+                                   Nama             :   {{ $detail->name}}
+                                   Alamat           :   {{ $detail->alamat}}
+                                   Telephone        :   {{ $detail->telephon}}
+                                   Nama Produk      :   {{ $detail->nama}}
+                                   Jumlah Pembelian :   {{ $detail->berat_produk}}
+                                   Jasa Pengiriman  :   {{ $detail->jasa_pengiriman}}
+                                   Bukti Transfer   :   <img src="{{ asset('public/assets/bukti_tf/' . $detail->bukti_tf) }}" alt="" style="width: 10%">
                                    {{-- Bukti Transfer :    <img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"> --}}
-                                   Harga          :   {{ $detail->harga}}
+                                   Harga            :   Rp. {{ $detail->harga}}
+                                   Ongkos Kirim     :   Rp. {{ $detail->ongkir}}
+                                   Total Pembayaran :   Rp. {{ $detail->harga + $detail->ongkir}}
 
 
                                   </pre>

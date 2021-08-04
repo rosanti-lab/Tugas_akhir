@@ -155,7 +155,7 @@
                     <div class="d-flex justify-content-between tm-text-gray">
                         {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
                         {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
-                        <span><p style="font-size:15px; font-style:bold;">{{$produk->harga}}</p><span>
+                        <span><p style="font-size:15px; font-style:bold;">{{$produk->deskripsi}}</p><span>
                         <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>
 
                     </div>

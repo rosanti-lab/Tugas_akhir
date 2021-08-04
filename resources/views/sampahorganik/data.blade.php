@@ -63,7 +63,7 @@
                                     <td><img src="{{ asset('public/assets/pengajuan/' . $item->image) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
-                                    <td>{{ $item->berat}}</td>
+                                    <td>{{ $item->berat}}Kg</td>
                                     <td>{{ $item->tanggal}}</td>
                                     <td>{{ $item->status_penjemputan}}</td>
                                     <td class="text-center">
