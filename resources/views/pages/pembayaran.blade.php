@@ -70,7 +70,7 @@
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
+                                            <li><a href="/"><img src="assets/img/logoo.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
@@ -98,9 +98,9 @@
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                {{-- <div class="header-right-btn d-none d-lg-block ml-20">
                                     <a href="/logout" class="btn header-btn">Login</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -119,33 +119,44 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card">
-                    <div class="heading text-center">
-                      <h4>Konfirmasi Pembayaran</h4>
-                    </div>
+                        <div class="heading text-center">
+                        <h4>Konfirmasi Pembayaran</h4>
+                        </div>
                     <div class="alert alert-info">
                     <p> Nomor Pesanan : {{$item->id}}</p>
-                    <p> Total Pembayaran : @currency($item->total)</p>
+                    <p> Total Pembayaran : Rp. {{ $item->harga + $item->ongkir}}</p>
                     </div>
                     {{-- <form method="post" action="/pembayaran_store" enctype="multipart/form-data"> --}}
-                        <form method="post" action="/pembayaran-store/{{$item['id']}}" enctype="multipart/form-data">
+                    <form method="post" action="/pembayaran-store/{{$item['id']}}" enctype="multipart/form-data">
 
             @csrf
-        <div>
-            <label for="bukti">Upload Bukti Pembayaran</label><br>
-            <input type="file"  id="bukti"  name="bukti_tf" required>
-          </div><br>
+                <div>
+                    <label for="bukti">Upload Bukti Pembayaran</label><br>
+                    <input type="file"  id="bukti"  name="bukti_tf" required>
+                </div><br>
 
           {{-- <form method="post" action="/pembayaran_store/{{$item['id']}}" enctype="multipart/form-data"> --}}
 
-          <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
+                <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
         </form></form>
 
-                            </div>
-                        </div>
-                      </div>
-                   </div>
-                </div>
+
+                    </div>
+                    </div>
+                    <div class="pull-right">
+                        <a href="{{ url('daftar-pesanan') }}" class="btn btn-secondary btn-sm">
+                            <i class="fa fa-undo"></i>Back
+                        </a>
+                    </div>
             </div>
+        </div>
+        </div>
+            </div>
+        {{-- <div class="pull-right">
+            <a href="{{ url('daftar-pesanan') }}" class="btn btn-secondary btn-sm">
+                <i class="fa fa-undo"></i>Back
+            </a>
+        </div> --}}
 
             @section('footer')
 

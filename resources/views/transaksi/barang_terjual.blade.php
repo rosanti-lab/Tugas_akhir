@@ -57,7 +57,8 @@
                                 <th>No.Telephon </th>
                                 <th>Nama Produk </th>
                                 <th>Jumlah Pembelian </th>
-                                <th>Berat (Kurir) </th>
+                                <th>Harga </th>
+                                <th>Total Pembayaran </th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Ekpedisi Pengiriman</th>
                                 <th>Status Pengiriman</th>
@@ -74,7 +75,8 @@
                                     <td>{{ $item->telephon}}</td>
                                     <td>{{ $item->nama}}</td>
                                     <td>{{ $item->berat_produk}} Pack</td>
-                                    <td>{{ $item->berat}}</td>
+                                    <td>Rp. {{ $item->harga * $item->berat_produk}}</td>
+                                    <td>Rp. {{ $item->harga + $item->ongkir}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
                                     <td>{{ $item->status_pengiriman}}</td>
@@ -90,8 +92,6 @@
                                             <i class=""></i>Detail
                                         </a>
                                     </td>
-
-
                                 </tr>
                             @endforeach
 

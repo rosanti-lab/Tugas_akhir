@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="{{ asset('style2/assets/css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('style2/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style2/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style2/assets/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('style2/assets/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style2/assets/css/cs-skin-elastic.css') }}">
-    <link rel="stylesheet" href="{{ asset('style2/assets/scss/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/cs-skin-elastic.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/scss/style.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-    <script src="{{ asset('style2/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
-    <script src="{{ asset('style2/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('style2/assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('style2/assets/js/main.js') }}"></script>
+    <script src="{{ asset('style/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('style/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('style/assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('style/assets/js/main.js') }}"></script>
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">

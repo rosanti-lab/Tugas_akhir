@@ -29,7 +29,7 @@
 
 <div class="col-sm-12">
             <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                <span class="badge badge-pill badge-success">Success</span> Selamat Datang Pada Halaman Admin Maggot Wiralodra.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                     </button>
@@ -52,11 +52,11 @@
                 </div>
             </div>
             <h4 class="mb-0">
-                <span class="count">10468</span>
+                <span class="count">9</span>
             </h4>
-            <p class="text-light">Members online</p>
+            <p class="text-light">Admin Budidaya Maggot Wiralodra</p>
 
-            <div class="chart-wrapper px-0" style="height:70px;" height="70">
+            <div class="chart-wrapper px-0" style="height:60px;" height="60">
                 <canvas id="widgetChart1"></canvas>
             </div>
 
@@ -82,9 +82,9 @@
                 </div>
             </div>
             <h4 class="mb-0">
-                <span class="count">10468</span>
+                <span class="count">5</span>
             </h4>
-            <p class="text-light">Members online</p>
+            <p class="text-light">Tim CSR</p>
 
             <div class="chart-wrapper px-0" style="height:70px;" height="70">
                 <canvas id="widgetChart2"></canvas>
@@ -111,9 +111,9 @@
                 </div>
             </div>
             <h4 class="mb-0">
-                <span class="count">10468</span>
+                <span class="count">3</span>
             </h4>
-            <p class="text-light">Members online</p>
+            <p class="text-light">Jumlah Produk</p>
 
         </div>
 
@@ -124,7 +124,7 @@
 </div>
 <!--/.col-->
 
-<div class="col-sm-6 col-lg-3">
+{{-- <div class="col-sm-6 col-lg-3">
     <div class="card text-white bg-flat-color-4">
         <div class="card-body pb-0">
             <div class="dropdown float-right">
@@ -150,10 +150,10 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 <!--/.col-->
 
-<div class="col-lg-3 col-md-6">
+{{-- <div class="col-lg-3 col-md-6">
     <div class="social-box facebook">
         <i class="fa fa-facebook"></i>
         <ul>
@@ -168,10 +168,10 @@
         </ul>
     </div>
     <!--/social-box-->
-</div><!--/.col-->
+</div><!--/.col--> --}}
 
 
-<div class="col-lg-3 col-md-6">
+{{-- <div class="col-lg-3 col-md-6">
     <div class="social-box twitter">
         <i class="fa fa-twitter"></i>
         <ul>
@@ -186,9 +186,9 @@
         </ul>
     </div>
     <!--/social-box-->
-</div><!--/.col-->
+</div><!--/.col--> --}}
 
-
+{{--
 <div class="col-lg-3 col-md-6">
     <div class="social-box linkedin">
         <i class="fa fa-linkedin"></i>
@@ -204,10 +204,10 @@
         </ul>
     </div>
     <!--/social-box-->
-</div><!--/.col-->
+</div><!--/.col--> --}}
 
 
-<div class="col-lg-3 col-md-6">
+{{-- <div class="col-lg-3 col-md-6">
     <div class="social-box google-plus">
         <i class="fa fa-google-plus"></i>
         <ul>
@@ -222,9 +222,9 @@
         </ul>
     </div>
     <!--/social-box-->
-</div><!--/.col-->
+</div><!--/.col--> --}}
 
-<div class="col-xl-6">
+{{-- <div class="col-xl-6">
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -297,7 +297,7 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection
 

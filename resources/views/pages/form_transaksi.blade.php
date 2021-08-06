@@ -28,7 +28,8 @@
                                 {{-- <img src="assets/img/gallery/about1.png" alt=""> --}}
                                 <img src="{{ asset('assets/img/' . $produk[0]->image) }}" alt="" style="width: 500px" Height="400px" alt ="">
                                 <h2>{{$produk[0]->nama}}</h2>
-                                <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->deskripsi}}</p><span>
+                                <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->judul}}</p><span>
+                                    <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->deskripsi}}</p><span>
                                 {{-- <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 400px" Height="100px" class="img-fluid"> --}}
                             </div>
                         </div>

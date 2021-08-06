@@ -23,8 +23,12 @@
                 <input type="text" class="form-control" id="harga" placeholder="masukan harga" name="harga" required value="{{$produk['harga']}}">
             </div>
             <div class="form-group">
+                <label for="email">Deskripsi</label>
+                <input type="text" class="form-control" id="deskripsi" placeholder="masukan deskripsi" name="deskripsi" required value="{{$produk['deskripsi']}}">
+            </div>
+            <div class="form-group">
                 <label for="email">Stok Produk</label>
-                <input type="text" class="form-control" id="stok" placeholder="masukan stok" name="stok" required value="{{$produk['stok']}}">
+                <input type="number" class="form-control" id="stok" placeholder="masukan stok" name="stok" required value="{{$produk['stok']}}">
             </div>
 
             <button type="submit" class="btn btn-warning btn-xs "> Edit</button>

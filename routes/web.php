@@ -43,8 +43,6 @@ Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::get('/pembayaran/{id}', 'TransaksiController@pembayaran');
     Route::post('/pembayaran-store/{id}', 'TransaksiController@pembayaranStore');
 
-
-
 });
 Route::group(['middleware' => ['auth','CekRole:user']], function () {
     Route::get('/form_pengajuan', 'PengajuanController@form');

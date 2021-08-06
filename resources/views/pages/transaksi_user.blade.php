@@ -61,14 +61,14 @@
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/"><img src="assets/img/logo-pertamina.png" alt="" style ="float:left; height: 63px; width: auto; padding: 11px 0; margin: -14px 0;"></a></li>
+                                            <li><a href="/"><img src="assets/img/logoo.png" alt="" style ="float:left; height: 63px; width: auto; padding: -20px 0; margin: -20px 0;"></a></li>
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="#">Contact</a></li>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            {{-- <li><a href="contact.html">Contact</a></li> --}}
                                             <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
@@ -155,7 +155,7 @@
                     <div class="d-flex justify-content-between tm-text-gray">
                         {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
                         {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
-                        <span><p style="font-size:15px; font-style:bold;">{{$produk->deskripsi}}</p><span>
+                        <span><p style="font-size:15px; font-style:bold;">{{$produk->judul}}</p><span>
                         <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>
 
                     </div>

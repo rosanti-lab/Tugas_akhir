@@ -146,6 +146,7 @@ class TransaksiController extends Controller
             'jasa_pengiriman' => 'required',
             'id_produk' => 'required',
             'ongkir'    => 'required',
+            // 'harga'    => 'required',
             //'bukti_tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -190,6 +191,7 @@ class TransaksiController extends Controller
 
     public function pembayaran($id)
     {
+
 
         $item =Transaksi::where('id',$id)->FirstOrFail();
         return view('pages.pembayaran',compact('item'));
