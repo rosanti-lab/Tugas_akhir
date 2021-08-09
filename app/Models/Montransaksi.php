@@ -1,0 +1,18 @@
+<?php
+
+namespace App\models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Montransaksi extends Model
+{
+    protected $table = 'mon_transaksi';
+
+    public function mon_transaksi(){                                              // sesuai nama tabel
+        return $this->belongsTo('\App\mon_transaksi','id','id');
+    }
+    protected $fillable = [
+        'name','id_produk', 'tgl_monitoring','alamat', 'telephon', 'berat', 'nama', 'ongkir','berat_produk', 'jasa_pengiriman', 'harga',
+    ];
+}

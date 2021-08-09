@@ -8,6 +8,7 @@ use App\Models\Transaksi;
 use App\Courier;
 use App\Province;
 use App\City;
+use App\models\Montransaksi;
 use App\User;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 use Illuminate\Http\Request;
@@ -87,6 +88,18 @@ class TransaksiController extends Controller
         return view('transaksi.data', compact('transaksi', 'produk'));
     }
 
+    public function data2()
+    {
+        //$transaksi = DB::table('transaksi')->get();
+        // $transaksi =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
+        $produk = DB::table('produks')->get();
+        // $mon_transaksi = DB::table('mon_transaksi')->get();
+        $mon_transaksi = Montransaksi::join('produks', 'mon_transaksi.id_produk', '=', 'produks.id_produk')->get();
+
+        // return $edulevels;
+        return view('mon_transaksi.data', compact('produk', 'mon_transaksi'));
+    }
+
     public function barang_terjual($id)
     {
         //$transaksi = DB::table('transaksi')->get();
@@ -122,6 +135,16 @@ class TransaksiController extends Controller
                 'status_transaksi'=>$request->status_transaksi,
 
             ]);
+            $transaksi = Transaksi::where('id',$id)->first();             //Proses Pengurangan stok jika bukti_tf valid
+            if($request->status_pengiriman === "Proses Pengiriman"){
+                DB::beginTransaction();
+                $data = Produk::where('id_produk', $transaksi->id_produk)->first();
+                $update = Produk::where('id_produk', $transaksi->id_produk)->update([
+                    'stok' => (int)$data->stok - (int)$transaksi->berat_produk
+                ]);
+                if($update) DB::commit();
+                else DB::rollBack();
+            }
             return redirect('/transaksi');
     }
 
@@ -133,9 +156,7 @@ class TransaksiController extends Controller
         return redirect('/transaksi');
     }
 
-
-
-    public function tambahdata(Request $request)
+    public function tambahdata(Request $request )
     {
         $request->validate([
             'name' => 'required',
@@ -146,30 +167,19 @@ class TransaksiController extends Controller
             'jasa_pengiriman' => 'required',
             'id_produk' => 'required',
             'ongkir'    => 'required',
-            // 'harga'    => 'required',
-            //'bukti_tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
         $input = $request->all();
 
-        // if ($image = $request->file('bukti_tf')) {
-        //     $destinationPath = 'public/assets/bukti_tf/';
 
-        //     $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-
-        //     $image->move($destinationPath, $profileImage);
-        // // dd($image);
-
-        //     $input['bukti_tf'] = "$profileImage";
-        // // dd($input);
-
-        // }
+        $transaksi = Transaksi::create($input);
+        // Produk::update($sisa_stok );
         // dd($input);
-        Transaksi::create($input);
 
         return redirect('/daftar-pesanan');
-
     }
+
 
     public function detail($id)
     {

@@ -139,7 +139,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">BERAT (GRAM)</label>
-                                        <input type="text" class="form-control" value="1000" name="berat" id="weight">
+                                        <input type="text" class="form-control" value="2000" name="berat" id="weight">
                                     </div>
                                 </div>
                             </div>

@@ -59,7 +59,7 @@
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('profil')}}"> Profil </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('about')}}"> About </a></li>
                                 <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infosampah')}}"> Info Sampah Organik </a></li>
-                                <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infotransaksi')}}"> Info Transaksi </a></li>
+                                {{-- <li><i class ="fa fa-puzzle-piece"></i><a href="{{ url ('infotransaksi')}}"> Info Transaksi </a></li> --}}
                         </ul>
                     </li>
                     <li>

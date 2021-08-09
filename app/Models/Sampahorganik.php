@@ -14,6 +14,6 @@ class Sampahorganik extends Model
     }
 
     protected $fillable = [
-        'name', 'alamat', 'telephon','tanggal' ,'image'
+        'name', 'alamat', 'telephon','tanggal' ,'image', 'created_at'
     ];
 }

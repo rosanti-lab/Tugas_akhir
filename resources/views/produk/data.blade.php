@@ -46,9 +46,9 @@
                                 <th>Nama</th>
                                 <th>Judul</th>
                                 <th>Image</th>
+                                <th>Stok Produk</th>
                                 <th>Deskripsi</th>
                                 <th>Harga</th>
-                                <th>Stok Produk</th>
                                 <th style="width: 156px;">Actions</th>
                             </tr>
                         </thead>
@@ -59,9 +59,10 @@
                                     <td>{{ $produk->nama}}</td>
                                     <td>{{ $produk->judul}} </td>
                                     <td><img src="{{ asset('assets/img/' . $produk->image) }}" alt="" style="width: 30%"></td>
-                                    <td>{{ substr(strip_tags($produk->deskripsi),0,50) }} ...</td>
-                                    <td>{{ $produk->harga}}</td>
                                     <td>{{ $produk->stok}}Kg</td>
+                                    <td>{{ substr(strip_tags($produk->deskripsi),0,50) }} ...</td>
+                                    <td>Rp. {{ $produk->harga}}</td>
+
                                     <td class="text-center">
                                         <a href="{{ url('produk/edit/' .$produk->id_produk) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit

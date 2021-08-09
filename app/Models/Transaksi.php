@@ -13,12 +13,11 @@ class Transaksi extends Model
         return $this->belongsTo('\App\transaksi','id','id');
     }
 
-    // public function produk()
-    // {
-    // 	return $this->hasMany('App\produk','id','id');
-    // }
+
     protected $fillable = [
         'name','id_produk', 'alamat', 'telephon', 'berat', 'nama', 'ongkir','berat_produk', 'jasa_pengiriman', 'harga',
+
     ];
+
 
 }

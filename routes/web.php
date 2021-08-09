@@ -156,7 +156,7 @@ Route::get('/transaksi/destroy/{id}', 'TransaksiController@destroy');
 Route::patch('/transaksi/update/{id}', 'TransaksiController@update');
 
 
-Route::get('/mon_transaksi', 'TransaksiController@data');
+Route::get('/mon_transaksi', 'TransaksiController@data2');
 
 
 Route::get('/transaksi_userlogin', 'TransaksiController@index_userlogin');
@@ -175,6 +175,9 @@ Route::get('/mon_sampah/destroy/{id}', 'MonsampahController@destroy');
 
 
 Route::get('csr_sampahorganik', 'CsrsampahorganikController@data');
+Route::patch('/csr_sampahorganik/update/{id}', 'CsrsampahorganikController@update');
+Route::get('csr_sampahorganik/edit/{id}', 'CsrsampahorganikController@edit');
+
 
 Route::get('/pembelian', 'PembelihomeController@index');
 Route::get('/pembelian', 'PembelihomeController@pesan');

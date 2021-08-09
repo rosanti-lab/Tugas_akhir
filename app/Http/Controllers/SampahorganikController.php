@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Monsampah;
 use App\Models\Sampahorganik;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+
 
 
 class SampahorganikController extends Controller
@@ -30,8 +33,27 @@ class SampahorganikController extends Controller
             ->update([
                 'berat'=>$request->berat,             //nama dari database->nama dari form input
                 'status_penjemputan'=>$request->status_penjemputan,
-
             ]);
+            if($request->status_penjemputan === 'selesai'){      //proses jumlah pendapatan sampah perminggu
+                $total = 0;
+                $now = Carbon::create(Sampahorganik::where('id',$id)->first()->tanggal);
+                $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
+                $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
+                // dd($weekStartDate);
+                $sampahs =  Sampahorganik::where('created_at', '>=', $weekStartDate)->where('created_at', '<=', $weekEndDate)->where('status_penjemputan', 'selesai')->get();
+                foreach ($sampahs as $sampah) {
+                    $total += $sampah->berat;
+                }
+                Monsampah::updateOrCreate(
+                    ['tanggal' => $weekStartDate],
+                    [
+                        'hari' => $weekStartDate.'-'.$weekEndDate,
+                        'total_sampah' => $total,
+                        'note'  => '-',
+                        'status_monitoring' => 'selesai'
+                    ]
+                );
+            }
             return redirect('/sampahorganik');
     }
 

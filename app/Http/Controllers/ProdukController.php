@@ -45,30 +45,6 @@ class ProdukController extends Controller
     }
 
 
-
-
-    // public function edit($id)
-    // {
-    //     $produk = Produk::where('id_produk',$id)->FirstOrFail();
-    //     $produk = DB::table('produks')->where('id_produk',$id)->get();
-    //     return view('produk.edit',compact('produk','produk'));
-    // }
-
-    // public function update(Request $request, $id)
-    // {
-    //     $produk=Produk::where('id_produk',$id)
-    //         ->update([
-    //             'nama'=>$request->nama,
-    //             'image'=>$request->image,           //nama dari database->nama dari form input
-    //             'deskripsi'=>$request->deskripsi,
-    //             'harga'=>$request->harga,
-    //             'stok'=>$request->stok,
-
-
-    //         ]);
-    //         return redirect('/produk');
-    // }
-
     public function add()
     {
         return view('produk.add');

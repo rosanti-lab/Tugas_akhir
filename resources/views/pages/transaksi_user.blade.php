@@ -153,10 +153,15 @@
                         </figcaption>
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
+
                         {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
                         {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
                         <span><p style="font-size:15px; font-style:bold;">{{$produk->judul}}</p><span>
-                        <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>
+                            @if($produk->stok > 0)
+                            <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>
+                            @else
+                            <button type="button" class="btn">Stok Habis</button>
+                            @endif
 
                     </div>
                 </div>

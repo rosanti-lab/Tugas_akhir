@@ -40,16 +40,24 @@
                         <thead>
                             <tr>
                                 <th>No. </th>
+                                {{-- <th>Minggu Ke-</th> --}}
+                                <th>Tanggal</th> --}}
                                 <th>Nama Produk </th>
+                                {{-- <th>Total Produk Terjual</th> --}}
+                                <th>Status Monitoring</th>
+
                                 <th>Aksi</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ( $produk as $item)
+
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
+                                    {{-- <td>{{ $item->tgl_monitoring}}</td> --}}
                                     <td>{{ $item->nama}}</td>
+                                    {{-- <td>{{ $item->total_terjual}}</td> --}}
                                     <td class="text-center">
                                         {{-- <a href="{{ url('transaksi/barang_terjual/' .$item->id_produk) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Data Pembeli

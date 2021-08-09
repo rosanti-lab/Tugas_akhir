@@ -47,6 +47,7 @@
                                 <th>Tanggal</th>
                                 <th>Total Sampah Organik</th>
                                 <th>Status Monitoring</th>
+                                <th>Note dari Tim CSR</th>
                                 <th style="width: 156px;">Actions</th>
                             </tr>
                         </thead>
@@ -58,6 +59,7 @@
                                     <td>{{ $item->tanggal}}</td>
                                     <td>{{ $item->total_sampah}} Kg</td>
                                     <td>{{ $item->status_monitoring}}</td>
+                                    <td>{{ $item->note}}</td>
                                     <td class="text-center">
                                         <a href="{{ url('mon_sampah/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit

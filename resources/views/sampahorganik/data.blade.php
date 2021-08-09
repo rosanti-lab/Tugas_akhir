@@ -45,6 +45,7 @@
                             <tr>
                                 <th>No. </th>
                                 <th>Name </th>
+                                <th>Tanggal Masuk </th>
                                 <th>Foto </th>
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
@@ -60,10 +61,11 @@
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->name}}</td>
+                                    <td>{{ $item->created_at}}</td>
                                     <td><img src="{{ asset('public/assets/pengajuan/' . $item->image) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>
-                                    <td>{{ $item->berat}}Kg</td>
+                                    <td>{{ $item->berat}} Kg</td>
                                     <td>{{ $item->tanggal}}</td>
                                     <td>{{ $item->status_penjemputan}}</td>
                                     <td class="text-center">

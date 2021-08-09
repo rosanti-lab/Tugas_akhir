@@ -5,6 +5,7 @@ use App\Models\Monsampah;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class MonsampahController extends Controller
 
@@ -14,7 +15,6 @@ class MonsampahController extends Controller
     {
         $mon_sampah = DB::table('mon_sampah')->get();
 
-        
         return view('mon_sampah.data', ['mon_sampah' =>$mon_sampah]);
     }
 
@@ -45,7 +45,7 @@ class MonsampahController extends Controller
     {
 
         $mon_sampah = new Monsampah;
-        
+
         $mon_sampah->hari = $request->hari;
         $mon_sampah->tanggal = $request->tanggal;
         $mon_sampah->total_sampah = $request->total_sampah;
@@ -54,7 +54,7 @@ class MonsampahController extends Controller
         $mon_sampah->save();
 
         return redirect('/mon_sampah');
-    
+
     }
 
     public function destroy($id)

@@ -36,7 +36,7 @@
             <div id="Dain-Denu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url ('main2')}}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
+                        <a href=""> <i class="menu-icon fa fa-dashboard"></i>Home </a>
                     </li>
 
                     <li>
