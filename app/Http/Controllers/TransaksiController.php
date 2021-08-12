@@ -10,6 +10,7 @@ use App\Province;
 use App\City;
 use App\models\Montransaksi;
 use App\User;
+use Illuminate\Support\Carbon;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -88,28 +89,15 @@ class TransaksiController extends Controller
         return view('transaksi.data', compact('transaksi', 'produk'));
     }
 
-    public function data2()
+
+
+    public function barang_terjual(Request $request, $id)
     {
         //$transaksi = DB::table('transaksi')->get();
-        // $transaksi =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
-        $produk = DB::table('produks')->get();
-        // $mon_transaksi = DB::table('mon_transaksi')->get();
-        $mon_transaksi = Montransaksi::join('produks', 'mon_transaksi.id_produk', '=', 'produks.id_produk')->get();
+        $barang_terjual =Transaksi:: select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->get();
 
-        // return $edulevels;
-        return view('mon_transaksi.data', compact('produk', 'mon_transaksi'));
-    }
-
-    public function barang_terjual($id)
-    {
-        //$transaksi = DB::table('transaksi')->get();
-        $barang_terjual =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->get();
-        // dd($transaksi);
-
-        // return $edulevels;
         return view('transaksi.barang_terjual', ['barang_terjual' =>$barang_terjual]);
     }
-
     public function details($id)
     {
         //$transaksi = DB::table('transaksi')->get();
@@ -129,22 +117,43 @@ class TransaksiController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($id);
+        DB::beginTransaction();
         $transaksi=Transaksi::where('id',$id)
             ->update([
-                'status_pengiriman'=>$request->status_pengiriman,             //nama dari database->nama dari form input
-                'status_transaksi'=>$request->status_transaksi,
-
+                // 'berat'=>$request->berat,             //nama dari database->nama dari form input
+                'status_pengiriman'=>$request->status_pengiriman,
             ]);
             $transaksi = Transaksi::where('id',$id)->first();             //Proses Pengurangan stok jika bukti_tf valid
             if($request->status_pengiriman === "Proses Pengiriman"){
-                DB::beginTransaction();
                 $data = Produk::where('id_produk', $transaksi->id_produk)->first();
                 $update = Produk::where('id_produk', $transaksi->id_produk)->update([
                     'stok' => (int)$data->stok - (int)$transaksi->berat_produk
                 ]);
-                if($update) DB::commit();
-                else DB::rollBack();
+
             }
+            if($request->status_pengiriman === 'Proses Pengiriman'){      //proses jumlah pendapatan sampah perminggu
+                $total = 0;
+                $now = Carbon::create(Transaksi::where('id',$id)->first()->created_at->toDateString());
+                $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
+                $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
+                // dd($weekStartDate);
+                $transaksis =  Transaksi::where('created_at', '>=', $weekStartDate)->where('created_at', '<=', $weekEndDate)->where('status_pengiriman', 'Proses Pengiriman')->get();
+                foreach ($transaksis as $transaksi) {
+                    $total += $transaksi->berat_produk;
+                }
+                $done = Montransaksi::updateOrCreate(
+                    ['tgl' => $weekStartDate],
+                    [
+                        'id_produk' => $transaksis[0]->id_produk,
+                        'hari' => $weekStartDate.'-'.$weekEndDate,
+                        'total_terjual' => $total,
+                        'note'  => '-',
+                        'status_monitoring' => 'proses pengiriman'
+                    ]
+                );
+            }
+            DB::commit();
             return redirect('/transaksi');
     }
 
@@ -183,7 +192,7 @@ class TransaksiController extends Controller
 
     public function detail($id)
     {
-        $detail =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+        $detail =Transaksi::select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
         // $d = Transaksi::all();
         // $detail = Transaksi::join('produks', 'produks.id_produk', '=', 'transaksi.id_produk')
         //         ->where('id',$id)

@@ -20,7 +20,7 @@ class LoginController extends Controller
           if($request->user()->role=='user'){
               return redirect('/');
           }elseif($request->user()->role=='admin'){
-              return redirect('/home');
+              return redirect('home');
           }else{
             return redirect('/homecsr');
         }
@@ -40,6 +40,7 @@ class LoginController extends Controller
          'name' => $request['name'],
          'email' => $request['email'],
          'alamat' => $request['alamat'],
+         'no_hp' => $request['no_hp'],
          'role' => 'user',
          'password' => Hash::make($request['password']),
      ]);

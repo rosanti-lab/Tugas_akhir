@@ -166,12 +166,13 @@
                     <div class="single-cat text-center mb-50">
                         <div class="cat-cap">
                             <h5><a href="services.html">Mitra Binaan </a></h5>
+                            {{-- <span><p style="font-size:15px; font-style:bold;">{{$item[0]->konten}}</p><span> --}}
                             <p>Budidaya Maggot Wiralodra adalah usaha ternak yang bekerjasama dengan mitra Binaan Tim CSR Pertamina RU VI Balongan.
                                 <br>Kerjasama ini sudah berjalan 3 tahun sejak pembangunan pertama tempat untuk ternak maggot.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cat text-center mb-50">
                         <div class="cat-icon">
                             <span class="flaticon-ship"></span>
@@ -180,8 +181,8 @@
                             {{-- <h5><a href="services.html">Ship Transport</a></h5>
                             <p>The sea freight service has grown conside rably in recent years. We spend timetting to know your processes to.</p> --}}
                         {{-- </div> --}}
-                    </div>
-                </div>
+                    {{-- </div> -
+                </div> --}}
                 <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cat text-center mb-50">
                         <div class="cat-icon">

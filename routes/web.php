@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +25,13 @@ Route::get('/', function () {
 
 //=========================== Middlewere Admin =================================
 Route::group(['middleware' => ['auth','CekRole:admin']], function () {
-    Route::get('home', function(){
-        return view ('home');
+    Route::get('/home', function(){
+
+         $coba = count(DB::table('users')->whereRole('user')->get());
+         $coba1 = count(DB::table('produks')->get());
+
+
+        return view('home',compact('coba', 'coba1'));
     });
 });
 //===============================================================================
@@ -156,8 +165,10 @@ Route::get('/transaksi/destroy/{id}', 'TransaksiController@destroy');
 Route::patch('/transaksi/update/{id}', 'TransaksiController@update');
 
 
-Route::get('/mon_transaksi', 'TransaksiController@data2');
-
+Route::get('/mon_transaksi', 'MontransaksiController@data');
+Route::get('/mon_transaksi/data_monitoring/{id}', 'MontransaksiController@data_monitoring');
+Route::get('mon_transaksi/add', 'MontransaksiController@add');
+Route::post('mon_transaksi', 'MontransaksiController@addProcess');
 
 Route::get('/transaksi_userlogin', 'TransaksiController@index_userlogin');
 
@@ -177,6 +188,10 @@ Route::get('/mon_sampah/destroy/{id}', 'MonsampahController@destroy');
 Route::get('csr_sampahorganik', 'CsrsampahorganikController@data');
 Route::patch('/csr_sampahorganik/update/{id}', 'CsrsampahorganikController@update');
 Route::get('csr_sampahorganik/edit/{id}', 'CsrsampahorganikController@edit');
+
+
+Route::get('csr_transaksi', 'CsrtransaksiController@data');
+Route::get('/csr_transaksi/data_monitoring/{id}', 'CsrtransaksiController@data_monitoring');
 
 
 Route::get('/pembelian', 'PembelihomeController@index');

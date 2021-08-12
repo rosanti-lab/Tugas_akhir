@@ -12,7 +12,7 @@ class AdminController extends Controller
     {
         $admin = DB::table('users')->get();
 
-        
+
         return view('admin.data', ['users' =>$admin]);
     }
 

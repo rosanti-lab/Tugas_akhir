@@ -6,13 +6,21 @@ use Illuminate\Http\Request;
 use App\Province;
 use App\City;
 use App\Courier;
+use App\User;
+use Illuminate\Support\Facades\DB;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        // $count = User::count();
+        // return view::make('users')->with('count', $count);
+        $coba['users'] = count(DB::table('users')->whereRole('user')->get());
+        // $hitung_user = count($coba)['users'];
+        var_dump($coba); die;
+
+        return view('home',compact('hitung_user','coba'));
     }
 
 //=========================================

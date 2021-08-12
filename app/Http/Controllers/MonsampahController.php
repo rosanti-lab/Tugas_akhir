@@ -14,6 +14,7 @@ class MonsampahController extends Controller
     public function data()
     {
         $mon_sampah = DB::table('mon_sampah')->get();
+        // dd($mon_sampah);
 
         return view('mon_sampah.data', ['mon_sampah' =>$mon_sampah]);
     }

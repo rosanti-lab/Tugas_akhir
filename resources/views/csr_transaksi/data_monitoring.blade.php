@@ -1,13 +1,13 @@
-@extends('main')
+@extends('main2')
 
-@section('title', 'admin')
+@section('title', 'Dashboard')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <!-- <h1>Dashboard</h1> -->
+                        {{-- <h1>Selamat datang di halaman Dashboard Tim CSR</h1> --}}
                     </div>
                 </div>
             </div>
@@ -25,25 +25,15 @@
 @endsection
 
 @section('content')
-        <div class="content mt-3">
 
-
-            <div class="animated fadeIn">
-
-            @if (session('status'))
-            <div class="alert alert-success">
-                {{session('status')}}
-            </div>
-            @endif
-
-
-                <div class="card">
+<div class="content mt-3">
+        <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Admin</strong>
+                            <strong> Monitoring Pendapatan Sampah Organik</strong>
                         </div>
                         <div class="pull-right">
-                            <a href="{{ url('admin/add') }}" class="btn btn-success btn-sm">
+                            <a href="{{ url('mon_transaksi/add') }}" class="btn btn-success btn-sm">
                                 <i class="fa fa-plus"></i>Add
                             </a>
                         </div>
@@ -52,31 +42,29 @@
                         <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>No. </th>
-                                <th>Nama </th>
-                                <th>Nomor Telephon </th>
-                                <th>Email </th>
-                                <th>Alamat </th>
-                                <th>Password </th>
-                                <th>Role</th>
-                                <th>Aksi</th>
+                                <th style="width: 20px;">No</th>
+                                <th>Minggu Ke-</th>
+                                <th>Tanggal</th>
+                                <th>Total Sampah Organik</th>
+                                <th>Status Monitoring</th>
+                                <th>Note dari Tim CSR</th>
+                                <th style="width: 156px;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $users as $item)
+                            @foreach ($data_monitoring as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $item->name}}</td>
-                                    <td>{{ $item->no_hp}}</td>
-                                    <td>{{ $item->email}}</td>
-                                    <td>{{ $item->alamat}}</td>
-                                    <td>{{ $item->password}}</td>
-                                    <td>{{ $item->role}}</td>
+                                    <td>{{ $item->hari}}</td>
+                                    <td>{{ $item->tgl}}</td>
+                                    <td>{{ $item->total_terjual}} Kg</td>
+                                    <td>{{ $item->status_monitoring}}</td>
+                                    <td>{{ $item->note}}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('admin/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('mon_sampah/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
-                                        <a href="{{ url('admin/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
+                                        <a href="{{ url('mon_sampah/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
                                         </a>
 
@@ -85,12 +73,11 @@
                             @endforeach
 
                         </tbody>
+
+
                         </table>
                     </div>
-                </div>
-
-            </div>
-
         </div>
 
+</div>
 @endsection

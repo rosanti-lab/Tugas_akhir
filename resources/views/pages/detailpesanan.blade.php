@@ -127,7 +127,7 @@
 
                             @if($detail)
                                    <pre style="background=#000;">
-                                   Dibuat Pada      : {{ $detail->created_at}}
+                                   Dibuat Pada      : {{ $detail->create}}
                                    Nomor Pesanan    : {{ $detail->id}}
                                    Silahkan Lakukan Pembayaran Sesuai Total Pembayaran Ke
                                    Nama             : Rosanti

@@ -86,9 +86,7 @@
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
-                                <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="/logout" class="btn header-btn">Login</a>
-                                </div>
+
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -154,7 +152,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nomor Telepon </label>
-                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
+                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" value="{{auth()->user()->no_hp}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Tanggal Pengajuan Penjemputan</label>

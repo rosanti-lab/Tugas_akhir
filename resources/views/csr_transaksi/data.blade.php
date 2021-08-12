@@ -1,4 +1,4 @@
-@extends('main')
+@extends('main2')
 
 @section('title', 'Dashboard')
 
@@ -59,7 +59,7 @@
                                     <td>{{ $item->nama}}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ url('mon_transaksi/data_monitoring/' .$item->id_produk) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('csr_transaksi/data_monitoring/' .$item->id_produk) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Data Pembeli
                                         </a>
                                         {{-- <a href="{{ url('transaksi/destroy/' .$item->id_produk) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">

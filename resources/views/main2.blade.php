@@ -43,7 +43,7 @@
                         <a href="{{ url ('csr_sampahorganik') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Sampah Organik </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Pembelian Maggot </a>
+                        <a href="{{url ('csr_transaksi')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pembelian Maggot </a>
                     </li>
 
                 </ul>

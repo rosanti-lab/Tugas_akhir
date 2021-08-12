@@ -63,6 +63,20 @@
                         </div>
 
                         <div class="form-group row">
+
+                            <div class="col-md-12">
+                                <input id="no_hp" type="no_hp" class="input100" name="no_hp" value="{{ old('no_hp') }}" required autocomplete="no_hp" placeholder="nomor telepon">
+
+                                @error('no_hp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <div class="col-md-12">
                                 <input id="alamat" type="Alamat Lengkap" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat">
                                 {{-- " type="alamat" class=" input100" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="alamat"> --}}
@@ -74,11 +88,6 @@
                                 @enderror
                             </div>
                         </div>
-
-
-
-
-
 
 
                         <div class="form-group row">

@@ -52,6 +52,7 @@
                         <thead>
                             <tr>
                                 <th>No. </th>
+                                <th>Data Masuk</th>
                                 <th>Nama </th>
                                 <th>Alamat </th>
                                 <th>No.Telephon </th>
@@ -70,6 +71,7 @@
                             @foreach ( $barang_terjual as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
+                                    <td>{{ $item->create}}</td>
                                     <td>{{ $item->name}}</td>
                                     <td>{{ $item->alamat}}</td>
                                     <td>{{ $item->telephon}}</td>

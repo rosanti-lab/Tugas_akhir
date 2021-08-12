@@ -124,7 +124,8 @@
                         </div>
                     <div class="alert alert-info">
                     <p> Nomor Pesanan : {{$item->id}}</p>
-                    <p> Total Pembayaran : Rp. {{ $item->harga + $item->ongkir}}</p>
+                    <p>    Nama          :   {{ $item->name}} </p>
+                    {{-- <p> Total Pembayaran : Rp. {{ $item->harga * $item->berat_produk + $item->ongkir}}</p> --}}
                     </div>
                     {{-- <form method="post" action="/pembayaran_store" enctype="multipart/form-data"> --}}
                     <form method="post" action="/pembayaran-store/{{$item['id']}}" enctype="multipart/form-data">
