@@ -169,6 +169,7 @@ Route::get('/mon_transaksi', 'MontransaksiController@data');
 Route::get('/mon_transaksi/data_monitoring/{id}', 'MontransaksiController@data_monitoring');
 Route::get('mon_transaksi/add', 'MontransaksiController@add');
 Route::post('mon_transaksi', 'MontransaksiController@addProcess');
+Route::get('/mon_transaksi/destroy/{id}', 'MontransaksiController@destroy');
 
 Route::get('/transaksi_userlogin', 'TransaksiController@index_userlogin');
 
@@ -207,3 +208,6 @@ Route::get('/produk/destroy/{id_produk}', 'ProdukController@destroy');
 
 
 Route::get('/detailpesanan/edit/{id}', 'TransaksiController@detail');
+
+Route::get('/print/{id}', 'TransaksiController@print');
+Route::get('/print/{id}/cetak', 'TransaksiController@cetak');

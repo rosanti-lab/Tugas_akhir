@@ -58,10 +58,32 @@ class SampahorganikController extends Controller
             return redirect('/sampahorganik');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         $sampahorganik = Sampahorganik::where('id',$id);
         $sampahorganik->delete();
+
+        if($request->status_penjemputan === 'selesai'){      //proses jumlah pendapatan sampah perminggu
+            $total = 0;
+            $now = Carbon::create(Sampahorganik::where('id',$id)->first()->tanggal);
+            $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
+            $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
+            // dd($weekStartDate);
+            $sampahs =  Sampahorganik::where('created_at', '>=', $weekStartDate)->where('created_at', '<=', $weekEndDate)->where('status_penjemputan', 'selesai')->get();
+            foreach ($sampahs as $sampah) {
+                $total += $sampah->berat;
+            }
+            Monsampah::updateOrDelete(
+                ['tanggal' => $weekStartDate],
+                [
+                    'hari' => $weekStartDate.'-'.$weekEndDate,
+                    'total_sampah' => $total,
+                    'note'  => '-',
+                    'status_monitoring' => 'selesai'
+                ]
+            );
+        }
+
         return redirect('/sampahorganik');
     }
 

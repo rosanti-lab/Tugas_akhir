@@ -130,6 +130,7 @@
                                       <th scope="col">Status Pengiriman</th>
                                       <th scope="col">Detail</th>
                                       <th scope="col">Pembayaran</th>
+                                      <th scope="col">Nota</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -157,6 +158,15 @@
                                           <a  class="btn btn-xs btn-success">Sudah Kirim pembayaran</a>
 
                                         @endif
+                                    </td>
+
+                                    <td>
+                                        @if($item->status_pengiriman=="Proses Pengiriman")
+                                        <a href="{{ url('/print/'.$item->id. '/cetak') }}" class="btn btn-secondary btn-sm"> Cetak Nota</a>
+                                        @else
+                                        <a  class="btn btn-xs btn-success">Cetak Nota</a>
+                                        @endif
+
                                     </td>
                                     @endforeach
                                   </tr>

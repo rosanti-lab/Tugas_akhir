@@ -78,7 +78,7 @@
                                     <td>{{ $item->nama}}</td>
                                     <td>{{ $item->berat_produk}} Pack</td>
                                     <td>Rp. {{ $item->harga * $item->berat_produk}}</td>
-                                    <td>Rp. {{ $item->harga + $item->ongkir}}</td>
+                                    <td>Rp. {{ $item->harga * $item->berat_produk + $item->ongkir}}</td>
                                     <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
                                     <td>{{ $item->jasa_pengiriman}}</td>
                                     <td>{{ $item->status_pengiriman}}</td>
@@ -86,7 +86,7 @@
                                         <a href="{{ url('transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
-                                        <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm">
+                                        <a href="{{ url('transaksi/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Hapus
                                         </a>
                                         <br>

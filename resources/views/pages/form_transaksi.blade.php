@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nomor Telepon </label>
-                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
+                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" value="{{auth()->user()->no_hp}}">
                             </div>
                             {{-- <div class="form-group">
                                 <label for="">Nomor Telepon </label>
@@ -84,12 +84,12 @@
                                     <hr>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">PROVINSI ASAL</label>
-                                        <label class="form-control provinsi-asal" name="province_origin">
+                                        <select class="form-control provinsi-asal" name="province_origin">
                                             <option value="9">Jawa Barat</option>
                                             {{-- @foreach ($provinces as $province => $value) --}}
                                                 {{-- <option value="{{ $provinces[9]  }}">{{ $provinces[9] }}</option> --}}
                                             {{-- @endforeach --}}
-                                        </label>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold" style="font-size: 10px">KOTA / KABUPATEN ASAL</label>

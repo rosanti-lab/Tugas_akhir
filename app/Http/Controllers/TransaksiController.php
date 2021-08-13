@@ -11,6 +11,8 @@ use App\City;
 use App\models\Montransaksi;
 use App\User;
 use Illuminate\Support\Carbon;
+use PDF;
+// use Barryvdh\DomPDF\PDF;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -246,6 +248,27 @@ class TransaksiController extends Controller
 
         return redirect('/daftar-pesanan');
     }
+
+    public function print($id)
+    {
+        $detail =Transaksi::findOrFail($id)-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+
+        return view('pages.printpesanan',compact('detail'));
+    }
+
+    public function cetak($id)
+    {
+        $detail =Transaksi::findOrFail($id)->select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+        // $cek=view()->share('printpesanan', $detail);
+        // $pdf = PDF::loadView('printpesanan',['detail'=>$detail]);
+        // dd($pdf);
+        $customPaper = array(0,0,283.80,567.00);
+        $pdf =PDF::loadView('pages.printpesanan',compact('detail'))->setPaper($customPaper, 'potrait');;
+
+        // dd($detail);
+        return $pdf->download('nota_pembayaran.pdf');
+    }
+
 
 
 }

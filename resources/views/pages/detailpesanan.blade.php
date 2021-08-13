@@ -147,6 +147,7 @@
                                                                     Total Pembayaran :   Rp. {{ $detail->harga * $detail->berat_produk + $detail->ongkir}}
                                    </pre>
 
+                                   {{-- <a href="{{ url('/print/'.$detail->id. '/cetak') }}" class="btn btn-secondary btn-sm"> Cetak Nota</a> --}}
 
 
                                   </pre>
