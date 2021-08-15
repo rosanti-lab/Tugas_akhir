@@ -53,21 +53,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $produk as $produk)
+                            @foreach ( $produk as $item)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $produk->nama}}</td>
-                                    <td>{{ $produk->judul}} </td>
-                                    <td><img src="{{ asset('assets/img/' . $produk->image) }}" alt="" style="width: 30%"></td>
-                                    <td>{{ $produk->stok}}Kg</td>
-                                    <td>{{ substr(strip_tags($produk->deskripsi),0,50) }} ...</td>
-                                    <td>Rp. {{ $produk->harga}}</td>
+                                    <td>{{ $item->nama}}</td>
+                                    <td>{{ $item->judul}} </td>
+                                    <td><img src="{{ asset('assets/img/' . $item->image) }}" alt="" style="width: 30%"></td>
+                                    <td>{{ $item->stok}}Kg</td>
+                                    <td>{{ substr(strip_tags($item->deskripsi),0,50) }} ...</td>
+                                    <td>Rp. {{ $item->harga}}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ url('produk/edit/' .$produk->id_produk) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('produk/edit/' .$item->id_produk) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
-                                        <a href="{{ url('produk/destroy/' .$produk->id_produk) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
+                                        <a href="{{ url('produk/destroy/' .$item->id_produk) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
                                         </a>
 

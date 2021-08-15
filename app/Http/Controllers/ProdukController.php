@@ -39,6 +39,7 @@ class ProdukController extends Controller
                 'nama'=>$request->nama,
                 'deskripsi'=>$request->deskripsi,         //nama dari database->nama dari form input
                 'harga'=>$request->harga,
+                'stok'=>$request->stok,
 
             ]);
             return redirect('/produk');

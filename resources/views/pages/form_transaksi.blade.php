@@ -1,11 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Css Dari tampilan sebelah -->
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slicknav.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/flaticon.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/animate.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/themify-icons.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slick.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
+            <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
@@ -13,6 +26,93 @@
     <title>Form Transaksi-Maggot Wiralodra</title>
 </head>
 <body style="background: #f3f3f3">
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top d-none d-lg-block">
+                <div class="container">
+                    <div class="col-xl-12">
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2">
+                        </div>
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/"><img src="assets/img/logoo.png" alt="" style ="float:left; height: 63px; width: auto; padding: -20px 0; margin: -20px 0;"></a></li>
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="/about_user">About</a></li>
+                                            <li><a href="/pengajuan">pengajuan sampah organik</a></li>
+                                            <li><a href="/transaksi_user">transaksi</a>
+                                            <li><a href="#">Contact</a></li>
+                                            </li>
+                                            {{-- <li><a href="contact.html">Contact</a></li> --}}
+                                            <li class="nav-right">
+                                                <!--Login&Register-->
+                                                @if(auth()->user())
+                                                  <!-- USER INFO -->
+                                                  <li class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f15f22"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i style="font-size:15px; color:#000"class="lnr lnr-user" >{{auth()->user()->name}}</i> </a>
+                                                    <ul class="dropdown-menu" style="background-color: #f15f22">
+                                                    <li> <a href="/logout">Logout  </a> </li>
+                                                    <li><a href="/daftar-pesanan">Pesanan Saya </a></li>
+                                                    <li><a href="/daftar-pengajuan">Pengajuan Penjemputan Sampah</a></li>
+                                                    </ul>
+                                                  </li>
+                                                @else
+                                                    <a class="btn btn-default" href="/login">Login</a>
+
+                                                  @endif
+
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Header-btn -->
+
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Header End -->
+    </header>
+
+    <!-- main -->
+    <main>
+    <div class="slider-area ">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot4.jpeg" style="min-height: 247px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap">
+                            <h2>Form Transaksi Maggot</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="about-low-area section-padding30">
         <div class="container">
@@ -26,8 +126,9 @@
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 {{-- <img src="assets/img/gallery/about1.png" alt=""> --}}
-                                <img src="{{ asset('assets/img/' . $produk[0]->image) }}" alt="" style="width: 500px" Height="400px" alt ="">
+                                <img src="{{ asset('assets/img/' . $produk[0]->image) }}" alt="" style="width: 300px" Height="200px" alt ="">
                                 <h2>{{$produk[0]->nama}}</h2>
+                                <span><p style="font-size:15px; font-style:bold;">Stok Produk : {{$produk[0]->stok}} Pack</p><span>
                                 <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->judul}}</p><span>
                                 <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->deskripsi}}</p><span>
                                 {{-- <img src="{{asset('assets/img/maggotttt.jpg')}}" alt="Image" style="width: 400px" Height="100px" class="img-fluid"> --}}
@@ -37,7 +138,7 @@
                         <!-- about-img -->
                         <div class="about-img ">
                             <div class="section-tittle mb-35">
-                                <h4>Form Transaksi Maggot Wiralodra</h4>
+                                <h4> Isi Form Transaksi Maggot Wiralodra</h4>
                             </div>
                             <div class="contact-right formulir_">
                             <form method="post" action="/transaksi" enctype="multipart/form-data" >
@@ -59,23 +160,18 @@
                                 <label for="">Nomor Telepon </label>
                                 <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" value="{{auth()->user()->no_hp}}">
                             </div>
+
                             {{-- <div class="form-group">
-                                <label for="">Nomor Telepon </label>
-                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" required>
-                            </div> --}}
-                            <div class="form-group">
                                 <label for="">Jumlah Pembelian</label>
                                 <select class="form-control" id="" name="berat_produk">
                                   <option>1</option>Pack
                                   <option>2</option>Pack
-                                  {{-- <option>20</option>
-                                  <option>25</option> --}}
                                 </select>
-                              </div>
-                            {{-- <div class="form-group">
-                                <label for="">Berat Produk </label>
-                                <input type="text" class="form-control" id="" placeholder="masukan berat produk " name="berat_produk" required>
-                            </div> --}}
+                              </div> --}}
+                            <div class="form-group">
+                                <label for="">Jumlah Pembelian (Pack)</label>
+                                <input type="number" class="form-control" id="" placeholder="masukan jumlah pembelian " name="berat_produk" required>
+                            </div>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card">
@@ -188,7 +284,7 @@
         </div>
     </div>
 
-
+</main>
 
 
 
@@ -197,6 +293,10 @@
 
 
 <!-- Optional JavaScript -->
+<!--js dari sebelah -->
+{{-- <script src="{{ asset('logisticexpress-master')}}./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="{{ asset('logisticexpress-master')}}./assets/js/popper.min.js"></script>
+<script src="{{ asset('logisticexpress-master')}}./assets/js/bootstrap.min.js"></script> --}}
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>

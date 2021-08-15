@@ -55,7 +55,7 @@ class MontransaksiController extends Controller
 
     public function destroy($id)
     {
-        $mon_transaksi = Montransaksi::where('id',$id);
+        $mon_transaksi = Montransaksi::where('id_monitoring',$id);
         $mon_transaksi->delete();
         return redirect('/mon_transaksi');
     }

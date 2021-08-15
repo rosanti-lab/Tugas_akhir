@@ -31,7 +31,7 @@ class TransaksiController extends Controller
     public function form($id)
     {
 
-        $form_transaksi = Infotransaksi::all();
+        $form_transaksi = Produk::all();
         //$form_transaksi =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->get();
         $couriers = Courier::pluck('title', 'code');
         $provinces = Province::pluck('title', 'province_id');
@@ -80,7 +80,6 @@ class TransaksiController extends Controller
 
     }
 
-
     public function data()
     {
         //$transaksi = DB::table('transaksi')->get();
@@ -91,8 +90,6 @@ class TransaksiController extends Controller
         return view('transaksi.data', compact('transaksi', 'produk'));
     }
 
-
-
     public function barang_terjual(Request $request, $id)
     {
         //$transaksi = DB::table('transaksi')->get();
@@ -100,15 +97,14 @@ class TransaksiController extends Controller
 
         return view('transaksi.barang_terjual', ['barang_terjual' =>$barang_terjual]);
     }
-    public function details($id)
+    public function details(Request $request, $id)   //detail pesanan pada halaman admin
     {
-        //$transaksi = DB::table('transaksi')->get();
-        $details =Transaksi::join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->get();
-        // dd($transaksi);
+        $item = Transaksi:: select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+        $transaksi = DB::table('transaksi')->where('id',$id)->get();
+        return view('transaksi.detail',compact('transaksi', 'item'));
 
-        // return $edulevels;
-        return view('transaksi.detail', ['details' =>$details]);
     }
+
 
     public function edit($id)
     {
@@ -259,10 +255,8 @@ class TransaksiController extends Controller
     public function cetak($id)
     {
         $detail =Transaksi::findOrFail($id)->select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
-        // $cek=view()->share('printpesanan', $detail);
-        // $pdf = PDF::loadView('printpesanan',['detail'=>$detail]);
-        // dd($pdf);
-        $customPaper = array(0,0,283.80,567.00);
+
+        $customPaper = array(0,0,400.80,567.00);
         $pdf =PDF::loadView('pages.printpesanan',compact('detail'))->setPaper($customPaper, 'potrait');;
 
         // dd($detail);
