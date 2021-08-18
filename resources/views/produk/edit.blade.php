@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Deskripsi</label>
-                <input type="text" class="form-control" id="deskripsi" placeholder="masukan deskripsi" name="deskripsi" required value="{{$item['deskripsi']}}">
+                <textarea input type="text" class="form-control" id="deskripsi" rows="10" placeholder="masukan deskripsi" name="deskripsi" required value="{{$item['deskripsi']}}">{{$item['deskripsi']}}</textarea>
             </div>
             <div class="form-group">
                 <label for="email">Stok Produk</label>

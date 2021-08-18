@@ -14,7 +14,7 @@ class ProfilController extends Controller
     {
 
         $profil = Profil::all();
-        
+
         // dd($items= Infosampah::all());
         return view('view.index', ['profil' =>$profil]);
     }
@@ -41,8 +41,8 @@ class ProfilController extends Controller
 
         $profil->save();
 
-        return redirect('/profil');
-    
+        return view('profil');
+
     }
 
     public function edit($id)
@@ -77,6 +77,6 @@ class ProfilController extends Controller
             'judul' => $request->judul,
             'konten' => $request->konten
         ]);
-        return redirect('/index');
+        return redirect('/profil');
     }
 }

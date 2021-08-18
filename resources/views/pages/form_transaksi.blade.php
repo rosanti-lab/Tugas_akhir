@@ -161,6 +161,35 @@
                                 <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" value="{{auth()->user()->no_hp}}">
                             </div>
 
+                            {{-- <label for="form-group">Nama Produk</label>
+                            <!-- <select name="id_produk[]" id="" class="form-control"> -->
+                                <br>
+
+                                @foreach ($produk as $key => $value)
+
+                                    {{$value->nama}}
+                                    <input type="checkbox" name="id_produk[]" value="<?= $value->id_produk ?>"><?= $value->nama_produk ?>
+                                    <br>
+                                    <label for="form-group">Jumlah</label>
+                                    <input type="number" class="form-control" style="width: 50%;" placeholder="Masukkan Jumlah Produk" required="inputan tidak boleh kosong" id="jumlah" name="berat_produk[]" value="">
+
+
+                                 @endforeach --}}
+
+
+                                {{-- <input type="checkbox" name="id_produk[]" value="<?= $value->id_produk ?>"><?= $value->nama_produk ?>
+                                <br><label for="form-group">Jumlah</label>
+                            <input type="number" class="form-control" style="width: 50%;"
+                                placeholder="Masukkan Jumlah Produk" required="inputan tidak boleh kosong" id="jumlah" name="berat_produk[]" value=""> --}}
+
+
+
+                            {{-- <div class="form-group">
+                                <label for="">Produk</label>
+                                <input type="checkbox" class="form-control" id="" placeholder="masukan jumlah pembelian " name="id_prodik[]" value="">
+                                <input type="checkbox" class="form-control" id="" placeholder="masukan jumlah pembelian " name="id" required>
+                            </div> --}}
+
                             {{-- <div class="form-group">
                                 <label for="">Jumlah Pembelian</label>
                                 <select class="form-control" id="" name="berat_produk">
@@ -168,6 +197,7 @@
                                   <option>2</option>Pack
                                 </select>
                               </div> --}}
+
                             <div class="form-group">
                                 <label for="">Jumlah Pembelian (Pack)</label>
                                 <input type="number" class="form-control" id="" placeholder="masukan jumlah pembelian " name="berat_produk" required>
@@ -225,7 +255,7 @@
                                     <h5>KURIR</h5>
                                     <hr>
                                     <div class="form-group">
-                                        <label>PROVINSI TUJUAN</label>
+                                        <label>PILIH KURIR</label>
                                         <select class="form-control kurir" name="jasa_pengiriman">
                                             <option value="0">-- pilih kurir --</option>
                                             <option value="jne">JNE</option>

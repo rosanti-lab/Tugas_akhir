@@ -5,7 +5,7 @@
 @section('breadcrumbs')
   <div class="card">
     <div class="card-header">
-        <strong>Edit Info Sampah Organik</strong>
+        <strong>Edit About Us</strong>
     </div>
     <div class="card-body card-block">
         <form method="post" action="/about/update/{{$item->id}}">
@@ -20,12 +20,13 @@
 
             <div class="form-group">
                 <label for="email">Image</label>
-                <input type="file" class="form-control" id="photo" placeholder="masukan gambar" name="photo" required value="{{$item['photo']}}">
+                <input type="file" class="form-control" id="photo" placeholder="masukan gambar" name="photo" required value="{{$item['photo']}}" >
             </div>
 
             <div class="form-group">
                 <label for="no_telepon">DESKRIPSI</label>
-                <input type="text" class="form-control" id="konten" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}">
+                <textarea input type="text" class="form-control" id="konten" rows="10" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}">{{$item['konten']}}</textarea>
+                {{-- <input type="text" class="form-control" id="konten" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}"> --}}
             </div>
 
             <button type="submit" class="btn btn-warning btn-xs "> Edit</button>
@@ -37,6 +38,6 @@
   </div>
 
 
-        
-      
+
+
 @endsection

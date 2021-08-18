@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Budidaya Maggot WIralodra-About Us </title>
+        <title>Budidaya Maggot WIralodra </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -21,6 +21,9 @@
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slick.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
+
+
+
    </head>
 
    <body>
@@ -63,8 +66,9 @@
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
+                                            <li><a href="#">Contact</a></li>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            {{-- <li><a href="contact.html">Contact</a></li> --}}
                                             <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
@@ -103,16 +107,16 @@
     <main>
         <!--? slider Area Start-->
         <div class="slider-area ">
-            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/organik2.jpeg">
+            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot4.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Form Pengajuan Sampah Organik</h2>
+                                <h2>Transaksi Maggot</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
+                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -123,149 +127,139 @@
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
-        <div class="about-low-area section-padding30">
+        <!------------------------tampilan produk---------------------------------------------------->
+        <section class="contact-section">
             <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+
+
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+                    </script>
+
+                </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="about-caption mb-50">
-                        </div>
+                    <div class="col-12">
+                        <h2 class="contact-title">Get in Touch</h2>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="section-tittle mb-35">
-                            <h4>Form Pengajuan Penjemputan Sampah Organik</h4>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>Buttonwood, California.</h3>
+                                <p>Rosemead, CA 91770</p>
+                            </div>
                         </div>
-			        </div>
-                        <!-- about-img -->
-                        <div class="about-img ">
-                            <div class="contact-right formulir_">
-                            <form method="post" action="/sampahorganik" enctype="multipart/form-data" >
-                        @csrf
-
-                            <div class="form-group">
-                                <label for="">Nama</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan nama " name="name" required value="{{auth()->user()->name}}">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3>+1 253 565 2365</h3>
+                                <p>Mon to Fri 9am to 6pm</p>
                             </div>
-                            <div class="form-group">
-                                <label for="">Alamat Penjemputan</label>
-                                <input type="text" class="form-control" id="" placeholder="masukan alamat lengkap " name="alamat" value="{{auth()->user()->alamat}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Nomor Telepon </label>
-                                <input type="number" class="form-control" id="" placeholder="masukan nomor telepon " name="telephon" value="{{auth()->user()->no_hp}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Tanggal Pengajuan Penjemputan</label>
-                                <br>
-                                <input type="date" name="tanggal" placeholder="" style="display: width: 49%; height: 42.16px;" required>
-                            </div>
-                            <div>
-                                <label for="">foto Sampah Organik</label>
-                                <input type="file"  id=""  name="image" required>
-                            </div><br>
-
-                            <form method="post" action="" enctype="multipart/form-data">
-
-                            <button type="submit" class="btn btn-warning btn-xs bayar"> Kirim</button>
-                            </form>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3>support@colorlib.com</h3>
+                                <p>Send us your query anytime!</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
     </main>
     <footer>
-    <!--? Footer Start-->
-    <div class="footer-area footer-bg">
-        <div class="container">
-            <div class="footer-top footer-padding">
-                <!-- footer Heading -->
+        <!--? Footer Start-->
+        <div class="footer-area footer-bg">
+            <div class="container">
+                <div class="footer-top footer-padding">
+                    <!-- footer Heading -->
 
-                <!-- Footer Menu -->
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>COMPANY</h4>
-                                <ul>
-                                    <li><a href="about_user">About Us</a></li>
-                                    <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
-                                    <li><a href="transaksi_user"> Transaksi Maggot</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Jam Operasional Kerja</h4>
-                                <ul>
-                                    <li>Senin 08.00 - 16.00</li>
-                                    <li>Selasa 08.00 - 16.00</li>
-                                    <li>Rabu 08.00 - 16.00</li>
-                                    <li>Kamis 08.00 - 16.00</li>
-                                    <li>Jum'at 08.00 - 16.00</li>
-                                    <li>Sabtu 08.00 - 15.00</li>
-                                    <li>Minggu 08.00 - 16.00</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>RESOURCES</h4>
-                                <ul>
-                                    <li><a href="#">Home Insurance</a></li>
-                                    <li><a href="#">Travel Insurance</a></li>
-                                    <li><a href="#"> Car Insurance</a></li>
-                                    <li><a href="#"> Business Insurance</a></li>
-                                    <li><a href="#"> Heal Insurance</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <!-- logo -->
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                            </div>
-                            <div class="footer-tittle">
-                                <div class="footer-pera">
-                                    <p class="info1">GThe trade war currently ensuing between te US anfd several natxions around thdhe globe, most fiercely with.</p>
+                    <!-- Footer Menu -->
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    {{-- <h4>COMPANY</h4>
+                                    <ul>
+                                        <li><a href="about_user">About Us</a></li>
+                                        <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
+                                        <li><a href="transaksi_user"> Transaksi Maggot</a></li>
+                                        <li><a href="#"> Privacy Policy</a></li>
+                                    </ul> --}}
                                 </div>
                             </div>
-                            <!-- Footer Social -->
-                            <div class="footer-social ">
-                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>MAGGOT WIRALODRA</h4>
+                                    <ul>
+                                        <li><a href="">Home</a></li>
+                                        <li><a href="about_user">About Us</a></li>
+                                        <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
+                                        <li><a href="transaksi_user"> Transaksi Maggot</a></li>
+                                        <li><a href="#"> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Jam Operasional Kerja</h4>
+                                    <ul>
+                                        <li>Senin 08.00 - 16.00</li>
+                                        <li>Selasa 08.00 - 16.00</li>
+                                        <li>Rabu 08.00 - 16.00</li>
+                                        <li>Kamis 08.00 - 16.00</li>
+                                        <li>Jum'at 08.00 - 16.00</li>
+                                        <li>Sabtu 08.00 - 15.00</li>
+                                        <li>Minggu 08.00 - 16.00</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                </div>
+                                {{-- <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p class="info1">GThe trade war currently ensuing between te US anfd several natxions around thdhe globe, most fiercely with.</p>
+                                    </div>
+                                </div>
+                                <!-- Footer Social -->
+                                <div class="footer-social ">
+                                    <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fas fa-globe"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right text-center">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  {{-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> --}}
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-lg-12">
+                            <div class="footer-copy-right text-center">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> Budidaya Maggot Wiralodra <i class="fa fa-heart" aria-hidden="true"></i> By CSR Pertamina RU VI Balongan
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Footer End-->
-</footer>
+        <!-- Footer End-->
+    </footer>
     <!-- Scroll Up -->
     <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>

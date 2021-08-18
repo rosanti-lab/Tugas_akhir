@@ -30,13 +30,18 @@
         <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Monitoring Pendapatan Sampah Organik</strong>
+                            <strong> Monitoring Produk Terjual</strong>
                         </div>
                         <div class="pull-right">
                             <a href="{{ url('mon_transaksi/add') }}" class="btn btn-success btn-sm">
                                 <i class="fa fa-plus"></i>Add
                             </a>
                         </div>
+                        {{-- <div class="pull-right">
+                            <a href="{{ url('/print/'.$item->id. '/cetak') }}" class="btn btn-secondary btn-sm"> Cetak Nota</a>
+                                <i class="fa fa-plus"></i>Add
+                            </a>
+                        </div> --}}
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">
@@ -45,7 +50,7 @@
                                 <th style="width: 20px;">No</th>
                                 <th>Minggu Ke-</th>
                                 <th>Tanggal</th>
-                                <th>Total Sampah Organik</th>
+                                <th>Total Terjual</th>
                                 <th>Status Monitoring</th>
                                 <th>Note dari Tim CSR</th>
                                 <th style="width: 156px;">Actions</th>
@@ -57,16 +62,18 @@
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $item->hari}}</td>
                                     <td>{{ $item->tgl}}</td>
-                                    <td>{{ $item->total_terjual}} Kg</td>
+                                    <td>{{ $item->total_terjual}} Pack</td>
                                     <td>{{ $item->status_monitoring}}</td>
                                     <td>{{ $item->note}}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('mon_sampah/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('mon_transaksi/edit/' .$item->id_monitoring) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
-                                        <a href="{{ url('mon_sampah/destroy/' .$item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
+                                        <a href="{{ url('mon_transaksi/destroy/' .$item->id_monitoring) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
                                         </a>
+                                        <a href="{{ url('/print'.$item->id. '/cetak') }}" class="btn btn-secondary btn-sm">
+                                            <i class=""></i></a>Cetak
 
                                     </td>
                                 </tr>

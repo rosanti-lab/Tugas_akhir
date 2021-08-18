@@ -63,7 +63,7 @@
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact">Contact</a></li>
                                             <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
@@ -111,7 +111,7 @@
                     <div class="row">
                         <div class="col-xl-9 col-lg-9">
                             <div class="hero__caption">
-                                <h1 >Budidaya maggot Wiralodra <span>Mitra Binaan Tim CSR Ru VI Balongan</span></h1>
+                                <h1 >Budidaya maggot Wiralodra <span>Mitra Binaan Tim CSR Pertamina RU VI Balongan</span></h1>
                             </div>
                             <!--Hero form -->
                             <!-- <form action="#" class="search-box">
@@ -145,11 +145,23 @@
                     <div class="section-tittle text-center mb-80">
                         <h1>Welcome to Bubidaya Maggot Wiralodra </h1>
                         <h2>...</h2>
+                        @foreach ($profil as $key => $value)
+
+
+                                        {{-- <h5><a href="">{{$value->judul}} </a></h5> --}}
+
+                                        <p>
+                                            {{$value->konten}}
+                                        </p>
+
+                        @endforeach
+
+                        {{-- <span><p style="font-size:15px; font-style:bold;">{{$profil[0]->konten}}</p><span> --}}
                     </div>
                 </div>
             </div>
 
-            <section class="tiles">
+            {{-- <section class="tiles">
 								<article class="style1">
 
 								</article>
@@ -159,19 +171,25 @@
 								<!-- <article class="style3">
 
 								</article> -->
-							</section>
+							</section> --}}
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cat text-center mb-50">
-                        <div class="cat-cap">
-                            <h5><a href="services.html">Mitra Binaan </a></h5>
-                            {{-- <span><p style="font-size:15px; font-style:bold;">{{$item[0]->konten}}</p><span> --}}
-                            <p>Budidaya Maggot Wiralodra adalah usaha ternak yang bekerjasama dengan mitra Binaan Tim CSR Pertamina RU VI Balongan.
-                                <br>Kerjasama ini sudah berjalan 3 tahun sejak pembangunan pertama tempat untuk ternak maggot.</p>
-                        </div>
-                    </div>
-                </div>
+{{-- @foreach ($profil as $key => $value)
+<div class="col-lg-4 col-md-6 col-sm-6">
+    <div class="single-cat text-center mb-50">
+        <div class="cat-cap">
+
+            <h5><a href="services.html">{{$value->judul}} </a></h5>
+
+            <p>
+                {{$value->konten}}
+            </p>
+        </div>
+    </div>
+</div>
+
+@endforeach --}}
+
                 {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cat text-center mb-50">
                         <div class="cat-icon">
@@ -230,118 +248,7 @@
     </div> -->
     <!-- About Area End -->
     <!--? contact-form start -->
-    <section class="contact-form-area section-bg  pt-115 pb-120 fix" data-background="assets/img/gallery/section_bg02.jpg">
-        <div class="container">
-            <div class="row justify-content-end">
-                <!-- Contact wrapper -->
-                <div class="col-xl-8 col-lg-9">
-                    <div class="contact-form-wrapper">
-                        <!-- From tittle -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <!-- Section Tittle -->
-                                <div class="section-tittle mb-50">
-                                    <span>Get a Qote For Free</span>
-                                    <h2>Request a Free Quote</h2>
-                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- form -->
-                        <!-- <form action="#" class="contact-form">
-                            <div class="row ">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Contact Number">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="select-items">
-                                        <select name="select" id="select1">
-                                            <option value="">Freight Type</option>
-                                            <option value="">Catagories One</option>
-                                            <option value="">Catagories Two</option>
-                                            <option value="">Catagories Three</option>
-                                            <option value="">Catagories Four</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="City of Departure">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Incoterms">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Weight">
-                                    </div>
-                                </div>
-                                <!-- Height Width length -->
-                                <!-- <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Height">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Width">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="length">
-                                    </div>
-                                </div> -->
-                                <!-- Radio Button -->
-                                <!-- <div class="col-lg-12">
-                                    <div class="radio-wrapper mb-30 mt-15">
-                                        <label>Extra services:</label>
-                                        <div class="select-radio">
-                                            <div class="radio">
-                                                <input id="radio-1" name="radio" type="radio" checked="">
-                                                <label for="radio-1" class="radio-label">Freight</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input id="radio-2" name="radio" type="radio">
-                                                <label for="radio-2" class="radio-label">Express Delivery</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input id="radio-4" name="radio" type="radio">
-                                                <label for="radio-4" class="radio-label">Insurance</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input id="radio-5" name="radio" type="radio">
-                                                <label for="radio-5" class="radio-label">Packaging</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- Button -->
-                                <!-- <div class="col-lg-12">
-                                    <button name="submit" class="submit-btn">Request a Quote</button>
-                                </div> -->
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- contact-form end -->
     <!--Team Ara Start -->
     <!-- <div class="team-area section-padding30">
@@ -491,17 +398,31 @@
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>COMPANY</h4>
+                                {{-- <h4>COMPANY</h4>
                                 <ul>
                                     <li><a href="about_user">About Us</a></li>
                                     <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
                                     <li><a href="transaksi_user"> Transaksi Maggot</a></li>
                                     <li><a href="#"> Privacy Policy</a></li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>MAGGOT WIRALODRA</h4>
+                                <ul>
+                                    <li><a href="">Home</a></li>
+                                    <li><a href="about_user">About Us</a></li>
+                                    <li><a href="pengajuan">Pengajuan Sampah Organik</a></li>
+                                    <li><a href="transaksi_user"> Transaksi Maggot</a></li>
+                                    <li><a href="#"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
                                 <h4>Jam Operasional Kerja</h4>
@@ -517,27 +438,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>RESOURCES</h4>
-                                <ul>
-                                    <li><a href="#">Home Insurance</a></li>
-                                    <li><a href="#">Travel Insurance</a></li>
-                                    <li><a href="#"> Car Insurance</a></li>
-                                    <li><a href="#"> Business Insurance</a></li>
-                                    <li><a href="#"> Heal Insurance</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
                             <div class="footer-logo">
                                 <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
                             </div>
-                            <div class="footer-tittle">
+                            {{-- <div class="footer-tittle">
                                 <div class="footer-pera">
                                     <p class="info1">GThe trade war currently ensuing between te US anfd several natxions around thdhe globe, most fiercely with.</p>
                                 </div>
@@ -548,7 +455,7 @@
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fas fa-globe"></i></a>
                                 <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

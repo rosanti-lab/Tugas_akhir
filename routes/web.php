@@ -19,7 +19,15 @@ use Illuminate\Support\Facades\DB;
 
 //==============web=======================
 Route::get('/', function () {
-    return view('index');
+    $profil =  (DB::table('profil')->get()); //tambahan database
+    return view('index', compact('profil'));
+
+});
+
+Route::get('/profil', function () {
+    $profil =  (DB::table('profil')->get()); //tambahan database
+    return view('profil', compact('profil'));
+
 });
 //=========================================
 
@@ -39,7 +47,12 @@ Route::group(['middleware' => ['auth','CekRole:admin']], function () {
 //=========================== Middleware CSR =====================================
 Route::group(['middleware' => ['auth','CekRole:csr']], function () {
     Route::get('homecsr', function(){
-        return view ('homecsr');
+        $coba = count(DB::table('users')->whereRole('user')->get());
+        $coba1 = count(DB::table('produks')->get());
+
+
+       return view('homecsr',compact('coba', 'coba1'));
+        // return view ('homecsr');
     });
 });
 //=================================================================================
@@ -108,7 +121,7 @@ Route::get('/about_user', 'AboutController@index');
 Route::get('/infosampah', 'InfosampahController@index');
 Route::get('/pengajuan', 'PengajuanController@index');
 Route::get('/transaksi_user', 'TransaksiController@index');
-
+Route::get('/contact', 'ContactController@index');
 // Route::get('/form_transaksi', 'TransaksiController@form');
 Route::get('/form_pengajuan', 'PengajuanController@form');
 //===================================================================
@@ -171,12 +184,18 @@ Route::get('/mon_transaksi/data_monitoring/{id}', 'MontransaksiController@data_m
 Route::get('mon_transaksi/add', 'MontransaksiController@add');
 Route::post('mon_transaksi', 'MontransaksiController@addProcess');
 Route::get('/mon_transaksi/destroy/{id}', 'MontransaksiController@destroy');
+Route::patch('/mon_transaksi/update/{id}', 'MontransaksiController@update');
+Route::get('mon_transaksi/edit/{id_monitoring}', 'MontransaksiController@edit');
+
+
 
 Route::get('/transaksi_userlogin', 'TransaksiController@index_userlogin');
 
 
 Route::get('admin', 'AdminController@data');
 Route::get('/admin/destroy/{id}', 'AdminController@destroy');
+Route::get('admin/add', 'AdminController@add');
+Route::post('admin', 'AdminController@addProcess');
 
 
 Route::get('mon_sampah', 'MonsampahController@data');
@@ -185,6 +204,7 @@ Route::post('mon_sampah', 'MonsampahController@addProcess');
 Route::patch('/mon_sampah/update/{id}', 'MonsampahController@update');
 Route::get('mon_sampah/edit/{id}', 'MonsampahController@edit');
 Route::get('/mon_sampah/destroy/{id}', 'MonsampahController@destroy');
+Route::get('/cetak1/{id}', 'MontransaksiController@cetak1');
 
 
 Route::get('csr_sampahorganik', 'CsrsampahorganikController@data');
@@ -194,6 +214,10 @@ Route::get('csr_sampahorganik/edit/{id}', 'CsrsampahorganikController@edit');
 
 Route::get('csr_transaksi', 'CsrtransaksiController@data');
 Route::get('/csr_transaksi/data_monitoring/{id}', 'CsrtransaksiController@data_monitoring');
+Route::patch('/csr_transaksi/update/{id}', 'CsrtransaksiController@update');
+Route::get('csr_transaksi/edit/{id_monitoring}', 'CsrtransaksiController@edit');
+// Route::get('/print/{id}', 'MontransaksiController@print');
+// Route::get('/print/{id}/cetak', 'MontransaksiController@cetak');
 
 
 Route::get('/pembelian', 'PembelihomeController@index');
@@ -212,3 +236,5 @@ Route::get('/detailpesanan/edit/{id}', 'TransaksiController@detail');
 
 Route::get('/print/{id}', 'TransaksiController@print');
 Route::get('/print/{id}/cetak', 'TransaksiController@cetak');
+// Route::get('/print1/{id}', 'TransaksiController@print1');
+// Route::get('/cetak1/{id}', 'TransaksiController@cetak1');

@@ -45,6 +45,12 @@
                                 <i class="fa fa-undo"></i>Back
                             </a>
                         </div>
+                        {{-- <div class="pull-right">
+                            <a href="{{ url('print/'.$item->id. '/cetak') }}" class="btn btn-secondary btn-sm"> Cetak Nota
+                                <i class="fa fa-undo"></i>Back
+                            </a>
+                        </div> --}}
+
 
                     </div>
                     <div class="card-body table-responsive">
@@ -93,6 +99,11 @@
                                         <a href="{{ url('transaksi/details/' .$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Detail
                                         </a>
+                                        {{-- <a href="{{ url('cetak1/' .$item->id) }}" class="btn btn-secondary btn-sm"> Cetak Nota
+                                            <i class="fa fa-undo"></i>
+                                        </a> --}}
+
+
                                     </td>
                                 </tr>
                             @endforeach

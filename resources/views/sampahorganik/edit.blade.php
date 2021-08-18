@@ -33,6 +33,9 @@
                 <!-- <textarea id="konten" name="konten" class="form-control" rows="10" placeholder="Enter description"></textarea> -->
                 <!-- <input type="text" class="form-control" id="status_penjemputan" rows="10" placeholder="masukan Status Penjemputan" name="konten" required value="{{$item['status_penjemputan']}}">
             </div> -->
+            <br>
+            <br>
+            <br>
 
             <button type="submit" class="btn btn-warning btn-xs "> Save</button>
 

@@ -19,9 +19,9 @@
                 <input type="text" class="form-control" id="judul" placeholder="masukan judul" name="judul" required value="{{$item['judul']}}">
             </div>
             <div class="form-group">
-                <label for="no_telepon">DESKRIPSI</label>
-                <!-- <textarea id="konten" name="konten" class="form-control" rows="10" placeholder="Enter description"></textarea> -->
-                <input type="text" class="form-control" id="konten" rows="10" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}">
+                <label for="konten">DESKRIPSI</label>
+                {{-- <textarea text="konten" name="konten" class="form-control" rows="10" placeholder="Enter description" required value="{{$item['konten']}}"></textarea> --}}
+                <textarea input type="text" class="form-control" id="konten" rows="10" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}">{{$item['konten']}}</textarea>
             </div>
 
             <button type="submit" class="btn btn-warning btn-xs "> Save</button>

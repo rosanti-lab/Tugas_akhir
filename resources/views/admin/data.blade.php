@@ -40,7 +40,7 @@
                 <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Admin</strong>
+                            <strong> Users</strong>
                         </div>
                         <div class="pull-right">
                             <a href="{{ url('admin/add') }}" class="btn btn-success btn-sm">

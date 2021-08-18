@@ -12,59 +12,64 @@
             {{-- <title>Nota Pembayaran Transaksi Maggot Wiralodra</title> --}}
             <tr>
                 <th style="text-align:center" colspan="2">
+                    <img src="assets/img/bmw.png" alt="" style ="float:left; height: 63px; width: auto; padding: -20px 0; margin: -20px 0;" style="text-align:center" colspan="2"> NOTA PEMBAYARAN MAGGOT WIRALODRA
+                </th>
+            </tr>
+            {{-- <tr>
+                <th style="text-align:center" colspan="2">
                     <h3 style="font-size:16px;font-type:bold">MAGGOT WIRALODRA</h3>
                 </th>
-          </tr>
+            </tr> --}}
             <tr class="table-danger">
                 <th style="text-align:center" colspan="2">
                     <p style="font-size:15px;">Jl. Raya Balongan RT/RW 005./002 Desa Balongan, Kec. Balongan ,Kab. Indramayu, Jawa Barat </p>
+                    <hr style="font-type:bold">
                 </th>
             </tr>
-                {{-- <br>
-            <tr class="table-danger" >
-                <th style="text-align:center" colspan="2">
-                    <p style="font-size:12px;">Jl. Komp AL, Gg. H. Ganang, RT005/RW009 No. 17, Kel. Jatimakmur, Kec. Pondokgede, Kota Bekasi</p>
-                </th>
-            </tr> --}}
+            <tr>
+				<th style="width: 100%;line-height: 20%;" >
+				</th>
+			</tr>
+
 
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Pesanan Dibuat Pada : {{$detail->create}}</p>
+					<pre style="font-size:15px; ">Pesanan Dibuat Pada : {{$detail->create}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Nama : {{$detail->name}}</p>
+					<pre style="font-size:15px; ">Nama                : {{$detail->name}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Alamat : {{$detail->alamat}}</p>
+					<pre style="font-size:15px; ">Alamat               : {{$detail->alamat}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Alamat : {{$detail->telephon}}</p>
+					<pre style="font-size:15px; ">Alamat               : {{$detail->telephon}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Nama Produk : {{$detail->nama}}</p>
+					<pre style="font-size:15px; ">Nama Produk          : {{$detail->nama}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Jumlah Pembelian : {{$detail->berat_produk}}</p>
+					<pre style="font-size:15px; ">Jumlah Pembelian     : {{$detail->berat_produk}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:left">
-					<p style="font-size:15px; ">Total Pembayaran : Rp. {{ $detail->harga * $detail->berat_produk + $detail->ongkir}}</p>
+					<pre style="font-size:15px; ">Total Pembayaran     : Rp. {{ $detail->harga * $detail->berat_produk + $detail->ongkir}}</pre>
 				</th>
 			</tr>
             <tr>
 				<th style="text-align:center">
-					<p style="font-size:15px; ">Terima Kasih :)</p>
+					<pre style="font-size:15px; ">                      Terima Kasih :)</pre>
 				</th>
 			</tr>
 

@@ -48,7 +48,7 @@
     </tr>
     <tr>
         <th>Bukti Pembayaran</th>
-        <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 50%"></td>
+        <td><img src="{{ asset('public/assets/bukti_tf/' . $item->bukti_tf) }}" alt="" style="width: 20%"></td>
     </tr>
     <tr>
         <th>Ekspedisi Pengiriman</th>

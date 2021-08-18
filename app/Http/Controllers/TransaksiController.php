@@ -93,7 +93,7 @@ class TransaksiController extends Controller
     public function barang_terjual(Request $request, $id)
     {
         //$transaksi = DB::table('transaksi')->get();
-        $barang_terjual =Transaksi:: select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->get();
+        $barang_terjual =Transaksi:: select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('produks.id_produk',$id)->orderBy('create', 'DESC')->get();
 
         return view('transaksi.barang_terjual', ['barang_terjual' =>$barang_terjual]);
     }
@@ -256,12 +256,37 @@ class TransaksiController extends Controller
     {
         $detail =Transaksi::findOrFail($id)->select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
 
-        $customPaper = array(0,0,400.80,567.00);
+        $customPaper = array(0,0,500.80,567.00);
         $pdf =PDF::loadView('pages.printpesanan',compact('detail'))->setPaper($customPaper, 'potrait');;
 
         // dd($detail);
         return $pdf->download('nota_pembayaran.pdf');
     }
+
+//     public function print1($id)
+//     {
+//         $item =Transaksi::findOrFail($id)-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+//  dd($item);
+//         return view('pages.lap_keuangan',compact('item'));
+//     }
+
+//     public function cetak1($id)
+//     {
+//         $item =Transaksi::findOrFail($id)->select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )->join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+
+// // dd($item);
+//         $customPaper = array(0,0,500.80,567.00);
+//         $pdf =PDF::loadView('pages.lap_keuangan',compact('item'))->setPaper($customPaper, 'potrait');;
+
+//         return $pdf->download('laporan_keunagan.pdf');
+//     }
+
+    // public function tambahproduk(Request $request)
+    // {
+
+    //     $data -> id_produk = $request -> id_produk[];
+    //     $jumlah -> berat_produk = $request
+    // }
 
 
 

@@ -61,11 +61,14 @@
                                     <td>{{ $item->status_monitoring}}</td>
                                     <td>{{ $item->note}}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('mon_transaksi/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('mon_transaksi/edit/' .$item->id_monitoring) }}" class="btn btn-primary btn-sm">
                                             <i class=""></i>Edit
                                         </a>
                                         <a href="{{ url('mon_transaksi/destroy/' .$item->id_monitoring) }}" class="btn btn-danger btn-sm" onclick="return confirm ('Apa Anda yakin ingin menghapus ini')">
                                             <i class=""></i>Delete
+                                        </a>
+                                        <a href="{{ url('cetak1/' .$item->id_monitoring) }}" class="btn btn-secondary btn-sm"> Cetak Nota
+                                            <i class="fa fa-undo"></i>
                                         </a>
 
                                     </td>

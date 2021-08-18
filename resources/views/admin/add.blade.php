@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'profil')
+@section('title', 'about')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
@@ -30,10 +30,10 @@
                 <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Tambah Profil</strong>
+                            <strong> Tambah User</strong>
                         </div>
                         <div class="pull-right">
-                            <a href="{{ url('profil') }}" class="btn btn-secondary btn-sm">
+                            <a href="{{ url('admin') }}" class="btn btn-secondary btn-sm">
                                 <i class="fa fa-undo"></i>Back
                             </a>
                         </div>
@@ -42,25 +42,58 @@
 
                     <div class ="card">
                     <div class=" card-body card-padding">
-                    <form action ="{{ url('profil') }}" method ="post">
+                    <form action ="{{ url('admin') }}" method ="post">
                         @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="fg-line">
-                                    <label>Judul</label>
-                                    <input type="text" name="judul" class="form-control" placeholder="Enter title" maxlength="150" required="require" autofocus>
+                                    <label>Nama</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Nama" maxlength="150" required="require" autofocus>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="fg-line">
-                                    <label>Description</label>
-                                    <textarea id="konten" name="konten" class="form-control" rows="10" placeholder="Enter description"></textarea>
+                                <label>Nomor Telephon</label>
+                                <input type="text" name="no_hp" class="form-control" placeholder="Enter nomor telephon" maxlength="150" required="require" autofocus>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                <label>Email</label>
+                                <input type="text" name="email" class="form-control" placeholder="Enter email" maxlength="150" required="require" autofocus>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                <label>alamat</label>
+                                <input type="text" name="alamat" class="form-control" placeholder="Enter alamat" maxlength="150" required="require" autofocus>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                <label>Role</label>
+                                <input type="text" name="role" class="form-control" placeholder="Enter role" maxlength="150" required="require" autofocus>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                <label>Password</label>
+                                <input type="text" name="password" class="form-control" placeholder="Enter password" maxlength="150" required="require" autofocus>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <div class="fg-line">

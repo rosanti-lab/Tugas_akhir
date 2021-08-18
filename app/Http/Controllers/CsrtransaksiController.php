@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\models\Montransaksi;
+use App\models\Csrtransaksi;
 use App\Models\Transaksi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -26,5 +27,23 @@ class CsrtransaksiController extends Controller
 //
         // return $edulevels;
         return view('csr_transaksi.data_monitoring', ['data_monitoring' =>$data_monitoring]);
+    }
+
+    public function edit($id)
+    {
+        $item = Csrtransaksi::where('id_monitoring',$id)->FirstOrFail();
+        $transaksi = DB::table('mon_transaksi')->where('id_monitoring',$id)->get();
+        return view('csr_transaksi.edit',compact('transaksi','item'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $sampah=Csrtransaksi::where('id_monitoring',$id)
+            ->update([
+                'note'=>$request->note,             //nama dari database->nama dari form input
+                // 'status_penjemputan'=>$request->status_penjemputan,
+
+            ]);
+            return redirect('/csr_transaksi');
     }
 }

@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class ="card-header">
                         <div class="pull-left">
-                            <strong> Data Transaksi Yang masuk</strong>
+                            <strong>Transaksi Berdasarkan Jenis Produk</strong>
                         </div>
                         {{-- <div class="pull-right">
                             <a href="" class="btn btn-success btn-sm">

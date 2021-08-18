@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="no_telepon">DESKRIPSI</label>
-                <input type="text" class="form-control" rows="10" id="konten" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}">
+                <textarea input type="text" class="form-control" id="konten" rows="10" placeholder="masukan deskripsi" name="konten" required value="{{$item['konten']}}">{{$item['konten']}}</textarea>
             </div>
 
             <button type="submit" class="btn btn-warning btn-xs "> Edit</button>
@@ -37,6 +37,6 @@
   </div>
 
 
-        
-      
+
+
 @endsection
