@@ -316,12 +316,6 @@
 
 </main>
 
-
-
-
-
-
-
 <!-- Optional JavaScript -->
 <!--js dari sebelah -->
 {{-- <script src="{{ asset('logisticexpress-master')}}./assets/js/vendor/jquery-1.12.4.min.js"></script>

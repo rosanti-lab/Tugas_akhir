@@ -79,7 +79,6 @@ class TransaksiController extends Controller
         return response()->json($cost);
 
     }
-
     public function data()
     {
         //$transaksi = DB::table('transaksi')->get();
@@ -104,7 +103,6 @@ class TransaksiController extends Controller
         return view('transaksi.detail',compact('transaksi', 'item'));
 
     }
-
 
     public function edit($id)
     {
@@ -263,30 +261,15 @@ class TransaksiController extends Controller
         return $pdf->download('nota_pembayaran.pdf');
     }
 
-//     public function print1($id)
-//     {
-//         $item =Transaksi::findOrFail($id)-> join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
-//  dd($item);
-//         return view('pages.lap_keuangan',compact('item'));
-//     }
+    public function detail_transaksi(Request $request, $id)
+    {
+        $detail =Transaksi:: join('detail_transaksi', 'transaksi.id_produk', '=', 'detail_transaksi.id_detail')->where('id',$id)->FirstOrFail();
 
-//     public function cetak1($id)
-//     {
-//         $item =Transaksi::findOrFail($id)->select ('transaksi.*', 'produks.*', 'transaksi.created_at as create' )->join('produks', 'transaksi.id_produk', '=', 'produks.id_produk')->where('id',$id)->FirstOrFail();
+// dd($detail);
+        // return view('pages.detailpesanan',compact('detail'));
+    }
 
-// // dd($item);
-//         $customPaper = array(0,0,500.80,567.00);
-//         $pdf =PDF::loadView('pages.lap_keuangan',compact('item'))->setPaper($customPaper, 'potrait');;
 
-//         return $pdf->download('laporan_keunagan.pdf');
-//     }
-
-    // public function tambahproduk(Request $request)
-    // {
-
-    //     $data -> id_produk = $request -> id_produk[];
-    //     $jumlah -> berat_produk = $request
-    // }
 
 
 

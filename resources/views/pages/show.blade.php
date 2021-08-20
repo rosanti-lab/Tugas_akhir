@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Budidaya Maggot WIralodra </title>
+        <title>Budidaya Maggot WIralodra-About Us </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -21,9 +21,6 @@
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slick.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
-
-
-
    </head>
 
    <body>
@@ -66,9 +63,8 @@
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
-                                            <li><a href="#">Contact</a></li>
                                             </li>
-                                            {{-- <li><a href="contact.html">Contact</a></li> --}}
+                                            <li><a href="contact.html">Contact</a></li>
                                             <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
@@ -107,16 +103,16 @@
     <main>
         <!--? slider Area Start-->
         <div class="slider-area ">
-            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot4.jpeg">
+            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/organik2.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Transaksi Maggot</h2>
+                                <h2>Form Pengajuan Sampah Organik</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li>
+                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -127,60 +123,44 @@
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
-        <!------------------------tampilan produk---------------------------------------------------->
-        <div class="container-fluid tm-container-content tm-mt-60" style="padding-left: 280px">
-            <div class="row mb-4">
-                <h2 class="col-6 tm-text-primary">
-                    Produk Budidaya Maggot
-                </h2>
-                <div class="col-6 d-flex justify-content-end align-items-center">
-                    <form action="" class="tm-text-primary">
-                        Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
-                    </form>
-                </div>
-            </div>
-
-            <div class="row tm-mb-90 tm-gallery">
-                @foreach ($transaksi as $produk)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img src="{{asset('assets/img/'.$produk->image)}}" alt="Image" class="img-fluid">
-                        <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>{{$produk->nama}}</h2>
-
-                            {{-- <p style="font-size:10px; font-style:bold;">{{$produk->konten}}</p></h3> --}}
-                            {{-- <a href="photo-detail.html">{{$produk->konten}}</a> --}}
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-
-                        {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
-                        {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
-                        <span><p style="font-size:15px; font-style:bold;">{{$produk->judul}}</p><span>
-                            @if($produk->stok > 0)
-                            {{-- <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>  --}}  //belisekarang
-                             <a href="show/{{$produk->id_produk}}" class="btn">lihat produk</a>
-                            @else
-                            <button type="button" class="btn">Stok Habis</button>
-                            @endif
+        <div class="about-low-area section-padding30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-caption mb-50">
+                            {<img src="{{ asset('assets/img/' . $produk[0]->image) }}" alt="" style="width: 300px" Height="200px" alt ="">
+                                <h2>{{$produk[0]->nama}}</h2>
+                               <span><p style="font-size:15px; font-style:bold;">Stok Produk : {{$produk[0]->stok}} Pack</p><span>
+                               <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->judul}}</p><span>
+                               <span><p style="font-size:15px; font-style:bold;">{{$produk[0]->deskripsi}}</p><span>
+                                <form action="/carts" method="POST" >
+                                    @csrf
+                                    <div class="form-group">
+                                    <label for="">Jumlah Pembelian (Pack)</label>
+                                    <input type="number" class="form-control" id="" placeholder="masukan jumlah pembelian " name="berat_produk" required>
+                                </div>
+                            <a href="/carts" class="btn">Tambah Keranjang </a>
+                            {{-- <button class="btn" type="submit"> Tambah Keranjang</button> --}}
+                        </form>
+                        </div>
 
                     </div>
-                </div>
-                @endforeach
-            </div> <!-- row -->
-
-            <div class="row tm-mb-90">
-                <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
-                    {{-- <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a> --}}
-                    <div class="tm-paging d-flex">
-
+                    <div class="col-lg-6 col-md-12">
+                         <!-- about-img -->
+                         <div class="about-img ">
+                            <div class="about-font-img">
+                                {{-- <img src="{{ asset('assets/img/' . $produk->image) }}" alt="" style="width: 500px" Height="400px" alt =""> --}}
+                            </div>
+                            <div class="about-back-img d-none d-lg-block">
+                                <img src="assets/img/gallery/about1.png" alt="">
+                            </div>
+                        </div>
                     </div>
+
 
                 </div>
             </div>
         </div>
-
-
 
     </main>
     <footer>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Budidaya Maggot WIralodra </title>
+        <title>Budidaya Maggot WIralodra-About Us </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -21,9 +21,6 @@
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/slick.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/nice-select.css">
             <link rel="stylesheet" href="{{ asset('logisticexpress-master')}}/assets/css/style.css">
-
-
-
    </head>
 
    <body>
@@ -66,9 +63,8 @@
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
                                             <li><a href="transaksi_user">transaksi</a>
-                                            <li><a href="#">Contact</a></li>
                                             </li>
-                                            {{-- <li><a href="contact.html">Contact</a></li> --}}
+                                            <li><a href="contact.html">Contact</a></li>
                                             <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
@@ -107,16 +103,16 @@
     <main>
         <!--? slider Area Start-->
         <div class="slider-area ">
-            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/maggot4.jpeg">
+            <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/organik2.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Transaksi Maggot</h2>
+                                <h2></h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="pengajuan">Transaksi</a></li>
+                                        <li class="breadcrumb-item"><a href="pengajuan">Pengajuan sampah organik</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -127,60 +123,114 @@
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
-        <!------------------------tampilan produk---------------------------------------------------->
-        <div class="container-fluid tm-container-content tm-mt-60" style="padding-left: 280px">
-            <div class="row mb-4">
-                <h2 class="col-6 tm-text-primary">
-                    Produk Budidaya Maggot
-                </h2>
-                <div class="col-6 d-flex justify-content-end align-items-center">
-                    <form action="" class="tm-text-primary">
-                        Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
-                    </form>
-                </div>
-            </div>
-
-            <div class="row tm-mb-90 tm-gallery">
-                @foreach ($transaksi as $produk)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img src="{{asset('assets/img/'.$produk->image)}}" alt="Image" class="img-fluid">
-                        <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>{{$produk->nama}}</h2>
-
-                            {{-- <p style="font-size:10px; font-style:bold;">{{$produk->konten}}</p></h3> --}}
-                            {{-- <a href="photo-detail.html">{{$produk->konten}}</a> --}}
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-
-                        {{-- <a href="form_transaksi/{{$produk['id']}}" class="btn">Beli Sekarang</a> --}}
-                        {{-- <button style="color: black" a href="pembelian" {{$produk['id_info_produksaksi']}} class="tm-text-gray-light">Beli Sekarang</button> --}}
-                        <span><p style="font-size:15px; font-style:bold;">{{$produk->judul}}</p><span>
-                            @if($produk->stok > 0)
-                            {{-- <a href="form_transaksi/{{$produk->id_produk}}" class="btn">Beli Sekarang</a>  --}}  //belisekarang
-                             <a href="show/{{$produk->id_produk}}" class="btn">lihat produk</a>
-                            @else
-                            <button type="button" class="btn">Stok Habis</button>
-                            @endif
-
+        <body>
+            <div class="row" id="app">
+                <div class="container cart">
+                    <div class="row">
+                        {{-- <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>ADD ITEM</h2>
+                                    <p>(This is using custom database storage)</p>
+                                    <div class="form-group form-group-sm">
+                                        <label>ID</label>
+                                        <input v-model="item.id" class="form-control" placeholder="Id">
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <label>Name</label>
+                                        <input v-model="item.name" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <label>Price</label>
+                                        <input v-model="item.price" class="form-control" placeholder="Price">
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <label>Qty</label>
+                                        <input v-model="item.qty" class="form-control" placeholder="Quantity">
+                                    </div>
+                                    <button v-on:click="addItem()" class="btn btn-primary">Add Item</button>
+                                </div>
+                            </div>
+                        </div> --}}
+                        {{-- <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>ADD CONDITIONS</h2>
+                                    <div class="form-group form-group-sm">
+                                        <label>name*</label>
+                                        <input v-model="cartCondition.name" placeholder="Sale 5%" class="form-control" placeholder="Id">
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <label>Type (Any string that defines the type of your condition)*</label>
+                                        <input v-model="cartCondition.type" placeholder="sale" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <label>Target*</label>
+                                        <select v-model="cartCondition.target" class="form-control">
+                                            <option v-for="target in options.target" :key="target.key" :value="target.key">
+                                                @{{ target.label }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <label>Value*</label>
+                                        <input v-model="cartCondition.value" placeholder="-12% or -10 or +10 etc" class="form-control" placeholder="Quantity">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button v-on:click="addCartCondition()" class="btn btn-primary">Add Condition</button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button v-on:click="clearCartCondition()" class="btn btn-primary">Clear Conditions</button>
+                                </div>
+                            </div>
+                        </div> --}}
+                        <div class="col-lg-6">
+                            <h2>KERANJANG SAYA</h2>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr v-for="item in items">
+                                    <td>@{{ item.id }}</td>
+                                    <td>@{{ item.name }}</td>
+                                    <td>@{{ item.quantity }}</td>
+                                    <td>@{{ item.price }}</td>
+                                    <td>
+                                        <button v-on:click="removeItem(item.id)" class="btn btn-sm btn-danger">remove</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <tr>
+                                    <td>Items on Cart:</td>
+                                    <td>@{{itemCount}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Qty:</td>
+                                    <td>@{{ details.total_quantity }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Sub Total:</td>
+                                    <td>@{{ '$' + details.sub_total.toFixed(2) }} (@{{details.cart_sub_total_conditions_count}} conditions applied)</td>
+                                </tr>
+                                <tr>
+                                    <td>Total:</td>
+                                    <td>@{{ '$' + details.total.toFixed(2) }} (@{{details.cart_total_conditions_count}} conditions applied)</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                @endforeach
-            </div> <!-- row -->
-
-            <div class="row tm-mb-90">
-                <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
-                    {{-- <a href="javascript:void(0);" class="btn btn-primary tm-btn-prev mb-2 disabled">Previous</a> --}}
-                    <div class="tm-paging d-flex">
-
-                    </div>
-
-                </div>
             </div>
-        </div>
-
-
 
     </main>
     <footer>
@@ -313,3 +363,4 @@
 
     </body>
 </html>
+

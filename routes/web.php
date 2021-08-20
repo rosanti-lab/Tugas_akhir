@@ -238,3 +238,11 @@ Route::get('/print/{id}', 'TransaksiController@print');
 Route::get('/print/{id}/cetak', 'TransaksiController@cetak');
 // Route::get('/print1/{id}', 'TransaksiController@print1');
 // Route::get('/cetak1/{id}', 'TransaksiController@cetak1');
+
+//carts
+Route::get('/carts', 'CartController@index');
+Route::get('/carts/remove/{cartID}', 'CartController@destroy');
+Route::post('/carts', 'CartController@store');
+Route::get('/carts/update', 'CartController@update');
+
+Route::get('show/{id}', 'CartController@show');

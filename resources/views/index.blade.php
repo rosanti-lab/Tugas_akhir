@@ -61,9 +61,9 @@
                                             <li><a href="/">Home</a></li>
                                             <li><a href="about_user">About</a></li>
                                             <li><a href="pengajuan">pengajuan sampah organik</a></li>
-                                            <li><a href="transaksi_user">transaksi</a>
-                                            </li>
-                                            <li><a href="contact">Contact</a></li>
+                                            <li><a href="transaksi_user">transaksi</a></li>
+                                            <li><a href="{{ url('carts')}}">Cart</a></li>
+                                            <li><i class="zmdi zmdi-shopping-cart"></i><a href="contact">Contact</a></li>
                                             <li class="nav-right">
                                                 <!--Login&Register-->
                                                 @if(auth()->user())
